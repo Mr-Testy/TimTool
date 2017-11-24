@@ -4,43 +4,43 @@
 {% load i18n %}
 
 {% block title %}
-Mes Groupes
+{% trans 'My groups'%}
 {% endblock %}
 
 {% block jumboTitle %}
-Mes Groupes
+{% trans 'My groups'%}
 {% endblock %}
 
 {% block jumboMessage %}
-Tous les groupes dont je suis membre ou admin
+{% trans 'All groups where I am member or Administrator'%}
 {% endblock %}
 
 {% block timtool_body %}
 <div class="row">
     <div class="col-sm-12">
-        <h1>Filtres</h1>
+        <h1>{% trans 'Filters'%}</h1>
         <form method="GET" action="" class="form-inline">
             <div class="form-group">
-                <label for="q_name">Nom</label>
+                <label for="q_name">{% trans 'Name'%}</label>
                 <input type="text" name="q_name" placeholder="filtrer par nom" id="q_name" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Filtrer</button>
+            <button type="submit" class="btn btn-success">{% trans 'Filter'%}</button>
         </form>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h1>Mes groupes</h1>
+        <h1>{% trans 'My groups'%}</h1>
         <div class="panel panel-primary wrappedTable">
             <table class="table table-striped table-hover">
                 {% if groups|length == 0 %}
-                <thead><tr><th>Vous n'êtes membre ou admin d'aucun groupe</th></tr></thead>
+                <thead><tr><th>{% trans 'You are not member or admin in any group'%}</th></tr></thead>
                 {% else %}
                 <thead>
                     <tr>
-                        <th class="widthCell">Nom</th>
-                        <th class="visible-lg">Description</th>
-                        <th class="visible-lg">Mon rôle</th>
+                        <th class="widthCell">{% trans 'Name'%}</th>
+                        <th class="visible-lg">{% trans 'Description'%}</th>
+                        <th class="visible-lg">{% trans 'My role'%}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,11 +65,11 @@ Tous les groupes dont je suis membre ou admin
         <div class="col-sm-12">
             <div class="pagination">
                 {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">Précédente</a> —
+                <a href="?page={{ page_obj.previous_page_number }}">{% trans 'Previous'%}</a> —
                 {% endif %}
-                Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 {% if page_obj.has_next %}
-                — <a href="?page={{ page_obj.next_page_number }}">Suivante</a>
+                — <a href="?page={{ page_obj.next_page_number }}">{% trans 'Next'%}</a>
                 {% endif %}
             </div>
         </div>
