@@ -9,6 +9,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.template.defaultfilters import slugify
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
+from django.conf import settings
 
 from .forms import ContactForm, GroupForm, UserForm
 from tune.models import Tune, TuneFavori_group
@@ -26,7 +27,7 @@ def contact(request):
         message = form.cleaned_data['message']
         envoyeur = form.cleaned_data['envoyeur']
         renvoi = form.cleaned_data['renvoi']
-        mail_to = []
+        mail_to = [settings.DEFAULT_FROM_EMAIL]
         if renvoi:
             mail_to.append(envoyeur)
 
