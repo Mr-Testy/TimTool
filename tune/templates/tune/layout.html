@@ -17,9 +17,23 @@
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{% url 'accueil_lang' lang='fr' %}"><img src='{% static "img/flag_france.png" %}'/></a></li>
-                <li><a href="{% url 'accueil_lang' lang='en' %}"><img src='{% static "img/flag_usa.png" %}'/></a></li>
+                <li>
+        <form id="langage" class="form-inline" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <select class="form-control" name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+                <button class="btn btn-success" type="submit">GO</button>
+</form>          
+                </li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <div class="navbar-form btn-group">

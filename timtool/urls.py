@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^user/', include('user.urls', namespace='user')),
     url(r'^account/', include('allauth.urls')),
     url(r'^jsi18n/$', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]

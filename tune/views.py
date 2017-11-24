@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.core.urlresolvers import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.utils import translation
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -23,14 +22,6 @@ class LoginRequiredMixin(object):
 
 
 def home(request, lang=None):
-    if lang == "fr":
-        translation.activate("fr")
-        request.session[translation.LANGUAGE_SESSION_KEY] = "fr"
-        messages.success(request, "La langue est maintenant : 'Français'")
-    elif lang == "en":
-        translation.activate("en")
-        request.session[translation.LANGUAGE_SESSION_KEY] = "en"
-        messages.success(request, "Language has been set to 'English'")
     tunes = Tune.objects.all()[:10]
     groups = GroupExtend.objects.all()[:10]
     users = User.objects.all()[:10]
