@@ -18,7 +18,10 @@
 {% block timtool_body %}
 <div class="row">
     <div class="col-sm-12">
-        <h1>{% trans 'Filters' %}</h1>
+        {% trans "You can filter by name, type, or key. You can combine the filters." as tip1 %}
+        {% trans "The 'Type' and 'Key' fields are case-sensitive. Use tiny letters for Type (reel, jig) and use the following format for Keys (A, Am, Ador, Amix)" as warn1 %}
+        <h1>{% trans 'Filters' %} {% include 'tip.html' with message=tip1 %}
+        {%include 'warn.html' with message=warn1 %}</h1>
         <form method="GET" action="" class="form-inline">
             <div class="form-group">
                 <label for="q_name">{% trans 'Name' %}</label>
