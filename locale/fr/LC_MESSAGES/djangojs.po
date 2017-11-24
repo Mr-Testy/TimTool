@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 18:02+0100\n"
+"POT-Creation-Date: 2017-11-24 20:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,54 +17,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\static\js\main.js:19
+#: .\static\js\main.js:18
 msgid "Tune added to your favorites"
 msgstr "Tune ajouté à vos favoris"
 
-#: .\static\js\main.js:23 .\static\js\main.js:204
+#: .\static\js\main.js:22 .\static\js\main.js:205
 msgid "Tune removed from your favorites"
 msgstr "Tune retiré de vos favoris"
 
-#: .\static\js\main.js:87
+#: .\static\js\main.js:88
 msgid "Tune learnt"
 msgstr "Tune appris"
 
-#: .\static\js\main.js:91
+#: .\static\js\main.js:92
 msgid "Tune to learn"
 msgstr "Tune à apprendre"
 
-#: .\static\js\main.js:129 .\static\js\main.js:138 .\static\js\main.js:158
+#: .\static\js\main.js:130 .\static\js\main.js:139 .\static\js\main.js:159
 msgid "Warning"
 msgstr "Danger"
 
-#: .\static\js\main.js:130
+#: .\static\js\main.js:131
 msgid "You cannot remove the only Admin of the group"
 msgstr "Vous ne pouvez pas retirer le seul Administrateur du groupe"
 
-#: .\static\js\main.js:139
+#: .\static\js\main.js:140
 msgid "You are about to remove your Administrator rigths from this group. You will be redirected. Are you sure ?"
 msgstr "Vous êtes sur le point de retirer vos droits administrateurs de ce groupe. Vous serez redirigés. Êtes-vous certain ?"
 
-#: .\static\js\main.js:159
+#: .\static\js\main.js:160
 msgid "An error occured"
 msgstr "Une erreur est survenue"
 
-#: .\static\js\main.js:183
+#: .\static\js\main.js:184
 msgid "Remove \""
 msgstr "Retirer \""
 
-#: .\static\js\main.js:183
+#: .\static\js\main.js:184
 msgid "\" from your favorites ?"
 msgstr "\" de vos favoris ?"
 
-#: .\static\js\main.js:184
+#: .\static\js\main.js:185
 msgid "Are you sure to remove the Tune \""
 msgstr "Êtes-vous certain de supprimer le Tune \""
 
-#: .\static\js\main.js:184
+#: .\static\js\main.js:185
 msgid "\" from your favorites ? Information linked with this favorite will be lost"
 msgstr "\" de vos favoris ? Les informations liées à ce favori seront perdues"
 
-#: .\static\js\main.js:225
+#: .\static\js\main.js:229
 msgid "Information linked with this sound will be lost"
 msgstr "Les informations liées a ce son seront perdues"
+
+#: .\static\js\main.js:272
+msgid "Hide Menu"
+msgstr "Cacher Menu"
+
+#: .\static\js\main.js:276
+msgid "Show Menu"
+msgstr "Afficher Menu"

@@ -269,11 +269,11 @@ $("#checkAll3").click(function () {
 //MENU : Change icon and name
 $("[data-target='#sidebar']").click(function () {
     if ($(this).children().hasClass("fa-toggle-off")){
-        $(this).html("<i class='fa fa-toggle-on' aria-hidden='true'></i> gettext('Hide Menu')");
+        $(this).html("<i class='fa fa-toggle-on' aria-hidden='true'></i> "+gettext('Hide Menu'));
         $.post( "/user/toggle_menu/", { boolean: true });
     }
     else {
-        $(this).html("<i class='fa fa-toggle-off' aria-hidden='true'></i> gettext('Show Menu')");
+        $(this).html("<i class='fa fa-toggle-off' aria-hidden='true'></i> "+gettext('Show Menu'));
         $.post( "/user/toggle_menu/", { boolean: false });
     }
     if ($("#sidebar").hasClass("in")) {
