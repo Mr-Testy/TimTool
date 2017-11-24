@@ -20,15 +20,8 @@ User = get_user_model()
 
 
 def contact(request):
-    # Construire le formulaire, soit avec les données postées,
-    # soit vide si l'utilisateur accède pour la première fois
-    # à la page.
     form = ContactForm(request.POST or None)
-    # Nous vérifions que les données envoyées sont valides
-    # Cette méthode renvoie False s'il n'y a pas de données
-    # dans le formulaire ou qu'il contient des erreurs.
     if form.is_valid():
-        # Ici nous pouvons traiter les données du formulaire
         sujet = form.cleaned_data['sujet']
         message = form.cleaned_data['message']
         envoyeur = form.cleaned_data['envoyeur']
@@ -37,8 +30,6 @@ def contact(request):
         if renvoi:
             mail_to.append(envoyeur)
 
-        # Nous pourrions ici envoyer l'e-mail grâce aux données
-        # que nous venons de récupérer
         send_mail(sujet,
                   message,
                   envoyeur,
@@ -46,8 +37,8 @@ def contact(request):
                   fail_silently=True,
                   )
         messages.success(request, _('Your email has successfully been sent !'))
+        return redirect("accueil")
 
-    # Quoiqu'il arrive, on affiche la page du formulaire.
     return render(request, 'user/contact.html', locals())
 
 

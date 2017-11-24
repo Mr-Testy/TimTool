@@ -224,12 +224,12 @@ title="{{not_connected}}">
 <div class="row">
     {% if user|role_of_this_group:group == "admin" %}
     <a class="btn btn-success" href="{% url 'user:groupe_update_roles' slug=group.slug%}">
-        <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Update members roles' %}
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> {% trans 'Update members roles' %}
     </a>
     {% else %}
     <button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
     title="{% trans 'Only administrators can use this functionnality' %}">
-        <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Update members roles' %}
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> {% trans 'Update members roles' %}
     </button>
 {% endif %}
 </div>
