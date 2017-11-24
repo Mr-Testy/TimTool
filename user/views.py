@@ -28,7 +28,7 @@ def contact(request):
         envoyeur = form.cleaned_data['envoyeur']
         renvoi = form.cleaned_data['renvoi']
         mail_to = [settings.DEFAULT_FROM_EMAIL]
-        message = message + " --- Send by : " + envoyeur
+        message = message + " --- Sent by : " + envoyeur
         if renvoi:
             mail_to.append(envoyeur)
 
