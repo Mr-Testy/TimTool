@@ -1,0 +1,91 @@
+{% extends "tune/layout.html" %}
+{% load tune_filters %}
+{% load user_filters %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap_tags %}
+
+{% block title %}
+{{ tune_favori.of_tune.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{{ tune_favori.of_tune.name }}
+{% endblock %}
+
+{% block jumboMessage %}
+{% blocktrans with type=tune_favori.of_tune.type key=tune_favori.of_tune.key %}{{ type }} in {{ key }}{% endblocktrans %}. {% trans 'Favorite Tune of' %} {% if type == "user" %}{{ tune_favori.of_user.username }} 
+{% else %}{{ tune_favori.of_group.name }}
+{% endif %} {{ type }}.
+{% endblock %}
+
+{% block timtool_body %}
+<h1>{% trans 'Audio files' %}</h1>
+{% if type == "user" %}
+    {% if tune_favori.audio_clyp_user_favori_set.all|length == 0 %}
+        {% trans 'No audio file added to this favorite' %}
+    {% else %}
+        {% for clyp in tune_favori.audio_clyp_user_favori_set.all %}
+        <div class="temp">
+        <h2>{% trans 'Title' %} : {{clyp.name}}</h2>
+        <p>{% trans 'Description' %} : {{clyp.description}}</p>
+        <div class="row">
+            <div class="col-xs-11">
+            <iframe width="100%" height="150" src="{{clyp.href}}/widget" frameborder="0"></iframe>
+        </div>
+        <div class="col-xs-1">
+                                <button data-id="{{clyp.slug}}" class="btn remove_sound tooltipInfo" data-toggle="tooltip" title="{% blocktrans with name=clyp.name %}Remove the sound '{{name}}' from this favorite ?{% endblocktrans %}" type="button">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+        </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% else %}
+    {% if tune_favori.audio_clyp_group_favori_set.all|length == 0 %}
+        {% trans 'No audio file added to this favorite' %}
+    {% else %}
+        {% for clyp in tune_favori.audio_clyp_group_favori_set.all %}
+        <h2>{% trans 'Title' %} : {{clyp.name}}</h2>
+        <p>{% trans 'Description' %} : {{clyp.description}}</p>
+        <div class="row">
+            <div class="col-xs-11">
+            <iframe width="100%" height="150" src="{{clyp.href}}/widget" frameborder="0"></iframe>
+        </div>
+        <div class="col-xs-1">
+                                <button data-id="{{clyp.slug}}" class="btn remove_sound tooltipInfo" data-toggle="tooltip" title="{% blocktrans with name=clyp.name %}Remove the sound '{{name}}' from this favorite ?{% endblocktrans %}" type="button">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+    {% block actions_page %}
+    {% if type == "user" or request.user|is_admin:tune_favori.of_group.slug %}
+            <a class="btn btn-success" href="{% url 'tune:tune_favori_add_sound' slug=tune_favori.slug %}">
+            <i class="fa fa-music" aria-hidden="true"></i> {% trans 'Add a sound' %}
+        </a>
+{% else %}
+            <a class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+title="{% trans 'Only administrators of the group can use this functionnality' %}">
+            <i class="fa fa-music" aria-hidden="true"></i> {% trans 'Add a sound' %}
+        </a>
+{% endif %}
+    {% endblock %}
+
+    {% block actions %}
+    {% if type == "user" or request.user|is_admin:tune_favori.of_group.slug %}
+        <a class="list-group-item" href="{% url 'tune:tune_favori_add_sound' slug=tune_favori.slug %}">
+            <i class="fa fa-music" aria-hidden="true"></i> {% trans 'Add a sound' %}
+        </a>
+        {% else %}
+        <a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+    title="{% trans 'Only administrators of the group can use this functionnality' %}">
+            <i class="fa fa-music" aria-hidden="true"></i> {% trans 'Add a sound' %}
+        </a>
+        {% endif %}
+{% endblock %}

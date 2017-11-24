@@ -1,0 +1,72 @@
+This file contains 4 an dro (#1 - #4).
+You can find more abc tune files at http://www.norbeck.nu/abc/
+
+These an dro are Breton dance tunes from Brittany/Bretagne.
+
+Last updated 3 May 2017.
+
+(c) Copyright 2017 Henrik Norbeck. This file:
+- May be distributed with restrictions below.
+- May not be used for commercial purposes (such as printing a tune book to sell).
+- This file (or parts of it) may not be made available on a web page for
+  download without permission from me.
+- This copyright notice must be kept, except when e-mailing individual tunes.
+- May be printed on paper for personal use.
+- Questions? E-mail: henrik@norbeck.nu
+
+R:an dro
+M:2/4
+L:1/16
+Z:id:hn-%R-%X
+O:Bretagne
+
+X:1
+T:An Dro
+R:an dro
+O:Bretagne
+Z:id:hn-andro-1
+M:2/4
+L:1/16
+Q:1/4=100
+K:Ador
+A2BA G2E2 | AAGF E2AA | GABA G2E2 | AAGF E3A :|
+|: A2B2 c3c | BABc B3A | A2B2 c2A2 | A2G2 A3E :|
+
+X:2
+T:An Dro
+R:an dro
+H:Also in Amix, #3
+O:Bretagne
+Z:id:hn-andro-2
+M:2/4
+L:1/16
+Q:1/4=100
+K:Dmix
+FADE F2FF | GFGA B2cB | A2G2 F2FF |1 GFEG F3F :|2 GFEG F3A ||
+|: B2c2 G3A | BcBA G3A | B2c2 F2FF |1 GFEG F3A :|2 GFEG F3F ||
+
+X:3
+T:An Dro
+R:an dro
+H:Also in Dmix, #2
+O:Bretagne
+Z:id:hn-andro-3
+M:2/4
+L:1/16
+Q:1/4=100
+K:Amix
+ceAB c2cc | dcde f2gf | e2d2 c2cc|1 dcBd c3c :|2 dcBd c3e ||
+|: f2g2 d3e | fgfe d3e | f2g2 c2cc |1 dcBd c3e :|2 dcBd c3c ||
+
+X:4
+T:Dans An Dro
+R:an dro
+O:Bretagne
+Z:id:hn-andro-4
+M:2/4
+L:1/16
+Q:1/4=100
+K:Em
+E2B2 B2AB | c2B2 AGFG | A2F2 B2AG |1 FGEF G3F :|2 FEFG E4 ||
+|: E2E2 F2GF | E2E2 FEFG | A2F2 B2AG |1 FGEF G3F :|2 FEFG E4 ||
+

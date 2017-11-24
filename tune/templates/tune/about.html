@@ -1,0 +1,207 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'About' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'About Timtool' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Information about the Timtool Web application' %}
+{% endblock %}
+
+{% block timtool_body %}
+<div class="row">
+    <ul  class="nav nav-pills well">
+        <li class="active">
+            <a  href="#1a" data-toggle="tab">{% trans 'The project of a lifetime' %}</a>
+        </li>
+        <li><a href="#2a" data-toggle="tab">{% trans 'Feature tree' %}</a></li>
+    </ul>
+
+    <div class="tab-content clearfix">
+    <div class="tab-pane active" id="1a">
+<h3>{% trans 'The project of a lifetime' %}</h3>
+<p>{% trans 'This application is the project of a lifetime, and will not cease evolving according to your needs. To make learning Irish traditional music easier. To manage known tunes more efficiently (and thus avoid forgetting tunes as you progress). To learn the tunes that your friends already know (and so to avoid learning a tune that nobody knows...). To generate sets of Tunes and thus randomly discover nice sets. To simply review the tunes that you know. Or to share all the information needed to manage a session.' %}</p>
+<h3>{% trans 'Work required' %}</h3>
+<p>{% trans 'Web application development is like music: it is a hobby that takes time.' %}<br/>
+{% trans 'Like music, it requires:' %}
+<ul>
+<li>{% trans 'Equipment' %}</li>
+<li>{% trans 'Maintenance' %}</li>
+<li>{% trans 'Courses and trainings' %}</li>
+<li>{% trans 'Hours, days, years of practicing' %}</li>
+<li>{% trans 'Thinking' %}</li>
+<li>{% trans 'Bravery' %}</li>
+</ul>
+</p>
+{% comment %}
+<h3>{% trans 'Make a gift =D' %}</h3>
+<p>{% trans 'For all that, and for all that is to come, whether you like the current application or you believe in future application, whether you want to encourage the project or thank the effort that has already been done, you have the opportunity to' %} <a href="" class="btn btn-xs btn-success">{% trans 'make a gift to the developer' %}</a>.</p>
+<p>{% trans 'Thanks ! Enjoy =)' %}</p>
+{% endcomment %}
+<p>{% trans 'Enjoy =)' %}</p>
+
+</div>
+      <div class="tab-pane" id="2a">
+          <h3>{% trans 'Feature tree' %}</h3>
+          <p><span class="darkgreen">{% trans 'Existing features' %}</span> vs <span class="darkred">{% trans 'Upcoming features' %}</span></p>
+          <ul>
+          <li>{% trans 'General' %}</li>
+          <ul>
+              <li>{% trans 'Menus' %}</li>
+              <hr/>
+              <ul>
+                <li>{% trans 'Horizontal menu' %}</li>
+                <ul>
+                    <li><span class="darkgreen">{% trans 'Hide/Show menu' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Search for a Tune' %}</span></li>
+                </ul>
+
+                <li>{% trans 'Left vertical menu' %}</li>
+                <ul>
+                    <li><span class="darkgreen">{% trans 'Links and Actions' %}</span></li>
+                </ul>
+            </ul>
+
+            <li>{% trans 'Home' %}</li>
+            <hr/>
+            <ul>
+                <li><span class="darkgreen">{% trans 'Timtool introduction' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Last created Tunes, Groups, Users' %}</span></li>
+            </ul>
+
+            <li>Tunes</li>
+            <hr/>
+            <ul>
+                <li><span class="darkgreen">{% trans 'Show the list of tunes' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Show a Tune' %}</span></li>
+                <ul>
+                    <li><span class="darkgreen">{% trans 'Add/Remove this Tune to/from your favorites' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Increase the number of times the Tune has been viewed' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Show description' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Show .abc version' %}</span></li>
+                    <li><span class="darkred">{% trans 'Show music sheet' %}</span></li>
+                    <li><span class="darkred">{% trans 'Add comments' %}</span></li>
+                    <li><span class="darkred">{% trans 'Modify the Tune' %}</span></li>
+                    <li><span class="darkred">{% trans 'Play Tune sound' %}</span></li>
+                    <li><span class="darkred">{% trans 'Upload audio file for this Tune' %}</span></li>
+                    <li><span class="darkred">{% trans 'Display several versions of one the Tune' %}</span></li>
+                </ul>
+                <li><span class="darkgreen">{% trans 'Add/Remove this Tune to/from your favorites' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Filter displayed Tunes' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Create a Tune' %}</span></li>
+                <ul>
+                    <li><span class="darkgreen">{% trans 'Create a Tune by Copying/pasting an .abc file' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Create a Tune from an .abc file' %}</span></li>
+                </ul>
+            </ul>
+            <li>{% trans 'Groups' %}</li>
+            <hr/>
+            <ul>
+                <li><span class="darkgreen">{% trans 'Display the list of groups' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Filter groups' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Create groups' %}</span></li>
+                <li><span class="darkgreen">{% trans 'Show a group' %}</span></li>
+                <ul>
+                    <li><span class="darkgreen">{% trans 'Display description' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Display group favorites' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Display group members' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Modify the group' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Add/Remove favorite tunes to/from group' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Join/Leave group' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Increase number of times the group has been viewed' %}</span></li>
+                    <li><span class="darkred">{% trans 'Leave messages to the group' %}</span></li>
+                    <li><span class="darkred">{% trans 'Manage members role' %}</span></li>
+                    <li><span class="darkgreen">{% trans 'Upload group related audio files' %}</span></li>
+                    <li><span class="darkred">{% trans 'Send a mail to all members of the group' %}</span></li>
+                </ul>
+                <li><span class="darkgreen">{% trans 'Create a group' %}</span></li>
+            </ul>
+            <li>{% trans 'Contact' %}</li>
+            <hr/>
+            <ul>
+            <li><span class="darkgreen">{% trans 'Send me a mail' %}</span></li>
+            <li><span class="darkgreen">{% trans 'Receive a copy of the mail' %}</span></li>
+            </ul>
+                        <li>{% trans 'About' %}</li>
+                        <hr/>
+            <ul>
+            <li><span class="darkgreen">{% trans 'Display existing features and upcoming ones' %}</span></li>
+            <li><span class="darkgreen">{% trans 'Information' %}</span></li>
+            <li><span class="darkred">{% trans 'Vote for the most wanted features' %}</span></li>
+            </ul>
+        </ul>
+        <li>{% trans 'Personal' %}</li>
+        <ul>
+        <li><span>{% trans 'My favorite Tunes' %}</span></li>
+        <hr/>
+        <ul>
+        <li><span class="darkgreen">{% trans 'Show list of favorite Tunes from the connected user' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Filter by name/type/key' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Change status' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Remove favorite' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Show a Tune' %}</span></li>
+        </ul>
+        <li><span>{% trans 'My groups' %}</span></li>
+        <hr/>
+                <ul>
+        <li><span class="darkgreen">{% trans 'Show groups where I am user or admin' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Display group details' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Filter' %}</span></li>
+        </ul>
+        <li><span>{% trans 'Tune comparator' %}</span></li>
+        <hr/>
+                <ul>
+        <li><span class="darkgreen">{% trans 'Compare my Tunes with another user' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Compare my Tunes with a group' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Display in common tunes, in addition, in less' %}</span></li>
+        </ul>
+        <li><span>{% trans 'Sets and tunes generator' %}</span></li>
+        <hr/>
+                <ul>
+        <li><span class="darkgreen">{% trans 'Generate a list of sets according to all possible criterias (for a user)' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Generate a list of sets according to all possible criteria (for a group)' %}</span></li>
+        <li><span class="darkred">{% trans 'Add criteria "Never two times the same key in a row' %}</span></li>
+        <li><span class="darkred">{% trans 'Add criteria "alternate major or mix / minor or dor' %}</span></li>
+        <li><span class="darkred">{% trans 'Save a set' %}</span></li>
+        </ul>
+        <li><span>{% trans 'My account' %}</span></li>
+        <hr/>
+        <ul>
+        <li><span class="darkgreen">{% trans 'User overview' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Update overview' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Show groups created by the user' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Show Tunes added by the user' %}</span></li>
+        <li><span class="darkred">{% trans 'Upload profile picture' %}</span></li>
+        <li><span class="darkred">{% trans 'Display Tune dashboard' %}</span></li>
+        </ul>
+        </ul>
+        <li>{% trans 'Managing user accounts' %}</li>
+        <hr/>
+        <ul>
+        <li><span class="darkgreen">{% trans 'Log in' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Log out' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Password forgotten' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Register' %}</span></li>
+        <li><span class="darkgreen">{% trans 'Confirm registration' %}</span></li>
+        </ul>
+                <li>{% trans 'General' %}</li>
+        <hr/>
+                <ul>
+                <li><span class="darkgreen">{% trans 'Cross-platform' %}</span></li>
+                <li><span class="darkgreen">{% trans 'English/French' %}</span></li>
+                <li><span class="darkred">{% trans 'Android version' %}</span></li>
+                <li><span class="darkred">{% trans 'Custom domain name' %}</span></li>
+                <li><span class="darkred">{% trans 'Testing environment' %}</span></li>
+                <li><span class="darkred">{% trans 'Unit testing' %}</span></li>
+                </ul>
+                </ul>
+</div>
+</div>
+</div>
+{% endblock %}

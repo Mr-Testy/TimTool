@@ -1,0 +1,137 @@
+{% extends "tune/layout.html" %}
+{% load tune_filters %}
+{% load static %}
+{% load bootstrap_tags %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Comparator' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Tune comparator' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Compare your Tunes with other users or groups' %}
+{% endblock %}
+
+{% block timtool_body %}
+<div class="row">
+        <h1>{% trans 'Search' %}</h1>
+    <div class="col-sm-12 well">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|as_bootstrap }}
+        <input type="submit" class="btn btn-success" value="{% trans 'Compare' %}" />
+    </form>
+</div>
+</div>
+    <div class="row">
+    <h1>{% trans 'Results' %}</h1>
+<ul  class="nav nav-pills well">
+    <li class="active">
+        <a  href="#1a" data-toggle="tab">{% trans 'Tunes in common' %}</a>
+    </li>
+    <li><a href="#2a" data-toggle="tab">{% trans "Tunes I don't have" %}</a></li>
+    <li><a href="#3a" data-toggle="tab">{% trans 'Tunes only me have' %}</a></li>
+</ul>
+
+<div class="tab-content clearfix">
+  <div class="tab-pane active" id="1a">
+            <h1>{% trans 'Tunes in common' %}</h1>
+              <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if tunes_en_commun|length == 0 %}
+                <thead><tr><th>{% trans 'No Tune in common' %}</th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">{% trans 'Name' %}</th>
+                        <th class="hidden-xs">{% trans 'Type' %}</th>
+                        <th class="hidden-xs">{% trans 'Key' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tune in tunes_en_commun %}
+                    <tr data-id="{{tune.name}}">
+                        <td class="">{{ tune.of_tune.name }}</td>
+                            <td class="">{{ tune.of_tune.type }}</td>
+                            <td class="">{{ tune.of_tune.key }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+  </div>
+  <div class="tab-pane" id="2a">
+            <h1>{% trans "Tunes I don't have" %}</h1>
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if mes_tunes_en_moins|length == 0 %}
+                <thead><tr><th>{% trans "No Tune I don't have" %}</th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">{% trans 'Name' %}</th>
+                        <th class="hidden-xs">{% trans 'Type' %}</th>
+                        <th class="hidden-xs">{% trans 'Key' %}</th>
+                        <th>{% trans 'Favorite' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tune in mes_tunes_en_moins %}
+                    <tr>
+                        <td class="">{{ tune.of_tune.name }}</td>
+                            <td class="">{{ tune.of_tune.type }}</td>
+                            <td class="">{{ tune.of_tune.key }}</td>
+                            <td>
+                                {% if tune.of_tune|has_tune_favori:request.user %}
+                                <button data-id="{{tune.of_tune.slug}}" class="btn btn-simple unfavori tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune added to your favorites' %}" type="button">
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                </button>
+                                {% else %}
+                                <button data-id="{{tune.of_tune.slug}}" class="btn btn-simple favori tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune absent from your favorites' %}" type="button">
+                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                </button>
+                                {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+        </div>
+
+<div class="tab-pane" id="3a">
+            <h1>{% trans 'Tunes only me have' %}</h1>
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if mes_tunes_en_plus|length == 0 %}
+                <thead><tr><th>{% trans 'No tune only me have' %}</th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">{% trans 'Name' %}</th>
+                        <th class="hidden-xs">{% trans 'Type' %}</th>
+                        <th class="hidden-xs">{% trans 'Key' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tune in mes_tunes_en_plus %}
+                    <tr>
+                        <td class="">{{ tune.of_tune.name }}</td>
+                            <td class="">{{ tune.of_tune.type }}</td>
+                            <td class="">{{ tune.of_tune.key }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+        </div>
+        </div>
+        </div>
+{% endblock timtool_body %}

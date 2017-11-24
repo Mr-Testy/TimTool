@@ -1,0 +1,11 @@
+{% extends "socialaccount/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Social Network Login Failure" %}{% endblock %}
+
+{% block timtool_body %}
+{% block jumboTitle %}{% trans "Social Network Login Failure" %}{% endblock %}
+
+<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+{% endblock %}

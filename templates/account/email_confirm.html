@@ -1,0 +1,41 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account %}
+
+{% block title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+
+{% block jumboTitle %}{% trans "Confirm E-mail Address" %}{% endblock %}
+{% block jumboMessage %}
+
+{% if confirmation %}
+
+{% user_display confirmation.email_address.user as user_display %}
+
+{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}
+{% else %}
+
+{% url 'account_email' as email_url %}
+{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}
+{% endif %}
+{% endblock %}
+
+
+{% block timtool_body %}
+{% if confirmation %}
+
+{% user_display confirmation.email_address.user as user_display %}
+
+<form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+{% csrf_token %}
+    <button type="submit" class="btn btn-success">{% trans 'Confirm' %}</button>
+</form>
+
+{% else %}
+
+{% url 'account_email' as email_url %}
+
+
+{% endif %}
+
+{% endblock %}

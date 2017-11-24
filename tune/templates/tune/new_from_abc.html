@@ -1,0 +1,79 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'ABC Tune Creation' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'ABC Tune Creation' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Create a Tune with .abc notation' %}
+{% endblock %}
+
+{% block timtool_body %}
+<ul  class="nav nav-pills well">
+    <li class="active">
+        <a  href="#1a" data-toggle="tab">{% trans 'Copy/Paste an .abc file' %}</a>
+    </li>
+    <li><a href="#2a" data-toggle="tab">{% trans 'Upload an .abc file' %}</a></li>
+</ul>
+
+<div class="tab-content clearfix">
+  <div class="tab-pane active" id="1a">
+    <h2>{% trans 'Add Tune from .abc'%}. <a href="#tuto_add_abc">({% trans 'Where to find .abc files ?'%})</a></h2>
+  {% trans "You can find several tunebook .abc files on tunepal.org" as tip1 %}
+  {% trans "Attributes T: K: R: are mandatory" as warn1 %}
+  {%include 'tip.html' with message=tip1 %}
+  {%include 'warn.html' with message=warn1 %}
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ formArea|as_bootstrap}}
+    <br/>
+    <input type="submit" class="btn btn-success" value="{% trans 'Create' %}" />
+</form>
+<h2 id="tuto_add_abc">{% trans 'Where to find .abc file ?'%}</h2>
+<ol>
+        <li>{% trans 'Go to Tunepal website : '%}<a href="https://tunepal.org/index.html#!/keywordSearch" target="_blank">https://tunepal.org/</a></li>
+        <li>{% trans 'Search for a Tune'%}.</li>
+        <li>{% trans 'Select a Tune to go to its page'%}.</li>
+        <li>{% trans 'Click on "ABC"'%}.</li>
+        <li>{% trans 'Copy the whole text and go back to Timtool'%}.</li>
+        <li>{% trans 'Paste the text in the above area and click on "create"'%}.</li>
+        <li>{% trans 'Tip : the text looks like '%}<br/>
+X:8564<br/>
+T:A Trip To Galloway<br/>
+M:3/4<br/>
+L:1/8<br/>
+R:waltz<br/>
+K:Dmaj<br/>
+Bc|:d3 c B2|A  F3  d2|D3 E D2|A  F3  D2|<br/>
+d3 c B2| A  F3 D2|E3 F A2| B4 Bc|<br/>
+d3 c B2|A d3  F2| D3 E D2| A F3  D2|<br/>
+G3 B G2| F3 A F2|E3 F A2|B4 A2|<br/>
+d4  a2|a  f3  d2|c4  e2|e  c3  A2|<br/>
+d4  a2|a  f3  d2| A3 F  A2| B4  A2|<br/>
+d3 f  a2|a  f3  d2|c3 e  a2|e c3  A2|<br/>
+d3 c B2| A F3  d2| E3 F  A2|1  B4  Bc:|2 B4 ||<br/>
+        </li>
+  </ol>
+</div>
+<div class="tab-pane" id="2a">
+{% if request.user.is_staff %}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formUpload.as_p}}
+    <br/>
+    <input type="submit" class="btn btn-success" value="{% trans 'Send' %}" />
+</form>
+{% else %}
+{% trans 'You do not have the rights to upload a file. You can add a Tune by copying an .abc file into the "Copy/Paste an .abc file"' %}
+{% endif %}
+</div>
+</div>
+
+{% endblock timtool_body %}

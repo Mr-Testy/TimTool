@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block nav %}
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- nav -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'accueil' %}">{% trans 'TIMTOOL beta version' %}</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'accueil_lang' lang='fr' %}"><img src='{% static "img/flag_france.png" %}'/></a></li>
+                <li><a href="{% url 'accueil_lang' lang='en' %}"><img src='{% static "img/flag_usa.png" %}'/></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="navbar-form btn-group">
+                        <div class="form-group">
+                            {% if not request.user.is_authenticated %}
+                            <button class="btn btn-simple btn-sm btn-navbar">{% trans 'Anonymous' %}</button>
+                            <a href="{% url 'account_login' %}" class="btn btn-success btn-sm">{% trans 'Log in' %}</a>
+                            <a href="{% url 'account_signup' %}" class="btn btn-success btn-sm">{% trans 'Sign up' %}</a>
+                            {% else %}
+                            <button class="btn btn-simple btn-sm btn-navbar">{{request.user.username}}</button>
+                            <a href="{% url 'account_logout' %}" class="btn btn-success btn-sm">{% trans 'Log out' %}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block header %}
+<div class="header">
+    <div class="container-fluid">
+        <button class="btn btn-success btn-sm" data-toggle="collapse" data-target="#sidebar"><i class="fa {% if request.session.toggle_menu == False %}fa-toggle-off{% else %}fa-toggle-on{% endif %}" aria-hidden="true"></i> {% if request.session.toggle_menu == False %}{% trans 'Show Menu' %}{% else %}{% trans 'Hide Menu' %}{% endif %}
+        </button>
+        <form id="searchTuneForm" class="form-inline pull-right hidden-xs" action="{% url 'tune:tune_liste' %}" method="GET">
+            <div class='form-group'>
+                <input id="inputSearchTune" type="text" class="form-control input-sm" placeholder="{% trans 'Search for a Tune' %}" name="q_name" required>
+            </div>
+            <button id="searchTune" type="submit" class="btn btn-success btn-sm"><i class="fa fa-search" aria-hidden="true"></i> {% trans 'Search' %}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-2 collapse {% if request.session.toggle_menu == False %}{% else %}in{% endif %}" id="sidebar">
+            <br>
+            <form id="searchTuneForm" class="form-inline visible-xs" action="{% url 'tune:tune_liste' %}" method="GET">
+                <div class='form-group'>
+                    <input id="inputSearchTune" type="text" class="form-control input-sm" placeholder="{% trans 'Search a Tune' %}" name="q" required>
+                </div>
+                <button id="searchTune" type="submit" class="btn btn-success btn-sm"><i class="fa fa-search" aria-hidden="true"></i> {% trans 'Search' %}</button>
+            </form>
+            <div class="list-group">
+              <a href="#item-1" class="list-group-item chevron" data-toggle="collapse">
+                {% trans "Links and functionalities accessible to all" as message_1 %}
+                <i class="fa fa-chevron-down fa-chevron-change"></i> {% trans 'Global' %} {%include 'tip.html' with message=message_1 %}
+            </a>
+            <div class="list-group collapse in" id="item-1">
+                <a class="list-group-item" href="{% url 'accueil' %}">
+                    <i class="fa fa-home darkgreencolor" aria-hidden="true">
+                    </i> {% trans 'Home' %}
+                </a> 
+                <a class="list-group-item" href="{% url 'tune:tune_liste' %}">
+                    <i class="fa fa-music darkgreencolor" aria-hidden="true">
+                    </i> Tunes
+                </a>
+                <a class="list-group-item" href="{% url 'user:groupe_liste' %}">
+                    <i class="fa fa-users darkgreencolor" aria-hidden="true">
+                    </i> {% trans 'Groups' %}
+                </a>
+                <a class="list-group-item" href="{% url 'user:contact' %}"><i class="fa fa-info darkgreencolor" aria-hidden="true"></i> Contact</a>
+                <a class="list-group-item" href="{% url 'about' %}"><i class="fa fa-question-circle darkgreencolor" aria-hidden="true"></i> {% trans 'About' %}</a>
+                {% comment %}
+                <a class="list-group-item" href=""><i class="fa fa-gift" aria-hidden="true"></i> {% trans 'Make a Gift' %}</a>
+                {% endcomment %}
+            </div>
+
+            <a href="#item-2" class="list-group-item chevron" data-toggle="collapse">
+                {% trans "Links and features available to connected users" as message_2 %}
+                <i class="fa fa-chevron-down fa-chevron-change"></i> {% trans 'Personal' %} {%include 'tip.html' with message=message_2 %}
+            </a>
+            <div class="list-group collapse in" id="item-2">
+
+                {% if request.user.is_authenticated %}
+                <a class="list-group-item" href="{% url 'tune:tune_liste_favoris' %}"><i class="fa fa-heart darkgreencolor" aria-hidden="true"></i> {% trans 'My Tunes' %}</a>
+                <a class="list-group-item" href="{% url 'user:user_groupe_liste' %}"><i class="fa fa-handshake-o darkgreencolor" aria-hidden="true"></i> {% trans 'My Groups' %}</a>
+                <a class="list-group-item" href="{% url 'tune:comparateur' %}"><i class="fa fa-random darkgreencolor" aria-hidden="true"></i> {% trans 'Comparator' %}</a>
+                <a class="list-group-item" href="{% url 'tune:generateur' %}"><i class="fa fa-gear darkgreencolor" aria-hidden="true"></i> {% trans 'Generator' %}</a>
+                <a class="list-group-item" href="{% url 'user:profile'%}"><i class="fa fa-user darkgreencolor" aria-hidden="true"></i> {% trans 'My Account' %}</a>
+                {% else %}
+                {% trans "You must be logged in to use this feature" as not_connected %}
+                <a class="disabled list-group-item tooltipInfo" data-toggle="tooltip"
+                title="{{not_connected}}"><i class="fa fa-heart darkgreencolor" aria-hidden="true"></i> {% trans 'My Tunes' %}</a>
+                <a class="disabled list-group-item tooltipInfo" data-toggle="tooltip"
+                title="{{not_connected}}"><i class="fa fa-handshake-o darkgreencolor" aria-hidden="true"></i> {% trans 'My Groups' %}</a>
+                <a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+                title="{{not_connected}}"><i class="fa fa-random darkgreencolor" aria-hidden="true"></i> {% trans 'Comparator' %}</a>
+                <a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+                title="{{not_connected}}" ><i class="fa fa-gear darkgreencolor" aria-hidden="true"></i> {% trans 'Generator' %}</a>
+                <a class="disabled list-group-item tooltipInfo" data-toggle="tooltip"
+                title="{{not_connected}}" ><i class="fa fa-user darkgreencolor" aria-hidden="true"></i> {% trans 'My Account' %}</a>
+                {% endif %}
+            </div>
+
+            <a href="#item-3" class="list-group-item chevron" data-toggle="collapse">
+                {% trans "Links and features available from the current page" as message_3 %}
+                <i class="fa fa-chevron-down fa-chevron-change"></i> {% trans 'Current Page' %} {%include 'tip.html' with message=message_3 %}
+            </a>
+            <div class="list-group collapse in" id="item-3">
+                {% block actions %}
+                <a class="list-group-item">{% trans 'No action available on the current page' %}</a>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 {% if request.session.toggle_menu == False %}{% else %}col-sm-9 col-md-10{% endif %}" id="main">
+        <div class="jumbotron">
+        <div class="row">
+        <div class="col-xs-9">
+            <div class="row">
+                <h1>{% block jumboTitle %}{% endblock %}</h1>
+            </div>
+            <div class="row">
+            {% block jumboMessage %}{% endblock %}
+            </div>
+        </div>
+        <div class="col-xs-3">
+        {% block actions_page %}
+        {% endblock %}
+        </div>
+        </div>
+        </div>
+        <div class="row main_content">
+            <div class="col-xs-12">
+                <div class="row">
+                    {% include 'messages.html' %}
+                </div>
+                {% block timtool_body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

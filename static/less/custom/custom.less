@@ -1,0 +1,141 @@
+/* Décaler le body par rapport à la navigation et au header */
+body {
+  padding-top: 51px;
+}
+.main_content {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .05rem solid #e5e5e5;
+  margin-top : 50px;
+}
+.footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Icons */
+.favori, .delete, .favori:focus, .unfavori, .unfavori:focus{
+ color: red;
+}
+.fa-thumbs-down {
+ color: darkred;
+}
+.fa-thumbs-up {
+ color: lightgreen;
+}
+.favori, .unfavori, .status{
+  cursor: pointer;
+  width: 100px;
+}
+.darkred{
+  background-color:#FF9292;
+}
+.darkgreen{
+  background-color:#94FF9E;
+}
+.darkgreencolor{
+  color:#015900;
+}
+/* Buttons */
+.btn-simple {
+  background-color: inherit;
+}
+.btn-tip-warn {
+  background-color: inherit;
+  padding : 0px;
+  margin : 0px;
+  color : darkorange;
+}
+.btn-tip-tip {
+  background-color: inherit;
+  padding : 0px;
+  margin : 0px;
+  color : darkblue;
+}
+.btn {
+  white-space: normal;
+}
+a.btn.disabled, fieldset[disabled] a.btn{
+pointer-events: auto;
+}
+
+.btn-navbar, .btn-navbar:hover , .btn-navbar:focus  {
+  color: #ACACAC;
+}
+.btn-success-secondary {
+color: #fff;
+background-color: #A2A2A2;
+border-color: #9CE49C;
+}
+.btn-success-secondary:hover {
+background-color: #757575;
+}
+
+/* Background */
+.header {
+  background: #E3E3E3;
+  padding-top: 10px;
+}
+
+//SideBar
+#sidebar {
+  background: #EEEEEE;
+}
+.list-group.collapse.in > a,.list-group.collapse.in > form > button{
+  padding-left: 30px;
+  padding-right: 0px;
+  text-decoration: none;
+}
+.list-group-item.chevron {
+  background-color: #E3E3E3;
+}
+
+//BOOTSTRAP OVERRIDE
+.form-inline .form-group {
+display: inline-block;
+}
+.table > tbody > tr > td {
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+h1 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+h2 {
+  font-size: 20px;
+  margin-top: 18px;
+}
+h3 {
+  font-size: 18px;
+  margin-top: 16px;
+}
+h4 {
+  font-size: 16px;
+  margin-top: 14px;
+}
+hr {
+  margin:0px;
+  border-style: solid; 
+  border-color: black; 
+  border-width: 1px 0 0 0; 
+}
+a, a:focus{
+  text-decoration: underline;
+}
+
+a:hover{
+  text-decoration-color: #94FF9E;
+}
+
+//Typo
+.tip{
+  font-size: 0.9em;
+  border-color: #175601;
+}

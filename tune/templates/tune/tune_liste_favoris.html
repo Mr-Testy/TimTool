@@ -1,0 +1,118 @@
+{% extends "tune/layout.html" %}
+{% load tune_filters %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Favorite Tunes' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Favorite Tunes' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Your favorite Tunes' %}
+{% endblock %}
+
+{% block timtool_body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1>{% trans 'Filters' %}</h1>
+        <form method="GET" action="" class="form-inline">
+            <div class="form-group">
+                <label for="q_name">{% trans 'Name' %}</label>
+                <input type="text" name="q_name" placeholder="Mountain, road..." id="q_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="q_type">{% trans 'Type' %}</label>
+                <input type="text" name="q_type" placeholder="reel, jig, hornpipe..." id="q_type" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="q_key">{% trans 'Key' %}</label>
+                <input type="text" name="q_key" placeholder="A, Edor, Em, Dmix..." id="q_key" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">{% trans 'Filter' %}</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h1>{% trans 'List of your favorite Tunes' %}</h1>
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if all_tunes_favoris|length == 0 %}
+                <thead><tr><th>{% trans 'No Tune. Refine your search or add tunes to your favorites:' %}<a class="btn btn-success btn-sm" href="{% url 'tune:tune_liste' %}">{% trans 'List of Tunes' %}</a></th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">{% trans 'Name' %}</th>
+                        <th class="">{% trans 'Type' %}</th>
+                        <th class="">{% trans 'Key' %}</th>
+                        <th>{% trans 'Status' %}</th>
+                        <th>{% trans 'Remove' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tune_favori in all_tunes_favoris %}
+                    <tr data-id="{{tune_favori.of_tune.name}}">
+                        <td class="tuneName"><a
+                            href="{% url 'tune:tune_favori_lire' slug=tune_favori.slug %}"
+                            class="btn-link tooltipInfo" data-toggle="tooltip"
+                            title="Go to favorite: {{ tune_favori.of_tune.name }}"><span>{{ tune_favori.of_tune.name }}</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></td>
+                            <td class="">{{ tune_favori.of_tune.type }}</td>
+                            <td class="">{{ tune_favori.of_tune.key }}</td>
+                            <td>
+                                    {% if tune_favori.status == False %}
+                                    <button data-id="{{tune_favori.slug}}" class="btn btn-simple status tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune to learn' %}" type="button">
+                                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                    </button>
+                                    {% else %}
+                                    <button data-id="{{tune_favori.slug}}" class="btn btn-simple status tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune learnt' %}" type="button">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    </button>
+                                    {% endif %}
+                            </td>
+                            <td>
+                                <button data-id="{{tune_favori.of_tune.slug}}" class="btn btn-simple unfavori remove_me tooltipInfo" data-toggle="tooltip" title="{% blocktrans with name=tune_favori.of_tune.name %}Remove '{{name}}' from your favorites ?{% endblocktrans %}" type="button">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+        {% if is_paginated %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pagination">
+                    {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">{% trans 'Previous' %}</a> —
+                    {% endif %}
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                    {% if page_obj.has_next %}
+                    — <a href="?page={{ page_obj.next_page_number }}">{% trans 'Next' %}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endblock timtool_body %}
+
+    {% block actions %}
+            <a class="list-group-item" href="{% url 'tune:generateur' %}">
+                <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Training !' %}
+            </a>
+    {% endblock %}
+
+        {% block actions_page %}
+        <a class="btn btn-success" href="{% url 'tune:generateur' %}">
+            <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Training !' %}
+        </a>
+
+    {% endblock %}

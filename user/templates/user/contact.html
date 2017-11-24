@@ -1,0 +1,28 @@
+{% extends "user/layout.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Contact' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Contact' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Contact me using the following form !' %}
+{% endblock %}
+
+{% block timtool_body %}
+{% if envoi %}{% trans 'Your message has been sent !' %}{% endif %}
+
+<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
+<form action="{% url 'user:contact' %}" method="post">
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <input type="submit" class="btn btn-success" value="{% trans 'Send' %}" />
+</form>
+</div>
+{% endblock %}

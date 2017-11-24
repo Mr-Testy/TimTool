@@ -1,0 +1,5 @@
+'La liste de "{}" parmis "{}" est vide. Modifiez vos critères de recherche.'
+
+"La comparaison de tunes à échoué. Un problème est survenu avec le nom du groupe ou d'utilisateur"
+
+"L'utilisateur '{}' n'existe pas. Veuillez saisir un utilisateur existant afin de comparer vos tunes".format(username))

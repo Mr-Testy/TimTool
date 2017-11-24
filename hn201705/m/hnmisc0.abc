@@ -1,0 +1,181 @@
+This file contains 9 miscellaneous tunes (#1 - #9).
+You can find more abc tune files at http://www.norbeck.nu/abc/
+
+Contains miscellaneous tunes that don't fit into any of my main categories.
+
+Last updated 3 May 2017.
+
+(c) Copyright 2017 Henrik Norbeck. This file:
+- May be distributed with restrictions below.
+- May not be used for commercial purposes (such as printing a tune book to sell).
+- This file (or parts of it) may not be made available on a web page for
+  download without permission from me.
+- This copyright notice must be kept, except when e-mailing individual tunes.
+- May be printed on paper for personal use.
+- Questions? E-mail: henrik@norbeck.nu
+
+R:misc
+Z:id:hn-%R-%X
+
+X:1
+T:Tico-Tico No Fub\'a
+R:misc
+C:Zequinha de Abreu (1880-1935), Brazil
+Z:id:hn-misc-1
+M:4/4
+L:1/8
+K:Am
+|: e^de | fe2a ze^de | fe2^g ze^de | fe=d'b ^ged^c | =c4 za^g=g|
+fa2d' zc'af | ea2c' zc'ba |1 bB^d^f ac'ba | ^g4 z :|2 be^gb e'd'c'b | a4 z ||
+|: ba^g | =gceg ceg^g | a2f2 zba^g | =gBdf Bdfg | a2e2 zc'c'c' |
+c'bbb zaaa | afff zbbb | bggb affa | g4 zba^g |
+=gceg ceg^g | a2f2 zba^g | =gBdf Bdfg | a2e2 zc'b_b |
+a^gab d'c'bc' | e'=gc'e' g'^f'=f'e' | d'c'ba gfed | c4 z :|
+K:A
+|: Ace | aAcg zAce | fAce zAce | fAce zAce | fBde zBde |
+aBdg zBde | fBde zBde | aBdg zBde | fAce zAce |
+aAcg zAce | fAce zAce | fec^A fec^A | B^ABc d3z |
+dcde fgab | c'd'^d'e' f'e'=d'c' | bagf edcB | A4 z :|
+
+X:2
+T:Imperial March from Star Wars
+T:Darth Vader Theme
+R:misc
+C:John Williams, USA
+Z:id:hn-misc-2
+M:4/4
+L:1/8
+Q:1/4=120
+K:Bb
+"Gm"G2 G2 G2 "Ebm"E>B | "Gm"G2 "Ebm"E>B "Gm"G4 | 
+"Gm"d2 d2 d2 "Ebm"e>B | ^F2 E>B "Gm"G4 |
+"Gm"g2 G>G g2 ^f>=f | "C#m"=e/^d/=e z ^G ^c2 =c>=B |
+"Ebm"_B/A/B z E ^F2 E>F | "Gm"B2 G>B d4 |
+"Eb"g2 G>G "Gm"g2 ^f>=f | "C#m"=e/^d/=e z ^G ^c2 =c>=B |
+"Ebm"_B/A/B z E ^F2 E>B | "Gm"G2 "Ebm"E>B "Gm"G4 ||
+
+X:3
+T:Na Sopkakh Manchurii
+T:The Hills of Manchuria
+R:misc
+C:Ilya Alekseevitch Shatrov (1885-1952), Russia
+H:Original key Fm. See also #8 in Gm.
+Z:id:hn-misc-3
+M:3/4
+L:1/8
+K:Dm
+"Dm" A6- | A2 F2 G2 | A6- | A6 | "A7" G2A2^c2 | f4 e2 |
+"Dm" d6- | d6 | A2d2f2 | "A7" ^c4d2 | "Gm6" e2d2B2 | e4d2 |
+"A7" A2d2e2 | f4e2 |1 "Dm" d6- | d6 :|2 "Dm" d6- | d2 {B}A=GAB ||
+|: "A7" A3EE2 | z2F2G2 | "Dm" A6- | A2 c=Bcd |
+"C7" c3GG2 | z2A2B2 | "F" c6- | c2c2 "Gdim" ^c2 |
+"Dm" d3AA2 | (3ABA ^G2A2 | "C" c4 "Bb"B2 | z2c2B2 | 
+"Dm" f2e2d2 | "A7" ^c4e2 |1 "Dm" d6- | d2 {B}A=GAB :|2 "Dm" d6- | d2 d2 ^c2 ||
+|: "D7" d4_e2 | d4=c2 | "Gm" c4B2 | B2A2G2 |
+"C7" c4d2 | c4B2 | "Dm" B2A2^G2 | A2^G2A2 |
+"Dm" d2F2A2 | d2f3e | "Gm" d2c2B2 | "Gm6" d4B2 |
+"Dm" F2A2G2 | "A7" E4F2 |1 "Dm" D6- | D2d2^c2 :|2 "Dm" D6- | D2 z2 z2 ||
+
+X:4
+T:Tonight I Had the Strangest Dream
+T:I natt jag dr\"omde
+R:misc
+Z:id:hn-misc-4
+M:3/4
+L:1/8
+K:G
+d2 | d4 B2 | G4 d2 | d4 BA | G4 g2 | g4 e2 | c2 d2 e2 | d6- | d4
+d2 | d4 c2 | A4 d2 | d4 BA | G4 B2 | A4 B2 | c2 B2 A2 | G6- | G4 ||
+g2 | g4 e2 | c4 g2 | g4 d2 | B4 d2 | d4 d2 | d2 e2 d2 | d6- | d4
+g2 | g4 e2 | c4 g2 | g4 d2 | B4 B2 | A4 B2 | c2 B2 A2 | G6- | G4 || 
+
+X:5
+T:Berendans
+R:misc
+D:Dervish: Boys of Sligo
+D:King's Galliard
+D:Galway Express
+O:Flemish
+Z:id:hn-misc-5
+M:2/4
+L:1/8
+Q:1/4=100
+K:Am
+eA A/B/c/d/ | eA A>B | cc Bc | de/d/ cd |
+[1 eA A/B/c/d/ | eA A>B | cc B/A/G/B/ | A2 A2 :|
+[2 ea ea | eA A>B | cc B/A/G/B/ | A2 A>B ||
+|: ce d/c/B | ce d/c/B | g/d/B/d/ g_B | Af e^g |
+ae cB | A/G/A/B/ c/d/e | f/e/d/c/ B/A/G/B/ |1 A2 A>B :|2 A2 A2 ||
+
+X:6
+T:Lullaby of Birdland
+R:misc
+C:George Shearing (1919-2011), England/USA
+H:Transposed from original Ab to fit the simple system flute
+Z:id:hn-misc-6
+M:4/4
+L:1/8
+Q:1/4=160
+K:Bb
+|: "Gm"d2 cB AG2=E- | "A7"=E2 G^F-"D7"^F2 zD- |
+"Gm"D2 AG-G2 zE- | "Cm7"E2 dc-"F7"c2 zf- |
+"Bbmaj7"f2 ed cB2G- | "Cm7"Gdc^F- ^Fdc=F- |
+[1 "Bbmaj7"F4 zc BE- | "Db7#11"EBAD- "D7"D4 :|
+[2 "Bbmaj7"F4 "F7"zF AB | "Bbmaj7"z8 ||
+"G7"d2 e=e f2 f_e | "Cm7"zc3-c2 z2 |
+"Cm7"c2 ^cd "F7"e2 ed- | "Bbmaj7"d4 z4 |
+"G7"d2 e=e f2 f_e | "Cm7"zc3-c2 z2 |
+"Cm7"c2 ^cd "F7"e2 ed- | "Bbmaj7"dedc "C7#5"z4 ||
+
+X:7
+T:Thunderstruck
+R:misc
+C:Angus Young & Malcolm Young
+H:This is the guitar riff for the song, transposed for ITM instruments.
+H:Originally in key of B.
+D:AC/DC
+Z:id:hn-misc-7
+M:C|
+L:1/8
+K:Amix
+|: cAeA cAeA | cAeA cAeA :||: dA=fA dA=fA | dA=fA dA=fA :|
+|: cAeA cAeA | cAeA cAeA :||: dA=fA dA=fA | dA=fA dA=fA :|
+|: aAgA fAgA | fAeA fAdA | eAcA dAcA | dAcA dAcA :|
+|: aAgA fAgA | fAeA fAdA | eAcA dAcA | dAcA dAcA :|
+
+X:8
+T:Na Sopkakh Manchurii
+T:The Hills of Manchuria
+R:misc
+C:Ilya Alekseevitch Shatrov (1885-1952), Russia
+H:Original key Fm. See also #3 in Dm.
+Z:id:hn-misc-8
+M:3/4
+L:1/8
+K:Gm
+"Gm" d6- | d2 B2 c2 | d6- | d6 | "D7" c2d2^f2 | b4 a2 |
+"Gm" g6- | g6 | d2g2b2 | "D7" ^f4g2 | "Cm6" a2g2e2 | a4g2 |
+"D7" d2g2a2 | b4a2 |1 "Gm" g6- | g6 :|2 "Gm" g6- | g2 {e}d=cde ||
+|: "D7" d3AA2 | z2B2c2 | "Gm" d6- | d2 f=efg |
+"F7" f3cc2 | z2d2e2 | "Bb" f6- | f2f2 "Cdim" ^f2 |
+"Gm" g3dd2 | (3ded ^c2d2 | "F" f4 "Eb"e2 | z2f2e2 | 
+"Gm" b2a2g2 | "D7" ^f4a2 |1 "Gm" g6- | g2 {e}d=cde :|2 "Gm" g6- | g2 g2 ^f2 ||
+|: "G7" g4_a2 | g4=f2 | "Cm" f4e2 | e2d2c2 |
+"F7" f4g2 | f4e2 | "Gm" e2d2^c2 | d2^c2d2 |
+"Gm" g2B2d2 | g2b3a | "Cm" g2f2e2 | "Cm6"g4e2 |
+"Gm" B2d2c2 | "D7" A4B2 |1 "Gm" G6- | G2g2^f2 :|2 "Gm" G6- | G2 z2 z2 ||
+
+X:9
+T:Nokia Tune
+T:Mobile Ring Tone
+T:Grande Valse
+T:Gran Vals
+R:misc
+H:Bars 13-16 from "Gran Vals" by Spanish guitarist Francisco T\'arrega (1852-1909)
+Z:id:hn-misc-9
+M:3/4
+L:1/8
+Q:1/4=200
+K:D
+ag B2 c2 | fe G2 A2 | ed F2 A2 | d6 ||
+

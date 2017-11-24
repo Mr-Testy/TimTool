@@ -1,0 +1,2066 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-23 17:24+0100\n"
+"PO-Revision-Date: 2017-11-15 20:24+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: .\accounts\templates\accounts\registration_closed.html:5
+msgid "Registration is currently closed."
+msgstr "L'inscription est actuellement fermée."
+
+#: .\templates\account\account_inactive.html:5
+#: .\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Compte inactif"
+
+#: .\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Ce compte est inactif."
+
+#: .\templates\account\email.html:5
+msgid "Account"
+msgstr "Compte"
+
+#: .\templates\account\email.html:8
+msgid "E-mail Addresses"
+msgstr "Adresses mail"
+
+#: .\templates\account\email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Les adresses e-mail suivantes sont associées à votre compte:"
+
+#: .\templates\account\email.html:24
+msgid "Verified"
+msgstr "Vérifié"
+
+#: .\templates\account\email.html:26
+msgid "Unverified"
+msgstr "Non vérifié"
+
+#: .\templates\account\email.html:28
+msgid "Primary"
+msgstr "Principale"
+
+#: .\templates\account\email.html:34
+msgid "Make Primary"
+msgstr "Rendre Principale"
+
+#: .\templates\account\email.html:35
+msgid "Re-send Verification"
+msgstr "Renvoyer vérification"
+
+#: .\templates\account\email.html:36
+#: .\templates\socialaccount\connections.html:35
+#: .\tune\templates\tune\tune_liste_favoris.html:53
+#: .\user\templates\user\groupe_add_favoris.html:82
+msgid "Remove"
+msgstr "Retirer"
+
+#: .\templates\account\email.html:43
+msgid "Warning:"
+msgstr "Attention:"
+
+#: .\templates\account\email.html:43
+msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
+msgstr "Vous n'avez actuellement aucune adresse e-mail configurée. Nous vous conseillons vraiment d'ajouter une adresse e-mail afin que vous puissiez recevoir des notifications, réinitialiser votre mot de passe, etc."
+
+#: .\templates\account\email.html:48
+msgid "Add E-mail Address"
+msgstr "Ajouter une adresse e-mail"
+
+#: .\templates\account\email.html:53
+msgid "Add E-mail"
+msgstr "Ajouter e-mail"
+
+#: .\templates\account\email.html:62
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Voulez-vous vraiment supprimer l'adresse e-mail sélectionnée?"
+
+#: .\templates\account\email\email_confirmation_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this message because user %(user_display)s tries to link his %(site_name)s account with your email.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+"\n"
+"Else, please do not take this message into account.\n"
+msgstr ""
+"Bonjour de %(site_name)s!\n"
+"\n"
+"Vous recevez ce message car l'utilisateur %(user_display)s essaie d'associer son compte avec vôtre email.\n"
+"\n"
+"Afin confirmer que vous êtes bien à l'origine de cette demande, rendez-vous au lien suivant : %(activate_url)s\n"
+"\n"
+"Sinon, ne tenez pas en compte de ce message.\n"
+
+#: .\templates\account\email\email_confirmation_message.txt:9
+#, python-format
+msgid ""
+"Thank you from %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Merci de %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr "Merci de confirmer votre adresse e-mail"
+
+#: .\templates\account\email\password_reset_key_message.txt:1
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+msgstr ""
+"Bonjour de %(site_name)s!\n"
+"\n"
+"Vous recevez cet message car vous ou quelqu'un d'autre a demandé un mot de passe pour votre compte utilisateur.\n"
+"Il peut être ignoré en toute sécurité si vous n'avez pas demandé une réinitialisation de mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe."
+
+#: .\templates\account\email\password_reset_key_message.txt:8
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr "Au cas où vous l'avez oublié, votre nom d'utilisateur est %(username)s."
+
+#: .\templates\account\email\password_reset_key_message.txt:10
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"Merci d'utiliser %(site_name)s!\n"
+"%(site_domain)s"
+
+#: .\templates\account\email\password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr "Réinitialisation du mot de passe E-mail"
+
+#: .\templates\account\email_confirm.html:6
+#: .\templates\account\email_confirm.html:8
+msgid "Confirm E-mail Address"
+msgstr "Confirmez votre adresse email"
+
+#: .\templates\account\email_confirm.html:15
+#, python-format
+msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
+msgstr "Veuillez confirmer que <a href=\"mailto:%(email)s\">%(email)s</a> est une adresse mail pour l'utilisateur %(user_display)s."
+
+#: .\templates\account\email_confirm.html:19
+#, python-format
+msgid "This e-mail confirmation link expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr "Ce lien de confirmation par e-mail est expiré ou n'est pas valide. Veuillez <a href =\"%(email_url)s\"> émettre une nouvelle demande de confirmation par courrier électronique </a>."
+
+#: .\templates\account\email_confirm.html:31
+msgid "Confirm"
+msgstr "Confirmer"
+
+#: .\templates\account\login.html:7 .\templates\account\login.html:8
+#: .\templates\account\login.html:48
+msgid "Sign In"
+msgstr "Se connecter"
+
+#: .\templates\account\login.html:11
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">sign up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+"Veuillez vous connecter avec un\n"
+"de vos comptes tiers existants. Ou, <a class =\" btn btn-success btn-xs \" href=\"%(signup_url)s\">inscrivez-vous</a>\n"
+"pour un compte %(site_name)s et connectez-vous ci-dessous:"
+
+#: .\templates\account\login.html:15
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Si vous n'avez pas encore créé de compte, alors\n"
+"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">créez un compte</a>."
+
+#: .\templates\account\login.html:32
+msgid "or"
+msgstr "ou"
+
+#: .\templates\account\login.html:47
+msgid "Forgot Password?"
+msgstr "Mot de passe oublié?"
+
+#: .\templates\account\logout.html:5 .\templates\account\logout.html:6
+#: .\templates\account\logout.html:16
+msgid "Sign Out"
+msgstr "Déconnexion"
+
+#: .\templates\account\logout.html:7
+msgid "Are you sure you want to sign out?"
+msgstr "Êtes-vous certain de vouloir vous déconnecter?"
+
+#: .\templates\account\messages\cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr "Vous ne pouvez pas supprimer votre adresse e-mail principale (%(email)s)."
+
+#: .\templates\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr "E-mail de confirmation envoyé à %(email)s."
+
+#: .\templates\account\messages\email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr "Vous avez confirmé %(email)s."
+
+#: .\templates\account\messages\email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr "Adresse e-mail supprimée %(email)s."
+
+#: .\templates\account\messages\logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr "Connecté avec succès sous %(name)s."
+
+#: .\templates\account\messages\logged_out.txt:2
+msgid "You have signed out."
+msgstr "Vous vous êtes déconnecté."
+
+#: .\templates\account\messages\password_changed.txt:2
+msgid "Password successfully changed."
+msgstr "Mot de passe changé avec succès."
+
+#: .\templates\account\messages\password_set.txt:2
+msgid "Password successfully set."
+msgstr "Mot de passe défini avec succès."
+
+#: .\templates\account\messages\primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr "Adresse mail principale définie."
+
+#: .\templates\account\messages\unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr "Votre adresse mail principale doit être vérifiée."
+
+#: .\templates\account\password_change.html:6
+#: .\templates\account\password_change.html:7
+#: .\templates\account\password_change.html:14
+#: .\templates\account\password_reset_from_key.html:5
+#: .\templates\account\password_reset_from_key.html:7
+#: .\templates\account\password_reset_from_key_done.html:4
+#: .\templates\account\password_reset_from_key_done.html:6
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+#: .\templates\account\password_reset.html:7
+#: .\templates\account\password_reset.html:8
+#: .\templates\account\password_reset_done.html:6
+#: .\templates\account\password_reset_done.html:7
+msgid "Password Reset"
+msgstr "Réinitialiser le mot de passe"
+
+#: .\templates\account\password_reset.html:9
+msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
+msgstr "Mot de passe oublié ? Entrez votre adresse e-mail ci-dessous, et nous vous enverrons un e-mail vous permettant de le réinitialiser."
+
+#: .\templates\account\password_reset.html:19
+msgid "Reset My Password"
+msgstr "Réinitialiser mon mot de passe"
+
+#: .\templates\account\password_reset_done.html:8
+msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
+msgstr "Nous vous avons envoyé un e-mail. Contactez-nous si vous ne le recevez pas d'ici quelques minutes."
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr "Mauvais Token"
+
+#: .\templates\account\password_reset_from_key.html:11
+#, python-format
+msgid "The password reset link was invalid, possibly because it has already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
+msgstr "Le lien de réinitialisation du mot de passe n'était pas valide, peut-être parce qu'il a déjà été utilisé. Veuillez demander une <a href=\"%(passwd_reset_url)s\"> nouvelle réinitialisation du mot de passe </a>."
+
+#: .\templates\account\password_reset_from_key.html:15
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "Your password is now changed."
+msgstr "Votre mot de passe est maintenant modifié."
+
+#: .\templates\account\password_reset_from_key.html:27
+msgid "change password"
+msgstr "changer le mot de passe"
+
+#: .\templates\account\password_set.html:6
+#: .\templates\account\password_set.html:7
+#: .\templates\account\password_set.html:14
+msgid "Set Password"
+msgstr "Définir le mot de passe"
+
+#: .\templates\account\signup.html:6 .\templates\socialaccount\signup.html:5
+msgid "Signup"
+msgstr "S'inscrire"
+
+#: .\templates\account\signup.html:8 .\templates\account\signup.html:19
+#: .\templates\socialaccount\signup.html:8
+#: .\templates\socialaccount\signup.html:19
+msgid "Sign Up"
+msgstr "S'inscrire"
+
+#: .\templates\account\signup.html:9
+#, python-format
+msgid "Already have an account? Then please <a href=\"%(login_url)s\" class=\"btn btn-success btn-xs\">sign in</a>."
+msgstr "Vous avez déjà un compte? Alors, <a href=\"%(login_url)s\" class=\"btn btn-success btn-xs\"> connectez-vous </a>."
+
+#: .\templates\account\signup_closed.html:5
+#: .\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Inscriptions closes"
+
+#: .\templates\account\signup_closed.html:9
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Nous sommes désolés, mais l'inscription est actuellement fermée."
+
+#: .\templates\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr "Remarque"
+
+#: .\templates\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr "vous êtes déjà connecté en tant que %(user_display)s."
+
+#: .\templates\account\verification_sent.html:5
+#: .\templates\account\verification_sent.html:7
+#: .\templates\account\verified_email_required.html:5
+#: .\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Vérifiez votre adresse e-mail"
+
+#: .\templates\account\verification_sent.html:8
+msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
+msgstr "Nous vous avons envoyé un e-mail de vérification. Suivez le lien fourni afin de finalisez le processus d'inscription. Veuillez nous contacter si vous ne le recevez pas d'ici quelques minutes."
+
+#: .\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Cette partie du site exige que nous vérifions que\n"
+"vous êtes ce que vous prétendez être. À cette fin, nous exigeons que vous\n"
+"vérifiez la propriété de votre adresse e-mail. "
+
+#: .\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Nous vous avons envoyé un e-mail pour vérification.\n"
+"Veuillez cliquer sur le lien de cet e-mail.\n"
+"Contactez-nous si vous ne le recevez pas d'ici quelques minutes."
+
+#: .\templates\account\verified_email_required.html:20
+#, python-format
+msgid "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
+msgstr "<strong>Remarque: </strong> vous pouvez toujours <a href=\"%(email_url)s\">modifier votre adresse électronique</a>."
+
+#: .\templates\openid\login.html:9
+msgid "OpenID Sign In"
+msgstr "Ouvrir une session OpenID"
+
+#: .\templates\socialaccount\authentication_error.html:5
+#: .\templates\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr "Échec de connexion au réseau social"
+
+#: .\templates\socialaccount\authentication_error.html:10
+msgid "An error occurred while attempting to login via your social network account."
+msgstr "Une erreur s'est produite lors de la tentative de connexion via votre compte de réseau social."
+
+#: .\templates\socialaccount\connections.html:5
+#: .\templates\socialaccount\connections.html:8
+msgid "Account Connections"
+msgstr "Connexions de compte"
+
+#: .\templates\socialaccount\connections.html:11
+msgid "You can sign in to your account using any of the following third party accounts:"
+msgstr "Vous pouvez vous connecter à votre compte en utilisant l'un des comptes tiers suivants :"
+
+#: .\templates\socialaccount\connections.html:43
+msgid "You currently have no social network accounts connected to this account."
+msgstr "Vous n'avez actuellement aucun compte de réseau social connecté à ce compte."
+
+#: .\templates\socialaccount\connections.html:46
+msgid "Add a 3rd Party Account"
+msgstr "Ajouter un compte tiers"
+
+#: .\templates\socialaccount\login_cancelled.html:5
+#: .\templates\socialaccount\login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr "Connexion annulée"
+
+#: .\templates\socialaccount\login_cancelled.html:13
+#, python-format
+msgid "You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s\">sign in</a>."
+msgstr "Vous avez décidé d'annuler la connexion à notre site en utilisant l'un de vos comptes. Si cela était une erreur, allez à <a href=\"%(login_url)s\">connectez-vous</a>."
+
+#: .\templates\socialaccount\messages\account_connected.txt:2
+msgid "The social account has been connected."
+msgstr "Le compte social a été connecté."
+
+#: .\templates\socialaccount\messages\account_connected_other.txt:2
+msgid "The social account is already connected to a different account."
+msgstr "Le compte social est déjà connecté à un compte différent."
+
+#: .\templates\socialaccount\messages\account_disconnected.txt:2
+msgid "The social account has been disconnected."
+msgstr "Le compte social a été déconnecté."
+
+#: .\templates\socialaccount\signup.html:10
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"%(site_name)s. As a final step, please complete the following form:"
+msgstr ""
+"Vous êtes sur le point d'utiliser votre compte %(provider_name)s pour vous connecter à\n"
+"%(site_name)s. En dernière étape, veuillez remplir le formulaire suivant:"
+
+#: .\tune\forms.py:7
+msgid "Only favorite learned Tunes"
+msgstr "Seulement les Tunes favoris appris"
+
+#: .\tune\forms.py:7
+msgid "Only favorite not learned Tunes"
+msgstr "Seulement les Tunes favoris non appris"
+
+#: .\tune\forms.py:8
+msgid "All favorite Tunes"
+msgstr "Tous les Tunes favoris"
+
+#: .\tune\forms.py:8
+msgid "All Tunes of Timtool"
+msgstr "Tous les Tunes de Timtool"
+
+#: .\tune\forms.py:14
+msgid "Sets"
+msgstr "Sets"
+
+#: .\tune\forms.py:14
+msgid "Tunes"
+msgstr "Tunes"
+
+#: .\tune\forms.py:16
+msgid "List of "
+msgstr "Liste de "
+
+#: .\tune\forms.py:23
+msgid "Among "
+msgstr "Parmis"
+
+#: .\tune\forms.py:35
+msgid "Please select at least one type"
+msgstr "Veuillez sélectionner au moins un type"
+
+#: .\tune\forms.py:42
+msgid "Keys "
+msgstr "Tonalités"
+
+#: .\tune\forms.py:44
+msgid "Please select at least a key"
+msgstr "Veuillez sélectionner au moins une tonalité"
+
+#: .\tune\forms.py:50
+msgid "File "
+msgstr "Fichier "
+
+#: .\tune\forms.py:52
+msgid "Select a file"
+msgstr "Choisir un fichier"
+
+#: .\tune\forms.py:58
+msgid ".abc file here"
+msgstr "fichier .abc ici"
+
+#: .\tune\forms.py:59
+msgid "Copy / Paste .abc file content"
+msgstr "Copier/Coller le contenu d'un fichier .abc"
+
+#: .\tune\forms.py:63 .\tune\templates\tune\tune_favori_lire.html:30
+#: .\tune\templates\tune\tune_favori_lire.html:50
+msgid "Title"
+msgstr "Titre"
+
+#: .\tune\forms.py:65
+msgid "Description of the sound to add"
+msgstr "Description du son à ajouter"
+
+#: .\tune\forms.py:67
+msgid "Recording of the Tune \"xxx\" that I have learned from \"Abcdef\" on \"yyy\" festival"
+msgstr "L'enregistrement du Tune \"xxx\" que j'ai appris de \"Abcdef\" au festival du \"yyy\""
+
+#: .\tune\forms.py:72
+msgid "Link of the audio Clyp sound"
+msgstr "Lien du son Clyp"
+
+#: .\tune\forms.py:75
+msgid "The link of the sound is mandatory"
+msgstr "Le lien du son est obligatoire"
+
+#: .\tune\forms.py:81
+msgid "The link must start with \"https://clyp.it/\""
+msgstr "Le lien doit commencer par \"https://clyp.it/\""
+
+#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\about.html:131
+#: .\tune\templates\tune\accueil.html:21 .\tune\templates\tune\layout.html:89
+msgid "About"
+msgstr "A propos"
+
+#: .\tune\templates\tune\about.html:10
+msgid "About Timtool"
+msgstr "A propos de Timtool"
+
+#: .\tune\templates\tune\about.html:14
+msgid "Information about the Timtool Web application"
+msgstr "Informations à propos de l'application web Timtool"
+
+#: .\tune\templates\tune\about.html:21 .\tune\templates\tune\about.html:28
+msgid "The project of a lifetime"
+msgstr "Le projet d'une vie"
+
+#: .\tune\templates\tune\about.html:23 .\tune\templates\tune\about.html:51
+msgid "Feature tree"
+msgstr "Arbres des fonctionnalités"
+
+#: .\tune\templates\tune\about.html:29
+msgid "This application is the project of a lifetime, and will not cease evolving according to your needs. To make learning Irish traditional music easier. To manage known tunes more efficiently (and thus avoid forgetting tunes as you progress). To learn the tunes that your friends already know (and so to avoid learning a tune that nobody knows...). To generate sets of Tunes and thus randomly discover nice sets. To simply review the tunes that you know. Or to share all the information needed to manage a session."
+msgstr "Cette application est le projet d'une vie et ne cessera d'évoluer selon vos besoins. Que ce soit pour faciliter l'apprentissage de la musique traditionnelle irlandaise, pour gérer les morceaux connus plus efficacement (et évitez ainsi d'oublier les morceaux lorsque vous progressez). Pour apprendre les morceaux que vos amis connaissent déjà (et donc éviter d'apprendre un Tune que personne ne connait ...). Pour générer des sets de Tunes aléatoires et trouver la perle rare. Ou pour simplement réviser les morceaux que vous connaissez, partager toutes les informations nécessaires pour gérer une session..."
+
+#: .\tune\templates\tune\about.html:30
+msgid "Work required"
+msgstr "Travail requis"
+
+#: .\tune\templates\tune\about.html:31
+msgid "Web application development is like music: it is a hobby that takes time."
+msgstr "Le développement d'applications Web, c'est comme la musique: c'est un passe-temps qui prend du temps."
+
+#: .\tune\templates\tune\about.html:32
+msgid "Like music, it requires:"
+msgstr "Comme la musique, cela requiert :"
+
+#: .\tune\templates\tune\about.html:34
+msgid "Equipment"
+msgstr "De l'équipement (poste de travail, serveur, nom de domaine...)"
+
+#: .\tune\templates\tune\about.html:35
+msgid "Maintenance"
+msgstr "De la maintenance"
+
+#: .\tune\templates\tune\about.html:36
+msgid "Courses and trainings"
+msgstr "Des formations et de l'entrainement"
+
+#: .\tune\templates\tune\about.html:37
+msgid "Hours, days, years of practicing"
+msgstr "Des heures, jours, années de pratique"
+
+#: .\tune\templates\tune\about.html:38
+msgid "Thinking"
+msgstr "De la reflexion"
+
+#: .\tune\templates\tune\about.html:39
+msgid "Bravery"
+msgstr "Du courage"
+
+#: .\tune\templates\tune\about.html:47
+msgid "Enjoy =)"
+msgstr "Enjoy =)"
+
+#: .\tune\templates\tune\about.html:52
+msgid "Existing features"
+msgstr "Fonctionnalités existantes"
+
+#: .\tune\templates\tune\about.html:52
+msgid "Upcoming features"
+msgstr "Fonctionnalités à venir"
+
+#: .\tune\templates\tune\about.html:54 .\tune\templates\tune\about.html:193
+msgid "General"
+msgstr "Général"
+
+#: .\tune\templates\tune\about.html:56
+msgid "Menus"
+msgstr "Menus"
+
+#: .\tune\templates\tune\about.html:59
+msgid "Horizontal menu"
+msgstr "Menu Horizontal"
+
+#: .\tune\templates\tune\about.html:61
+msgid "Hide/Show menu"
+msgstr "Afficher/Cacher menu"
+
+#: .\tune\templates\tune\about.html:62 .\tune\templates\tune\layout.html:51
+#: .\tune\templates\tune\new_from_abc.html:42
+msgid "Search for a Tune"
+msgstr "Rechercher un Tune"
+
+#: .\tune\templates\tune\about.html:65
+msgid "Left vertical menu"
+msgstr "Menu gauche vertical"
+
+#: .\tune\templates\tune\about.html:67
+msgid "Links and Actions"
+msgstr "Liens et actions"
+
+#: .\tune\templates\tune\about.html:71 .\tune\templates\tune\accueil.html:7
+#: .\tune\templates\tune\accueil.html:11 .\tune\templates\tune\layout.html:78
+msgid "Home"
+msgstr "Accueil"
+
+#: .\tune\templates\tune\about.html:74
+msgid "Timtool introduction"
+msgstr "Introduction à Timtool"
+
+#: .\tune\templates\tune\about.html:75
+msgid "Last created Tunes, Groups, Users"
+msgstr "Derniers Tunes, Groupes, Utilisateurs créés"
+
+#: .\tune\templates\tune\about.html:81
+msgid "Show the list of tunes"
+msgstr "Afficher la liste des Tunes"
+
+#: .\tune\templates\tune\about.html:82 .\tune\templates\tune\about.html:148
+msgid "Show a Tune"
+msgstr "Afficher un Tune"
+
+#: .\tune\templates\tune\about.html:84 .\tune\templates\tune\about.html:95
+msgid "Add/Remove this Tune to/from your favorites"
+msgstr "Ajouter/Retirer ce Tune à/de vos favoris"
+
+#: .\tune\templates\tune\about.html:85
+msgid "Increase the number of times the Tune has been viewed"
+msgstr "Accroître le nombre de vues du Tune"
+
+#: .\tune\templates\tune\about.html:86
+msgid "Show description"
+msgstr "Afficher la description"
+
+#: .\tune\templates\tune\about.html:87
+msgid "Show .abc version"
+msgstr "Afficher la version .abc"
+
+#: .\tune\templates\tune\about.html:88
+msgid "Show music sheet"
+msgstr "Afficher la partition"
+
+#: .\tune\templates\tune\about.html:89
+msgid "Add comments"
+msgstr "Ajouter des commentaires"
+
+#: .\tune\templates\tune\about.html:90
+msgid "Modify the Tune"
+msgstr "Modifier le tune"
+
+#: .\tune\templates\tune\about.html:91
+msgid "Play Tune sound"
+msgstr "Jouer le Tune"
+
+#: .\tune\templates\tune\about.html:92
+msgid "Upload audio file for this Tune"
+msgstr "Uploader un fichier audio pour ce Tune"
+
+#: .\tune\templates\tune\about.html:93
+msgid "Display several versions of one the Tune"
+msgstr "Afficher plusieurs version de ce Tune"
+
+#: .\tune\templates\tune\about.html:96
+msgid "Filter displayed Tunes"
+msgstr "Filtrer les Tunes affichés"
+
+#: .\tune\templates\tune\about.html:97
+msgid "Create a Tune"
+msgstr "Créer un Tune"
+
+#: .\tune\templates\tune\about.html:99
+msgid "Create a Tune by Copying/pasting an .abc file"
+msgstr "Créer un Tune en copiant/collant un fichier .abc"
+
+#: .\tune\templates\tune\about.html:100
+msgid "Create a Tune from an .abc file"
+msgstr "Créer un Tune depuis un fichier .abc"
+
+#: .\tune\templates\tune\about.html:103 .\tune\templates\tune\layout.html:86
+#: .\user\templates\user\groupe_liste.html:7
+#: .\user\templates\user\groupe_liste.html:11
+msgid "Groups"
+msgstr "Groupes"
+
+#: .\tune\templates\tune\about.html:106
+msgid "Display the list of groups"
+msgstr "Afficher la liste de groupes"
+
+#: .\tune\templates\tune\about.html:107
+msgid "Filter groups"
+msgstr "Filtrer les groupes"
+
+#: .\tune\templates\tune\about.html:108
+msgid "Create groups"
+msgstr "Créer des groupes"
+
+#: .\tune\templates\tune\about.html:109
+msgid "Show a group"
+msgstr "Afficher un groupe"
+
+#: .\tune\templates\tune\about.html:111
+msgid "Display description"
+msgstr "Afficher la description"
+
+#: .\tune\templates\tune\about.html:112
+msgid "Display group favorites"
+msgstr "Afficher les favoris du groupe"
+
+#: .\tune\templates\tune\about.html:113
+msgid "Display group members"
+msgstr "Afficher les membres du groupe"
+
+#: .\tune\templates\tune\about.html:114
+#: .\user\templates\user\groupe_update.html:15
+msgid "Modify the group"
+msgstr "Modifier le groupe"
+
+#: .\tune\templates\tune\about.html:115
+msgid "Add/Remove favorite tunes to/from group"
+msgstr "Ajouter/Retirer des Tunes favoris au/du groupe"
+
+#: .\tune\templates\tune\about.html:116
+msgid "Join/Leave group"
+msgstr "Rejoindre/Quitter le groupe"
+
+#: .\tune\templates\tune\about.html:117
+msgid "Increase number of times the group has been viewed"
+msgstr "Accroître le nombre de vues du groupe"
+
+#: .\tune\templates\tune\about.html:118
+msgid "Leave messages to the group"
+msgstr "Laisser un message au groupe"
+
+#: .\tune\templates\tune\about.html:119
+msgid "Manage members role"
+msgstr "Gèrer les rôles du groupe"
+
+#: .\tune\templates\tune\about.html:120
+msgid "Upload group related audio files"
+msgstr "Uploader un fichier audio aux tunes favoris du groupe"
+
+#: .\tune\templates\tune\about.html:121
+msgid "Send a mail to all members of the group"
+msgstr "Envoyer un email à tous les membres du groupe"
+
+#: .\tune\templates\tune\about.html:123
+#: .\user\templates\user\groupe_liste.html:83
+#: .\user\templates\user\groupe_liste.html:88
+#: .\user\templates\user\groupe_liste.html:96
+#: .\user\templates\user\groupe_liste.html:101
+msgid "Create a group"
+msgstr "Créer un groupe"
+
+#: .\tune\templates\tune\about.html:125 .\user\templates\user\contact.html:7
+#: .\user\templates\user\contact.html:11
+msgid "Contact"
+msgstr "Contact"
+
+#: .\tune\templates\tune\about.html:128
+msgid "Send me a mail"
+msgstr "Envoyez-moi un email"
+
+#: .\tune\templates\tune\about.html:129
+msgid "Receive a copy of the mail"
+msgstr "Recevez une copie de cet email"
+
+#: .\tune\templates\tune\about.html:134
+msgid "Display existing features and upcoming ones"
+msgstr "Afficher la liste existantes des fonctionnalités et celles à venir"
+
+#: .\tune\templates\tune\about.html:135
+msgid "Information"
+msgstr "Informations"
+
+#: .\tune\templates\tune\about.html:136
+msgid "Vote for the most wanted features"
+msgstr "Voter pour les fonctionnalités les plus souhaitées"
+
+#: .\tune\templates\tune\about.html:139 .\tune\templates\tune\layout.html:98
+msgid "Personal"
+msgstr "Personnel"
+
+#: .\tune\templates\tune\about.html:141
+msgid "My favorite Tunes"
+msgstr "Mes Tunes favoris"
+
+#: .\tune\templates\tune\about.html:144
+msgid "Show list of favorite Tunes from the connected user"
+msgstr "Afficher la liste de Tunes favoris de l'utilisateur connecté"
+
+#: .\tune\templates\tune\about.html:145
+msgid "Filter by name/type/key"
+msgstr "Filtrer par nom/type/tonalité"
+
+#: .\tune\templates\tune\about.html:146
+msgid "Change status"
+msgstr "Changer le status"
+
+#: .\tune\templates\tune\about.html:147
+msgid "Remove favorite"
+msgstr "Retirer un favori"
+
+#: .\tune\templates\tune\about.html:150
+msgid "My groups"
+msgstr "Mes Groupes"
+
+#: .\tune\templates\tune\about.html:153
+msgid "Show groups where I am user or admin"
+msgstr "Afficher les groupes pour lesquels je suis admin ou user"
+
+#: .\tune\templates\tune\about.html:154
+msgid "Display group details"
+msgstr "Afficher les détails d'un groupe"
+
+#: .\tune\templates\tune\about.html:155
+#: .\tune\templates\tune\tune_liste.html:38
+#: .\tune\templates\tune\tune_liste_favoris.html:35
+#: .\user\templates\user\groupe_liste.html:27
+msgid "Filter"
+msgstr "Filtrer"
+
+#: .\tune\templates\tune\about.html:157
+#: .\tune\templates\tune\comparateur.html:12
+msgid "Tune comparator"
+msgstr "Comparateur de Tunes"
+
+#: .\tune\templates\tune\about.html:160
+msgid "Compare my Tunes with another user"
+msgstr "Comparer mes Tunes avec d'autres utilisateurs"
+
+#: .\tune\templates\tune\about.html:161
+msgid "Compare my Tunes with a group"
+msgstr "Comparer mes Tunes avec un groupe"
+
+#: .\tune\templates\tune\about.html:162
+msgid "Display in common tunes, in addition, in less"
+msgstr "Afficher les tunes en communs, que j'ai en plus, ou que j'ai en moins"
+
+#: .\tune\templates\tune\about.html:164
+msgid "Sets and tunes generator"
+msgstr "Générateur de Sets et de listes de Tunes"
+
+#: .\tune\templates\tune\about.html:167
+msgid "Generate a list of sets according to all possible criterias (for a user)"
+msgstr "Générer une liste de Sets/Tunes en fonction des critères (pour un utilisateur)"
+
+#: .\tune\templates\tune\about.html:168
+msgid "Generate a list of sets according to all possible criteria (for a group)"
+msgstr "Générer une liste de Sets/Tunes en fonction des critères (pour un groupe)"
+
+#: .\tune\templates\tune\about.html:169
+msgid "Add criteria \"Never two times the same key in a row"
+msgstr "Ajouter le critère \"Jamais deux fois la même tonalité d'un coup"
+
+#: .\tune\templates\tune\about.html:170
+msgid "Add criteria \"alternate major or mix / minor or dor"
+msgstr "Ajouter le critère \"alterner majeur ou mix / mineur ou dor"
+
+#: .\tune\templates\tune\about.html:171
+msgid "Save a set"
+msgstr "Sauvegarder un set"
+
+#: .\tune\templates\tune\about.html:173
+msgid "My account"
+msgstr "Mon compte"
+
+#: .\tune\templates\tune\about.html:176
+msgid "User overview"
+msgstr "Utilisateur Overview"
+
+#: .\tune\templates\tune\about.html:177
+msgid "Update overview"
+msgstr "Modifier l'overview"
+
+#: .\tune\templates\tune\about.html:178
+msgid "Show groups created by the user"
+msgstr "Afficher les groupes créés par l'utilisateur"
+
+#: .\tune\templates\tune\about.html:179
+msgid "Show Tunes added by the user"
+msgstr "Afficher les Tunes ajoutés par l'utilisateur"
+
+#: .\tune\templates\tune\about.html:180
+msgid "Upload profile picture"
+msgstr "Uploader une photo de profil"
+
+#: .\tune\templates\tune\about.html:181
+msgid "Display Tune dashboard"
+msgstr "Afficher le tableau de bord des Tunes"
+
+#: .\tune\templates\tune\about.html:184
+msgid "Managing user accounts"
+msgstr "Gérer les comptes utilisateurs"
+
+#: .\tune\templates\tune\about.html:187 .\tune\templates\tune\layout.html:29
+msgid "Log in"
+msgstr "Connexion"
+
+#: .\tune\templates\tune\about.html:188 .\tune\templates\tune\layout.html:33
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: .\tune\templates\tune\about.html:189
+msgid "Password forgotten"
+msgstr "Mot de passe oublié"
+
+#: .\tune\templates\tune\about.html:190
+msgid "Register"
+msgstr "S'inscrire"
+
+#: .\tune\templates\tune\about.html:191
+msgid "Confirm registration"
+msgstr "Confirmer l'inscription"
+
+#: .\tune\templates\tune\about.html:196
+msgid "Cross-platform"
+msgstr "Cross-platform"
+
+#: .\tune\templates\tune\about.html:197
+msgid "English/French"
+msgstr "Anglais/Français"
+
+#: .\tune\templates\tune\about.html:198
+msgid "Android version"
+msgstr "Version Android"
+
+#: .\tune\templates\tune\about.html:199
+msgid "Custom domain name"
+msgstr "Nom de domaine personnalisé"
+
+#: .\tune\templates\tune\about.html:200
+msgid "Testing environment"
+msgstr "Environnement de test"
+
+#: .\tune\templates\tune\about.html:201
+msgid "Unit testing"
+msgstr "Tests unitaires"
+
+#: .\tune\templates\tune\accueil.html:15
+msgid "Welcome on"
+msgstr "Bienvenue sur"
+
+#: .\tune\templates\tune\accueil.html:22
+msgid ""
+"<strong>Timtool</strong> means \"Traditional Irish Music Tool.\" <br/>\n"
+"             <strong>Timtool</strong> is a web application project (and soon available on Android). The application is <strong>completely free</strong> and without advertising, designed by a traditional Irish music lover, for lovers of traditional Irish music. <br/>\n"
+"             This application is not intended to replace existing applications (TheSession, or the excellent and indispensable Tunepal). On the other hand, it allows: "
+msgstr ""
+"<strong>Timtool</strong> signifie \"Traditional Irish Music Tool.\" <br/>\n"
+"<strong>Timtool</strong> est un projet d'application web (bientôt Android). L'application est <strong>complètement gratuite</strong> et sans publicité, conçue par un amateur de musique traditionnelle irlandaise, pour les amateurs de musique traditionnelle irlandaise. <br/>Cette application n'est pas destinée à remplacer des applications existantes (TheSession, ou l'excellent et indispensable Tunepal). D'autre part, cela permet: "
+
+#: .\tune\templates\tune\accueil.html:26
+msgid "Save and <strong>manage your personal Tune library</strong>,"
+msgstr "Sauvegarder et <strong>gérer sa bibliothèque de Tunes personnelle</strong>,"
+
+#: .\tune\templates\tune\accueil.html:27
+msgid "<strong>Generate random sets/lists</strong> of tunes based on filters and criterias,"
+msgstr "<strong>Générer des Sets et listes de Tunes aléatoires</strong> selon beaucoup de critères,"
+
+#: .\tune\templates\tune\accueil.html:28
+msgid "<strong>Compare your tunes with other users</strong>,"
+msgstr "<strong>Comparer vos Tunes avec d'autres utilisateurs</strong>,"
+
+#: .\tune\templates\tune\accueil.html:29
+msgid "<strong>Create groups (sessions)</strong> to share common information and tunes,"
+msgstr "<strong>Créer des groupes (sessions)</strong> afin de partager les Tunes en communs ainsi que les informations importantes,"
+
+#: .\tune\templates\tune\accueil.html:31
+#, python-format
+msgid ""
+"\n"
+"                And much more ... (see <a href='%(url_about)s' class=\"btn btn-xs btn-success\">about Timtool</a> to see the exhaustiveness of common features and coming from ones<strong> of Timtool</strong>)\n"
+"                "
+msgstr ""
+"\n"
+"                Et bien plus... (allez à <a href='%(url_about)s' class=\"btn btn-xs btn-success\">à propos de Timtool</a> afin de voir l'exhaustivité des fonctionnalités existantes ainsi que celles à venir<strong> de Timtool</strong>)\n"
+"                "
+
+#: .\tune\templates\tune\accueil.html:36
+msgid "<strong>Timtool v1.0</strong> is the first version of the application. Other versions of the app remain to come, with even more features, more design, more fun!"
+msgstr "<strong>Timtool v1.0</strong> est la première version de l'application. D'autres versions sont à venir, avec plus de fonctionnalités, plus de design, plus de fun!"
+
+#: .\tune\templates\tune\accueil.html:39
+#, python-format
+msgid ""
+"\n"
+"                Any ideas ? Recommendations ? Suggestions ? Questions ? Bug ? Need support ? Do not hesitate to contact me thanks to the <a href=\"%(url_contact)s\" class=\"btn btn-xs btn-success\">contact form !</a>\n"
+"                "
+msgstr ""
+"\n"
+"                Des idées ? Des recommendations ? Des suggestions ? Des questions ? Un bug ? Besoin de support ? N'hésitez pas à me contacter grâce au <a href=\"%(url_contact)s\" class=\"btn btn-xs btn-success\">formulaire de contact !</a>\n"
+"                "
+
+#: .\tune\templates\tune\accueil.html:49
+msgid "Last Tunes added"
+msgstr "Derniers Tunes ajoutés"
+
+#: .\tune\templates\tune\accueil.html:53
+msgid "No Tune found"
+msgstr "Aucun Tune trouvé"
+
+#: .\tune\templates\tune\accueil.html:57 .\tune\templates\tune\accueil.html:116
+#: .\tune\templates\tune\accueil.html:150
+#: .\tune\templates\tune\comparateur.html:50
+#: .\tune\templates\tune\comparateur.html:77
+#: .\tune\templates\tune\comparateur.html:117
+#: .\tune\templates\tune\generateur.html:119
+#: .\tune\templates\tune\generateur.html:142
+#: .\tune\templates\tune\tune_liste.html:27
+#: .\tune\templates\tune\tune_liste.html:52
+#: .\tune\templates\tune\tune_liste_favoris.html:24
+#: .\tune\templates\tune\tune_liste_favoris.html:49
+#: .\user\templates\user\groupe_add_favoris.html:30
+#: .\user\templates\user\groupe_add_favoris.html:66
+#: .\user\templates\user\groupe_lire.html:41
+#: .\user\templates\user\groupe_liste.html:24
+#: .\user\templates\user\groupe_liste.html:41
+#: .\user\templates\user\profile.html:45 .\user\templates\user\profile.html:75
+msgid "Name"
+msgstr "Nom"
+
+#: .\tune\templates\tune\accueil.html:58
+#: .\tune\templates\tune\comparateur.html:51
+#: .\tune\templates\tune\comparateur.html:78
+#: .\tune\templates\tune\comparateur.html:118
+#: .\tune\templates\tune\generateur.html:120
+#: .\tune\templates\tune\generateur.html:143
+#: .\tune\templates\tune\tune_liste.html:31
+#: .\tune\templates\tune\tune_liste.html:53
+#: .\tune\templates\tune\tune_liste_favoris.html:28
+#: .\tune\templates\tune\tune_liste_favoris.html:50
+#: .\user\templates\user\groupe_add_favoris.html:31
+#: .\user\templates\user\groupe_add_favoris.html:67
+#: .\user\templates\user\groupe_lire.html:42
+#: .\user\templates\user\profile.html:76
+msgid "Type"
+msgstr "Type"
+
+#: .\tune\templates\tune\accueil.html:59
+#: .\tune\templates\tune\comparateur.html:52
+#: .\tune\templates\tune\comparateur.html:79
+#: .\tune\templates\tune\comparateur.html:119
+#: .\tune\templates\tune\generateur.html:121
+#: .\tune\templates\tune\generateur.html:144
+#: .\tune\templates\tune\tune_liste.html:35
+#: .\tune\templates\tune\tune_liste.html:54
+#: .\tune\templates\tune\tune_liste_favoris.html:32
+#: .\tune\templates\tune\tune_liste_favoris.html:51
+#: .\user\templates\user\groupe_add_favoris.html:32
+#: .\user\templates\user\groupe_add_favoris.html:68
+#: .\user\templates\user\groupe_lire.html:43
+#: .\user\templates\user\profile.html:77
+msgid "Key"
+msgstr "Tonalité"
+
+#: .\tune\templates\tune\accueil.html:60
+#: .\tune\templates\tune\comparateur.html:80
+#: .\tune\templates\tune\tune_liste.html:57
+#: .\user\templates\user\profile.html:79
+msgid "Favorite"
+msgstr "Favori"
+
+#: .\tune\templates\tune\accueil.html:76
+#: .\tune\templates\tune\comparateur.html:91
+#: .\tune\templates\tune\tune_lire.html:14
+#: .\tune\templates\tune\tune_liste.html:75
+#: .\user\templates\user\profile.html:96
+msgid "Tune added to your favorites"
+msgstr "Tune ajouté à vos favoris"
+
+#: .\tune\templates\tune\accueil.html:80
+#: .\tune\templates\tune\comparateur.html:95
+#: .\tune\templates\tune\tune_lire.html:18
+#: .\tune\templates\tune\tune_liste.html:79
+#: .\user\templates\user\profile.html:100
+msgid "Tune absent from your favorites"
+msgstr "Tune absent de vos favoris"
+
+#: .\tune\templates\tune\accueil.html:86
+#: .\tune\templates\tune\tune_lire.html:24
+#: .\tune\templates\tune\tune_liste.html:85
+#: .\user\templates\user\profile.html:106
+msgid "Trick !"
+msgstr "Astuce !"
+
+#: .\tune\templates\tune\accueil.html:86
+#: .\tune\templates\tune\tune_lire.html:24
+#: .\tune\templates\tune\tune_liste.html:85
+#: .\user\templates\user\profile.html:106
+msgid "Sign in or register to be able to add this Tune to your favorites."
+msgstr "Connectez-vous afin d'ajouter ce Tune à vos favoris."
+
+#: .\tune\templates\tune\accueil.html:100
+msgid "All Tunes"
+msgstr "Tous les Tunes"
+
+#: .\tune\templates\tune\accueil.html:108
+msgid "Last groups created"
+msgstr "Derniers groupes créés"
+
+#: .\tune\templates\tune\accueil.html:112
+#: .\user\templates\user\groupe_liste.html:37
+msgid "No group"
+msgstr "Aucun groupe"
+
+#: .\tune\templates\tune\accueil.html:136
+msgid "All groups"
+msgstr "Tous les Groupes"
+
+#: .\tune\templates\tune\accueil.html:142
+msgid "Last registered users"
+msgstr "Derniers utilisateurs enregistrés"
+
+#: .\tune\templates\tune\accueil.html:146
+msgid "No registered user"
+msgstr "Aucun utilisateur enregistré"
+
+#: .\tune\templates\tune\comparateur.html:8
+#: .\tune\templates\tune\layout.html:105 .\tune\templates\tune\layout.html:115
+msgid "Comparator"
+msgstr "Comparateur"
+
+#: .\tune\templates\tune\comparateur.html:16
+msgid "Compare your Tunes with other users or groups"
+msgstr "Comparer vos Tunes avec d'autres utilisateurs ou groupes"
+
+#: .\tune\templates\tune\comparateur.html:21
+#: .\tune\templates\tune\layout.html:53 .\tune\templates\tune\layout.html:68
+msgid "Search"
+msgstr "Chercher"
+
+#: .\tune\templates\tune\comparateur.html:26
+msgid "Compare"
+msgstr "Comparer"
+
+#: .\tune\templates\tune\comparateur.html:31
+msgid "Results"
+msgstr "Résultats"
+
+#: .\tune\templates\tune\comparateur.html:34
+#: .\tune\templates\tune\comparateur.html:42
+msgid "Tunes in common"
+msgstr "Tunes en commun"
+
+#: .\tune\templates\tune\comparateur.html:36
+#: .\tune\templates\tune\comparateur.html:69
+msgid "Tunes I don't have"
+msgstr "Tunes que je n'ai pas"
+
+#: .\tune\templates\tune\comparateur.html:37
+#: .\tune\templates\tune\comparateur.html:109
+msgid "Tunes only me have"
+msgstr "Tunes que j'ai en plus"
+
+#: .\tune\templates\tune\comparateur.html:46
+msgid "No Tune in common"
+msgstr "Aucun Tune en commun"
+
+#: .\tune\templates\tune\comparateur.html:73
+msgid "No Tune I don't have"
+msgstr "Aucun Tune que je n'ai pas"
+
+#: .\tune\templates\tune\comparateur.html:113
+msgid "No tune only me have"
+msgstr "Aucun Tune que j'ai en plus"
+
+#: .\tune\templates\tune\generateur.html:8
+#: .\tune\templates\tune\generateur.html:12
+#: .\tune\templates\tune\layout.html:106 .\tune\templates\tune\layout.html:117
+msgid "Generator"
+msgstr "Generateur"
+
+#: .\tune\templates\tune\generateur.html:16
+msgid "Customizable generator of Tune list and sets"
+msgstr "Générateur de listes de Tunes et de Sets cutomisable"
+
+#: .\tune\templates\tune\generateur.html:22
+msgid "Generator of random tunes/sets"
+msgstr "Générateur de Tunes ou Sets de Tunes aléatoire"
+
+#: .\tune\templates\tune\generateur.html:24
+msgid "For the group:"
+msgstr "Pour le groupe :"
+
+#: .\tune\templates\tune\generateur.html:26
+msgid "For the user:"
+msgstr "Pour l'utilisateur :"
+
+#: .\tune\templates\tune\generateur.html:54
+msgid "Generate"
+msgstr "Generer"
+
+#: .\tune\templates\tune\generateur.html:62
+msgid "Generated list"
+msgstr "Liste Générée"
+
+#: .\tune\templates\tune\generateur.html:145
+#: .\tune\templates\tune\tune_liste_favoris.html:52
+#: .\user\templates\user\groupe_lire.html:44
+msgid "Status"
+msgstr "Etat"
+
+#: .\tune\templates\tune\generateur.html:161
+msgid "Tunes to learn"
+msgstr "Tunes à apprendre"
+
+#: .\tune\templates\tune\generateur.html:165
+msgid "Tunes learnt"
+msgstr "Tunes appris"
+
+#: .\tune\templates\tune\generateur.html:174
+msgid "Use the above generator to generate a list of Tunes or Sets"
+msgstr "Utiliser le générateur ci-dessus afin de générer une liste de Tunes ou de Sets"
+
+#: .\tune\templates\tune\layout.html:10
+msgid "TIMTOOL beta version"
+msgstr "TIMTOOL version beta"
+
+#: .\tune\templates\tune\layout.html:28
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: .\tune\templates\tune\layout.html:30
+msgid "Sign up"
+msgstr "S'inscrire"
+
+#: .\tune\templates\tune\layout.html:47
+msgid "Show Menu"
+msgstr "Afficher Menu"
+
+#: .\tune\templates\tune\layout.html:47
+msgid "Hide Menu"
+msgstr "Cacher Menu"
+
+#: .\tune\templates\tune\layout.html:66
+msgid "Search a Tune"
+msgstr "Rechercher un Tune"
+
+#: .\tune\templates\tune\layout.html:72
+msgid "Links and functionalities accessible to all"
+msgstr "Liens et fonctionnalités accessibles à tous"
+
+#: .\tune\templates\tune\layout.html:73
+msgid "Global"
+msgstr "Global"
+
+#: .\tune\templates\tune\layout.html:97
+msgid "Links and features available to connected users"
+msgstr "Liens et fonctionnalités disponibles aux utilisateurs connectés"
+
+#: .\tune\templates\tune\layout.html:103 .\tune\templates\tune\layout.html:111
+msgid "My Tunes"
+msgstr "Mes Tunes"
+
+#: .\tune\templates\tune\layout.html:104 .\tune\templates\tune\layout.html:113
+msgid "My Groups"
+msgstr "Mes Groupes"
+
+#: .\tune\templates\tune\layout.html:107 .\tune\templates\tune\layout.html:119
+msgid "My Account"
+msgstr "Mon compte"
+
+#: .\tune\templates\tune\layout.html:109
+#: .\tune\templates\tune\tune_liste.html:116
+#: .\user\templates\user\groupe_lire.html:120
+#: .\user\templates\user\groupe_liste.html:80
+msgid "You must be logged in to use this feature"
+msgstr "Vous devez être connecté afin d'utiliser cette fonctionnalité"
+
+#: .\tune\templates\tune\layout.html:124
+msgid "Links and features available from the current page"
+msgstr "Liens et fonctionnalités disponibles depuis cette page"
+
+#: .\tune\templates\tune\layout.html:125
+msgid "Current Page"
+msgstr "Page Courante"
+
+#: .\tune\templates\tune\layout.html:129
+msgid "No action available on the current page"
+msgstr "Aucune action disponible sur cette page"
+
+#: .\tune\templates\tune\new_from_abc.html:7
+#: .\tune\templates\tune\new_from_abc.html:11
+msgid "ABC Tune Creation"
+msgstr "Création Tune ABC"
+
+#: .\tune\templates\tune\new_from_abc.html:15
+msgid "Create a Tune with .abc notation"
+msgstr "Créer un Tune grâce au format .abc"
+
+#: .\tune\templates\tune\new_from_abc.html:21
+msgid "Copy/Paste an .abc file"
+msgstr "Copier/Coller un fichier .abc"
+
+#: .\tune\templates\tune\new_from_abc.html:23
+msgid "Upload an .abc file"
+msgstr "Uploader un fichier .abc"
+
+#: .\tune\templates\tune\new_from_abc.html:28
+msgid "Add Tune from .abc"
+msgstr "Ajouter un Tune depuis un fichier .abc"
+
+#: .\tune\templates\tune\new_from_abc.html:28
+msgid "Where to find .abc files ?"
+msgstr "Ou trouver des fichiers .abc ?"
+
+#: .\tune\templates\tune\new_from_abc.html:29
+msgid "You can find several tunebook .abc files on tunepal.org"
+msgstr "Vous pouvez trouver différents tunebooks en .abc sur tunepal.org"
+
+#: .\tune\templates\tune\new_from_abc.html:30
+msgid "Attributes T: K: R: are mandatory"
+msgstr "Les attributs T: K: R: sont obligatoires"
+
+#: .\tune\templates\tune\new_from_abc.html:37
+#: .\user\templates\user\groupe_new.html:23
+msgid "Create"
+msgstr "Créer"
+
+#: .\tune\templates\tune\new_from_abc.html:39
+msgid "Where to find .abc file ?"
+msgstr "Ou trouver un fichier .abc ?"
+
+#: .\tune\templates\tune\new_from_abc.html:41
+msgid "Go to Tunepal website : "
+msgstr "Rendez-vous sur le site web Tunepal : "
+
+#: .\tune\templates\tune\new_from_abc.html:43
+msgid "Select a Tune to go to its page"
+msgstr "Sélectionnez un Tune pour afficher sa page"
+
+#: .\tune\templates\tune\new_from_abc.html:44
+msgid "Click on \"ABC\""
+msgstr "Cliquez sur \"ABC\""
+
+#: .\tune\templates\tune\new_from_abc.html:45
+msgid "Copy the whole text and go back to Timtool"
+msgstr "Copiez l'integralité du texte et revenez sur Timtool"
+
+#: .\tune\templates\tune\new_from_abc.html:46
+msgid "Paste the text in the above area and click on \"create\""
+msgstr "Copiez le texte dans le champ au ci-dessus et cliquez sur \"créer\""
+
+#: .\tune\templates\tune\new_from_abc.html:47
+msgid "Tip : the text looks like "
+msgstr "Astuce : le texte à copier est de la forme suivante "
+
+#: .\tune\templates\tune\new_from_abc.html:71
+#: .\user\templates\user\contact.html:25
+#: .\user\templates\user\groupe_update.html:23
+msgid "Send"
+msgstr "Envoyer"
+
+#: .\tune\templates\tune\new_from_abc.html:74
+msgid "You do not have the rights to upload a file. You can add a Tune by copying an .abc file into the \"Copy/Paste an .abc file\""
+msgstr "Vous n'avez pas la permission d'uploader un fichier. Vous pouvez ajouter un Tune en copiant un fichier .abc dans la section \"Copier/Coller un fichier .abc\""
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:8
+#: .\tune\templates\tune\tune_favori_add_sound.html:12
+msgid "Add sound to"
+msgstr "Ajouter un son a"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:16
+#: .\tune\templates\tune\tune_favori_lire.html:17
+#: .\tune\templates\tune\tune_lire.html:31
+#, python-format
+msgid "%(type)s in %(key)s"
+msgstr "%(type)s en %(key)s"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:16
+msgid "Favorite Tune"
+msgstr "Tune favori"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:20
+msgid "Form to add a sound"
+msgstr "Formulaire d'ajout de son"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:20
+#: .\tune\templates\tune\tune_favori_add_sound.html:27
+msgid "How to add a sound ?"
+msgstr "Comment ajouter un son ?"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:25
+msgid "Add"
+msgstr "Ajouter"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:29
+msgid "Go to Clyp website : "
+msgstr "Se rendre au site web Clyp : "
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:30
+msgid "Log in or Sign up"
+msgstr "Se connecter ou s'inscrire"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:31
+msgid "Click on \"Upload a Clyp\""
+msgstr "Cliquez sur \"Upload a Clyp\""
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:31
+msgid "If you are lost, go "
+msgstr "Si vous êtes perdus, rendez-vous "
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:31
+#: .\user\templates\user\groupe_add_favoris.html:26
+msgid "here"
+msgstr "ici"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:31
+msgid "first"
+msgstr "premier"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:32
+msgid "Select the file to upload"
+msgstr "Choisissez le fichier à uploader"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:33
+msgid "Give it a name, a description, and even a picture if you wish"
+msgstr "Donnez-lui un nom, une description, eventuellement une image"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:33
+msgid "VERY IMPORTANT : Let checked 'This Clyp is Public', otherwise, it won't be seen by Timtool =("
+msgstr "TRES IMPORTANT : LAISSEZ COCHÉ 'This Clyp is Public', sinon, il ne sera pas accessible par Timtool =("
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:33
+msgid "TIP : Let checked 'Download', and you will be able to download this Tune directly from Timtool =)"
+msgstr "ASTUCE : Laissez coché 'Download', et vous serez en mesure de télécharger ce Tune directement depuis Timtool =)"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:34
+msgid "Click on the name of your Tune in order to go to the Tune page"
+msgstr "Cliquez sur le nom de votre Tune pour se rendre à la page du Tune"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:34
+msgid "You should see a Tune like"
+msgstr "Vous devriez voir un Tune comme"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:34
+msgid "this one"
+msgstr "celui-ci"
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:35
+msgid "Copy the link in \"DIRECT LINK\" field. It must start with \"https://clyp.it/\""
+msgstr "Copiez le lien du champ \"DIRECT LINK\". Il doit commencer par \"https://clyp.it/\""
+
+#: .\tune\templates\tune\tune_favori_add_sound.html:36
+msgid "Come back on Timtool, paste the link into the link section of the form above, a description, and click on \"Add\" button."
+msgstr "Revenez sur Timtool, copiez le lien dans le champ 'lien' du formulaire ci-dessus, ajoutez une description, et cliquez sur le bouton 'Ajouter'."
+
+#: .\tune\templates\tune\tune_favori_lire.html:17
+msgid "Favorite Tune of"
+msgstr "Tune favori de"
+
+#: .\tune\templates\tune\tune_favori_lire.html:23
+msgid "Audio files"
+msgstr "Fichiers audios"
+
+#: .\tune\templates\tune\tune_favori_lire.html:26
+#: .\tune\templates\tune\tune_favori_lire.html:47
+msgid "No audio file added to this favorite"
+msgstr "Pas de fichier audio ajouté à ce favori"
+
+#: .\tune\templates\tune\tune_favori_lire.html:31
+#: .\tune\templates\tune\tune_favori_lire.html:51
+#: .\tune\templates\tune\tune_lire.html:38
+#: .\tune\templates\tune\tune_lire.html:45
+#: .\tune\templates\tune\tune_liste.html:56
+#: .\user\templates\user\groupe_lire.html:21
+#: .\user\templates\user\groupe_lire.html:29
+#: .\user\templates\user\groupe_liste.html:42
+#: .\user\templates\user\profile.html:46 .\user\templates\user\profile.html:78
+msgid "Description"
+msgstr "Description"
+
+#: .\tune\templates\tune\tune_favori_lire.html:37
+#: .\tune\templates\tune\tune_favori_lire.html:57
+#, python-format
+msgid "Remove the sound '%(name)s' from this favorite ?"
+msgstr "Retirer le son '%(name)s' de ce favori ?"
+
+#: .\tune\templates\tune\tune_favori_lire.html:70
+#: .\tune\templates\tune\tune_favori_lire.html:75
+#: .\tune\templates\tune\tune_favori_lire.html:83
+#: .\tune\templates\tune\tune_favori_lire.html:88
+msgid "Add a sound"
+msgstr "Ajouter un son"
+
+#: .\tune\templates\tune\tune_favori_lire.html:74
+#: .\tune\templates\tune\tune_favori_lire.html:87 .\tune\views.py:499
+#: .\tune\views.py:502 .\user\models.py:103
+msgid "Only administrators of the group can use this functionnality"
+msgstr "Seuls les administrateurs de ce groupe peuvent utiliser cette fonctionnalité"
+
+#: .\tune\templates\tune\tune_lire.html:32
+#: .\user\templates\user\groupe_lire.html:15
+#, python-format
+msgid "Seen %(nb_vues)s times"
+msgstr "Vu %(nb_vues)s fois"
+
+#: .\tune\templates\tune\tune_liste.html:15
+msgid "All the tunes from Timtool"
+msgstr "Tous les Tunes de Timtool"
+
+#: .\tune\templates\tune\tune_liste.html:21
+msgid "You can filter by name, type, or key. You can combine the filters."
+msgstr "Vous pouvez filtrer par nom, type ou tonalité. Vous pouvez combiner les filtres."
+
+#: .\tune\templates\tune\tune_liste.html:22
+msgid "The 'Type' and 'Key' fields are case-sensitive. Use tiny letters for Type (reel, jig) and use the following format for Keys (A, Am, Ador, Amix)"
+msgstr "Les champs 'Type' et 'Tonalité' sont sensibles aux majuscules/minuscules. Utilisez des minuscules pour le Type (reel, jig) et utilisez les formats suivants pour les tonalités (A, Am, Ador, Amix)"
+
+#: .\tune\templates\tune\tune_liste.html:23
+#: .\tune\templates\tune\tune_liste_favoris.html:21
+#: .\user\templates\user\groupe_liste.html:21
+msgid "Filters"
+msgstr "Filtres"
+
+#: .\tune\templates\tune\tune_liste.html:44
+#: .\tune\templates\tune\tune_liste_favoris.html:45
+msgid "List of Tunes"
+msgstr "Liste de Tunes"
+
+#: .\tune\templates\tune\tune_liste.html:48
+msgid "No tune found"
+msgstr "Aucun Tune trouvé"
+
+#: .\tune\templates\tune\tune_liste.html:55
+msgid "Added by"
+msgstr "Ajouté par"
+
+#: .\tune\templates\tune\tune_liste.html:102
+#: .\tune\templates\tune\tune_liste_favoris.html:94
+#: .\user\templates\user\groupe_liste.html:66
+msgid "Previous"
+msgstr "Précédent"
+
+#: .\tune\templates\tune\tune_liste.html:106
+#: .\tune\templates\tune\tune_liste_favoris.html:98
+msgid "Next"
+msgstr "Suivant"
+
+#: .\tune\templates\tune\tune_liste.html:119
+#: .\tune\templates\tune\tune_liste.html:124
+#: .\tune\templates\tune\tune_liste.html:132
+#: .\tune\templates\tune\tune_liste.html:137
+msgid "Add a Tune"
+msgstr "Ajouter un Tune"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:7
+#: .\tune\templates\tune\tune_liste_favoris.html:11
+#: .\user\templates\user\groupe_lire.html:23
+msgid "Favorite Tunes"
+msgstr "Tunes favoris"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:15
+#: .\user\templates\user\groupe_add_favoris.html:22
+msgid "Your favorite Tunes"
+msgstr "Vos Tunes favoris"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:41
+msgid "List of your favorite Tunes"
+msgstr "Liste de vos Tunes favoris"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:45
+msgid "No Tune. Refine your search or add tunes to your favorites:"
+msgstr "Aucun Tune. Compléter votre recherche ou ajouter des Tunes à vos favoris :"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:68
+#: .\user\templates\user\groupe_lire.html:60
+msgid "Tune to learn"
+msgstr "Tunes à apprendre"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:72
+#: .\user\templates\user\groupe_lire.html:70
+msgid "Tune learnt"
+msgstr "Tunes appris"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:78
+#, python-format
+msgid "Remove '%(name)s' from your favorites ?"
+msgstr "Retirer '%(name)s' de vos favoris ?"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:109
+#: .\tune\templates\tune\tune_liste_favoris.html:115
+msgid "Training !"
+msgstr "Entrainement !"
+
+#: .\tune\views.py:62 .\tune\views.py:88
+#, python-format
+msgid "The following filters have been applied : \"name\" contains \"%(name)s\" | \"type\" = \"%(type)s\" | \"key\" = \"%(key)s\""
+msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\""
+
+#: .\tune\views.py:121 .\tune\views.py:134 .\tune\views.py:146
+#: .\tune\views.py:155 .\tune\views.py:252 .\tune\views.py:265
+#: .\tune\views.py:277 .\tune\views.py:286
+#, python-format
+msgid "The list of \"%(list_of)s\" among \"%(among)s\" is empty. Modify your search criterias."
+msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" est vide. Modifiez votre recherche."
+
+#: .\tune\views.py:204 .\tune\views.py:333
+#, python-format
+msgid "The list of \"%(list_of)s\" among \"%(among)s\" has been generated"
+msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" a été générée"
+
+#: .\tune\views.py:228
+#, python-format
+msgid "The group \"%(slug)s\" doesn't exist"
+msgstr "Le groupe \"%(slug)s\" n'existe pas"
+
+#: .\tune\views.py:232
+#, python-format
+msgid "There are several groupes \"%(slug)s\". Impossible to generate tunes."
+msgstr "Il y a plusieurs groupes \"%(slug)s\". Impossible de générer des tunes."
+
+#: .\tune\views.py:377
+#, python-format
+msgid "The comparison of \"%(to_compare)s\" with user \"%(username)s\" is a success."
+msgstr "La comparaison de \"%(to_compare)s\" avec l'utilisateur \"%(username)s\" est un succès."
+
+#: .\tune\views.py:398
+#, python-format
+msgid "The comparison of \"%(to_compare)s\" with group \"%(groupname)s\" is a success."
+msgstr "La comparaison de \"%(to_compare)s\" avec le groupe \"%(groupname)s\" est un succès."
+
+#: .\tune\views.py:405
+msgid "The comparison of tunes has failed. An error appeared with name of the user or group"
+msgstr "La comparaison de tunes a échoué. Une erreur est survenue avec le nom de l'utilisateur ou du groupe"
+
+#: .\tune\views.py:411
+#, python-format
+msgid "The user \"%(username)s\" doesn't exist. Please enter an existing user"
+msgstr "L'utilisateur \"%(username)s\" n'existe pas. Entrez un utilisateur existant"
+
+#: .\tune\views.py:417
+#, python-format
+msgid "The group \"%(groupname)s\" doesn't exist. Please enter an existing group"
+msgstr "Le groupe \"%(groupname)s\" n'existe pas. Entrez un groupe existant"
+
+#: .\tune\views.py:423
+#, python-format
+msgid "There are several users \"%(username)s\". Impossible to compare Tunes."
+msgstr "Il y a plusieurs utilisateurs \"%(username)s\". Impossible de comparer les Tunes."
+
+#: .\tune\views.py:427
+#, python-format
+msgid "There are several groups \"%(groupname)s\". Impossible to compare Tunes."
+msgstr "Il y a plusieurs groupes \"%(groupname)s\". Impossible de comparer les Tunes."
+
+#: .\tune\views.py:456 .\tune\views.py:491
+msgid "This Tune is not among your favorites !"
+msgstr "Ce Tune est absent de vos favoris !"
+
+#: .\tune\views.py:463
+msgid "This is the page of the favorite Tune. If you wish to go to the global Tune, go there : "
+msgstr "Cette page est la page personnelle du Tune favori. Si vous souhaitez afficher le Tune global, rendez-vous ici : "
+
+#: .\tune\views.py:532 .\tune\views.py:535
+msgid "Processus successfully ended !"
+msgstr "Traitement terminé avec succès !"
+
+#: .\user\forms.py:10
+msgid "Improvement request"
+msgstr "Demande d'amélioration"
+
+#: .\user\forms.py:10
+msgid "Bug"
+msgstr "Anomalie"
+
+#: .\user\forms.py:10
+msgid "Information request"
+msgstr "Demande d'information"
+
+#: .\user\forms.py:15
+msgid "Topic"
+msgstr "Sujet"
+
+#: .\user\forms.py:17
+msgid "Your mail address"
+msgstr "Votre adresse e-mail"
+
+#: .\user\forms.py:18
+msgid "Receive a copy"
+msgstr "Recevez une copie"
+
+#: .\user\forms.py:18
+msgid "Check if you wish to receive a copy of this email"
+msgstr "Cochez si vous souhaitez recevoir une copie de l'e-mail envoyé"
+
+#: .\user\forms.py:23
+msgid "Only my favorite learned Tunes"
+msgstr "Tous mes Tunes favoris"
+
+#: .\user\forms.py:23
+msgid "All my favorite Tunes"
+msgstr "Tous mes Tunes favoris"
+
+#: .\user\forms.py:26
+msgid "Compare : "
+msgstr "Comparer : "
+
+#: .\user\forms.py:32
+msgid "Select a user"
+msgstr "Choisir un utilisateur"
+
+#: .\user\forms.py:34
+msgid "Select a group"
+msgstr "Choisir un groupe"
+
+#: .\user\forms.py:38
+msgid "With one of the following users : "
+msgstr "Avec l'un des utilisateurs suivants : "
+
+#: .\user\forms.py:42
+msgid "Or one of the following groups : "
+msgstr "Ou l'un des groupes suivants : "
+
+#: .\user\forms.py:49
+msgid "You must choose a user or a group"
+msgstr "Vous devez choisir un utilisateur ou un groupe"
+
+#: .\user\forms.py:51
+msgid "You must choose a user OR a group, but not both"
+msgstr "Vous ne devez choisir QU'UN utilisateur ou QU'UN groupe, mais pas les deux"
+
+#: .\user\forms.py:56
+msgid "Group"
+msgstr "Groupe"
+
+#: .\user\forms.py:72
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\user\forms.py:73
+msgid "Confirm password"
+msgstr "Confirmer le mot de passe"
+
+#: .\user\forms.py:74 .\user\templates\user\groupe_lire.html:96
+#: .\user\templates\user\groupe_update_roles.html:27
+#: .\user\templates\user\profile.html:30
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: .\user\forms.py:86
+msgid "Passwords don't match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: .\user\models.py:19
+msgid "A user must have an email address."
+msgstr "Un utilisateur doit avoir une adresse email."
+
+#: .\user\models.py:52
+msgid "The user cannot contain other special characters than : '. @ + -'"
+msgstr "L'utilisateur ne peut pas contenir de caractères spéciaux autres que : '. @ + -'"
+
+#: .\user\models.py:127
+#, python-format
+msgid "Group : \"%(groupname)s\""
+msgstr "Groupe : \"%(groupname)s\""
+
+#: .\user\templates\user\contact.html:15
+msgid "Contact me using the following form !"
+msgstr "Contactez-moi grâce au formulaire suivant !"
+
+#: .\user\templates\user\contact.html:19
+msgid "Your message has been sent !"
+msgstr "Votre message a bien été envoyé !"
+
+#: .\user\templates\user\groupe_add_favoris.html:7
+#: .\user\templates\user\groupe_add_favoris.html:11
+#: .\user\templates\user\groupe_lire.html:141
+#: .\user\templates\user\groupe_lire.html:146
+#: .\user\templates\user\groupe_lire.html:214
+#: .\user\templates\user\groupe_lire.html:219
+msgid "Add favorites"
+msgstr "Ajouter des favoris"
+
+#: .\user\templates\user\groupe_add_favoris.html:15
+msgid "Add favorites to group : "
+msgstr "Ajouter des favoris au groupe : "
+
+#: .\user\templates\user\groupe_add_favoris.html:26
+msgid "You don't have any Tune in your favorites. Go to: "
+msgstr "Vous n'avez aucun Tune dans vos favoris. Rendez-vous : "
+
+#: .\user\templates\user\groupe_add_favoris.html:26
+msgid "in order to add Tunes to your favorites"
+msgstr "afin d'ajouter des Tunes à vos favoris"
+
+#: .\user\templates\user\groupe_add_favoris.html:48
+msgid "Add this Tune to the group"
+msgstr "Ajouter ce Tune au groupe"
+
+#: .\user\templates\user\groupe_add_favoris.html:61
+#: .\user\templates\user\groupe_lire.html:33
+msgid "Favorite Tunes of the group"
+msgstr "Tunes favoris du groupe"
+
+#: .\user\templates\user\groupe_add_favoris.html:82
+msgid "from this group ?"
+msgstr "de ce groupe ?"
+
+#: .\user\templates\user\groupe_add_favoris.html:96
+#: .\user\templates\user\groupe_add_favoris.html:102
+#: .\user\templates\user\groupe_update.html:30
+#: .\user\templates\user\groupe_update.html:36
+#: .\user\templates\user\groupe_update_roles.html:57
+#: .\user\templates\user\groupe_update_roles.html:63
+msgid "Back to the description"
+msgstr "Retour à la description"
+
+#: .\user\templates\user\groupe_lire.html:24
+msgid "Members"
+msgstr "Membres"
+
+#: .\user\templates\user\groupe_lire.html:37
+msgid "You have not added any Tunes in favorites."
+msgstr "Vous n'avez pas ajouté de Tunes en favori."
+
+#: .\user\templates\user\groupe_lire.html:64
+#: .\user\templates\user\groupe_lire.html:74
+#: .\user\templates\user\groupe_lire.html:128
+#: .\user\templates\user\groupe_lire.html:145
+#: .\user\templates\user\groupe_lire.html:185
+#: .\user\templates\user\groupe_lire.html:199
+#: .\user\templates\user\groupe_lire.html:218
+#: .\user\templates\user\groupe_lire.html:231
+msgid "Only administrators can use this functionnality"
+msgstr "Seuls les administrateurs peuvent utiliser cette fonctionnalité"
+
+#: .\user\templates\user\groupe_lire.html:88
+#: .\user\templates\user\groupe_update_roles.html:19
+msgid "Group members"
+msgstr "Membres du groupe"
+
+#: .\user\templates\user\groupe_lire.html:92
+#: .\user\templates\user\groupe_update_roles.html:23
+msgid "This group has not any member yet."
+msgstr "Ce groupe n'a pas encore de membre."
+
+#: .\user\templates\user\groupe_lire.html:97
+#: .\user\templates\user\groupe_update_roles.html:28
+msgid "Role"
+msgstr "Role"
+
+#: .\user\templates\user\groupe_lire.html:124
+#: .\user\templates\user\groupe_lire.html:129
+#: .\user\templates\user\groupe_lire.html:135
+#: .\user\templates\user\groupe_lire.html:195
+#: .\user\templates\user\groupe_lire.html:200
+#: .\user\templates\user\groupe_lire.html:206
+msgid "Update this group"
+msgstr "Modifier ce groupe"
+
+#: .\user\templates\user\groupe_lire.html:157
+#: .\user\templates\user\groupe_lire.html:243
+msgid "Leave this group"
+msgstr "Quitter ce groupe"
+
+#: .\user\templates\user\groupe_lire.html:165
+#: .\user\templates\user\groupe_lire.html:172
+#: .\user\templates\user\groupe_lire.html:251
+#: .\user\templates\user\groupe_lire.html:258
+msgid "Join this group"
+msgstr "Rejoindre ce groupe"
+
+#: .\user\templates\user\groupe_lire.html:181
+#: .\user\templates\user\groupe_lire.html:186
+msgid "Generate Sets/Tunes"
+msgstr "Générer des Sets/Tunes"
+
+#: .\user\templates\user\groupe_lire.html:227
+#: .\user\templates\user\groupe_lire.html:232
+msgid "Update members roles"
+msgstr "Gèrer les rôles du groupe"
+
+#: .\user\templates\user\groupe_lire.html:242
+msgid "You are member of this group"
+msgstr "Vous êtes membre de ce groupe"
+
+#: .\user\templates\user\groupe_lire.html:250
+msgid "You are not member of this group"
+msgstr "Vous n'êtes pas membre de ce groupe"
+
+#: .\user\templates\user\groupe_liste.html:15
+msgid "All groups from Timtool"
+msgstr "Tous les Tunes de Timtool"
+
+#: .\user\templates\user\groupe_liste.html:25
+msgid "Filter by name"
+msgstr "Filtrer par nom"
+
+#: .\user\templates\user\groupe_liste.html:33
+msgid "List of groups"
+msgstr "Liste de groupes"
+
+#: .\user\templates\user\groupe_liste.html:70
+msgid "next"
+msgstr "suivant"
+
+#: .\user\templates\user\groupe_new.html:7
+#: .\user\templates\user\groupe_new.html:11
+msgid "Group creation"
+msgstr "Création de groupe"
+
+#: .\user\templates\user\groupe_new.html:15
+msgid "Create a group filling the following form"
+msgstr "Créer un groupe en remplissant le formulaire suivant"
+
+#: .\user\templates\user\groupe_update.html:7
+#: .\user\templates\user\groupe_update.html:11
+#: .\user\templates\user\profil_update.html:7
+#: .\user\templates\user\profil_update.html:11
+msgid "Modify"
+msgstr "Modifier"
+
+#: .\user\templates\user\groupe_update.html:15
+#: .\user\templates\user\profil_update.html:15
+msgid "filling the following form"
+msgstr "en remplissant le formulaire suivant"
+
+#: .\user\templates\user\groupe_update_roles.html:11
+msgid "Update roles of"
+msgstr "Modifier les rôles de"
+
+#: .\user\templates\user\groupe_update_roles.html:15
+msgid "Update the roles of any user of this group"
+msgstr "Mettre à jour les rôles des membres de ce groupe"
+
+#: .\user\templates\user\profil_update.html:15
+msgid "Update user"
+msgstr "Modifier l'utilisateur"
+
+#: .\user\templates\user\profil_update.html:23
+#: .\user\templates\user\profile.html:123
+#: .\user\templates\user\profile.html:129
+msgid "Update"
+msgstr "Modifier"
+
+#: .\user\templates\user\profile.html:11
+msgid "Profile of"
+msgstr "Profil de"
+
+#: .\user\templates\user\profile.html:15 .\user\templates\user\profile.html:29
+msgid "Profile information"
+msgstr "Informations du profil"
+
+#: .\user\templates\user\profile.html:23
+msgid "Created groups"
+msgstr "Groupes créés"
+
+#: .\user\templates\user\profile.html:24
+msgid "Tunes added to Timtool"
+msgstr "Tunes ajoutés à Timtool"
+
+#: .\user\templates\user\profile.html:31
+msgid "Mail"
+msgstr "Email"
+
+#: .\user\templates\user\profile.html:32
+msgid "Creation date"
+msgstr "Date de création"
+
+#: .\user\templates\user\profile.html:37
+msgid "Groups I have created"
+msgstr "Groupes que j'ai créé"
+
+#: .\user\templates\user\profile.html:41
+msgid "I haven't created any group yet"
+msgstr "Je n'ai créé aucun groupe"
+
+#: .\user\templates\user\profile.html:67
+msgid "Tunes I have added to Timtool"
+msgstr "Tunes que j'ai ajouté à Timtool"
+
+#: .\user\templates\user\profile.html:71
+msgid "I haven't added any Tune to Timtool"
+msgstr "Je n'ai pas ajouté de Tunes à Timtool"
+
+#: .\user\views.py:48
+msgid "Your email has successfully been sent !"
+msgstr "Votre message a bien été envoyé !"
+
+#: .\user\views.py:83 .\user\views.py:275
+#, python-format
+msgid "The following filter has been applied : \"name\" contains \"%(name)s\""
+msgstr "Le filtre suivant a été appliqué : \"nom\" contient \"%(name)s\""
+
+#: .\user\views.py:103
+#, python-format
+msgid "The group \"%(groupname)s\" has been created."
+msgstr "Le groupe \"%(groupname)s\" a été créé."
+
+#: .\user\views.py:108 .\user\views.py:139
+#, python-format
+msgid "The group \"%(groupname)s\" already exists !"
+msgstr "Le groupe \"%(groupname)s\" existe déjà !"
+
+#: .\user\views.py:146
+#, python-format
+msgid "The group \"%(groupname)s\" has been updated"
+msgstr "Le groupe \"%(groupname)s\" a été mis à jour"
+
+#: .\user\views.py:167
+#, python-format
+msgid "The user \"%(username)s\" already exists"
+msgstr "L'utilisateur \"%(username)s\" existe déjà"
+
+#: .\user\views.py:175
+msgid "Your profile has been updated"
+msgstr "Votre profil a été mis à jour"
+
+#: .\user\views.py:188
+msgid "You have joined the group"
+msgstr "Vous avez rejoint le groupe"
+
+#: .\user\views.py:197
+msgid "You can't leave this group because you are the last administrator"
+msgstr "Vous ne pouvez pas quitter ce groupe car vous êtes le dernier administrateur"
+
+#: .\user\views.py:201
+msgid "You left this group"
+msgstr "Vous avez quitté ce groupe"
+
+#~ msgid ""
+#~ "\n"
+#~ "                Do you like the application? Would you like to support/encourage the guy behind it ? Feel free to <a href=\"%(url_donate)s\" class=\"btn btn-xs btn-success\">Make a present !</a>\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                Vous aimez l'application ? Vous souhaitez supporter/encourager le gars derrière tout ça ? Vous pouvez <a href=\"%(url_donate)s\" class=\"btn btn-xs btn-success\">lui faire un cadeau !</a>\n"
+#~ "                "
+
+#~ msgid "Make a gift to the developer"
+#~ msgstr "Faire un cadeau au développeur"
+
+#~ msgid "Make a gift with message"
+#~ msgstr "Faire un cadeau avec message"

@@ -1,0 +1,38 @@
+{% extends "tune/layout.html" %}
+{% load tune_filters %}
+{% load static %}
+{% load i18n %}
+{% load bootstrap_tags %}
+
+{% block title %}
+{% trans 'Add sound to' %} {{ tune_favori.of_tune.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Add sound to' %} {{ tune_favori.of_tune.name }}
+{% endblock %}
+
+{% block jumboMessage %}
+<p>{% blocktrans with type=tune_favori.of_tune.type key=tune_favori.of_tune.key %}{{ type }} in {{ key }}{% endblocktrans %}. {% trans 'Favorite Tune' %}.</p>
+{% endblock %}
+
+{% block timtool_body %}
+<h2>{% trans 'Form to add a sound' %}. <a href="#tuto_add_sound">({% trans 'How to add a sound ?'%})</a></h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form|as_bootstrap}}
+    <br/>
+    <input type="submit" class="btn btn-success" value="{% trans 'Add' %}" />
+</form>
+<h2 id="tuto_add_sound">{% trans 'How to add a sound ?'%}</h2>
+<ol>
+    <li>{% trans 'Go to Clyp website : '%}<a href="https://clyp.it/#signup" target="_blank">https://clyp.it/</a></li>
+    <li>{% trans 'Log in or Sign up'%}.</li>
+    <li>{% trans 'Click on "Upload a Clyp"'%}. ({% trans 'If you are lost, go '%}<a href="https://clyp.it/" target="_blank">{% trans 'here' %}</a> {% trans 'first' %}.)</li>
+    <li>{% trans 'Select the file to upload'%}.</li>
+    <li>{% trans 'Give it a name, a description, and even a picture if you wish'%}. <b>{% trans "VERY IMPORTANT : Let checked 'This Clyp is Public', otherwise, it won't be seen by Timtool =("%}</b>. <br/>{% trans "TIP : Let checked 'Download', and you will be able to download this Tune directly from Timtool =)"%}.</li>
+    <li>{% trans 'Click on the name of your Tune in order to go to the Tune page'%}. {% trans "You should see a Tune like" %} <a href="https://clyp.it/dg5yfi3q" target="_blank">{% trans 'this one' %}</a>.</li>
+    <li>{% trans 'Copy the link in "DIRECT LINK" field. It must start with "https://clyp.it/"'%}.</li>
+    <li>{% trans 'Come back on Timtool, paste the link into the link section of the form above, a description, and click on "Add" button.'%}.</li>
+</ol>
+{% endblock %}

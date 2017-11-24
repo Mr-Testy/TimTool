@@ -1,0 +1,26 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{{ tune.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{{ tune.name }}
+{% endblock %}
+
+{% block jumboMessage %}
+{{ tune.type }} en {{ tune.key }}{{ tune.mode }}. {{ tune.description }}
+{% endblock %}
+
+{% block timtool_body %}
+<h1>Êtes-vous sûr de vouloir supprimer ce tune ?</h1>
+
+<p>{{ tune.slug }} -&gt; {{ tune.name }} (créée le {{ tune.date|date:"DATE_FORMAT" }})</p>
+
+<form method="post" action="">
+   {% csrf_token %}
+   <input type="submit" class="btn btn-success" value="Oui, supprime moi ça" /> - <a href="{% url 'tune_liste' %}">Pas trop chaud en fait</a>
+</form>
+{% endblock %}

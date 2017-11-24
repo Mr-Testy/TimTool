@@ -1,0 +1,261 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load user_filters %}
+{% load i18n %}
+
+{% block title %}
+{{ group.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{{ group.name|truncatechars:30 }}
+{% endblock %}
+
+{% block jumboMessage %}
+{% blocktrans with nb_vues=group.nb_vues %}Seen {{ nb_vues }} times{% endblocktrans %}
+{% endblock %}
+
+{% block timtool_body %}
+<ul  class="nav nav-pills well">
+    <li class="active">
+        <a  href="#1a" data-toggle="tab">{% trans 'Description' %}</a>
+    </li>
+    <li><a href="#2a" data-toggle="tab">{% trans 'Favorite Tunes' %}</a></li>
+    <li><a href="#3a" data-toggle="tab">{% trans 'Members' %}</a></li>
+</ul>
+
+<div class="tab-content clearfix">
+  <div class="tab-pane active" id="1a">
+      <h1>{% trans 'Description' %}</h1>
+      <p>{{group.description}}</p>
+  </div>
+  <div class="tab-pane" id="2a">
+      <h1>{% trans 'Favorite Tunes of the group' %}</h1>
+      <div class="panel panel-primary wrappedTable">
+        <table class="table table-striped table-hover">
+            {% if group.tunes_favoris.all|length == 0 %}
+            <thead><tr><th>{% trans 'You have not added any Tunes in favorites.' %}</th></tr></thead>
+            {% else %}
+            <thead>
+                <tr>
+                    <th class="widthCell">{% trans 'Name' %}</th>
+                    <th class="">{% trans 'Type' %}</th>
+                    <th class="">{% trans 'Key' %}</th>
+                    <th>{% trans 'Status' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tune_favori in group.tunes_favoris.all %}
+                <tr data-id="{{tune_favori.of_tune.name}}">
+                    <td class="tuneName"><a
+                        href="{% url 'tune:tune_favori_lire' slug=tune_favori.slug %}"
+                        class="btn-link tooltipInfo" data-toggle="tooltip"
+                        title="Go to : {{ tune_favori.of_tune.name }}"><span>{{ tune_favori.of_tune.name }}</span>
+                        <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></td>
+                        <td class="">{{ tune_favori.of_tune.type }}</td>
+                        <td class="">{{ tune_favori.of_tune.key }}</td>
+                        <td>
+                                    {% if tune_favori.status == False %}
+                                    {% if user|role_of_this_group:group == "admin" %}
+                                    <button data-id="{{tune_favori.slug}}" class="btn btn-simple status tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune to learn' %}" type="button">
+                                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-simple tooltipInfo" data-toggle="tooltip" title="{% trans 'Only administrators can use this functionnality' %}" type="button">
+                                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                    </button>
+                                    {% endif %}
+                                    {% else %}
+                                    {% if user|role_of_this_group:group == "admin" %}
+                                    <button data-id="{{tune_favori.slug}}" class="btn btn-simple status tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune learnt' %}" type="button">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    </button>
+                                    {% else %}
+                                    <button class="btn btn-simple tooltipInfo" data-toggle="tooltip" title="{% trans 'Only administrators can use this functionnality' %}" type="button">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    </button>
+                                    {% endif %}
+                                    {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane" id="3a">
+      <h1>{% trans 'Group members' %}</h1>
+      <div class="panel panel-primary wrappedTable">
+        <table class="table table-striped table-hover">
+            {% if group.user_roles.all|length == 0 %}
+            <thead><tr><th>{% trans 'This group has not any member yet.' %}</th></tr></thead>
+            {% else %}
+            <thead>
+                <tr>
+                    <th class="widthCell">{% trans 'Username' %}</th>
+                    <th>{% trans 'Role' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_role in group.user_roles.all %}
+                <tr>
+                    <td class="">{{ user_role.of_user.username }}</td>
+                    <td class="">{{ user_role.role}}</td>
+                </tr>
+                {% endfor %}
+                <tr class="joined" hidden>
+                    <td class=""></td>
+                    <td class=""></td>
+                </tr>
+            </tbody>
+            {% endif %}
+        </table>
+        </div>
+</div>
+</div>
+{% endblock %}
+
+{% block actions %}
+{% trans "You must be logged in to use this feature" as not_connected %}
+{% if request.user.is_authenticated %}
+{% if user|role_of_this_group:group == "admin" %}
+<a class="list-group-item" href="{% url 'user:groupe_update' slug=group.slug%}">
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+</a>
+{% else %}
+<a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+title="{% trans 'Only administrators can use this functionnality' %}">
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+</a>
+{% endif %}
+{% else %}
+<a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+title="{{not_connected}}">
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+</a>
+{% endif %}
+
+{% if user|role_of_this_group:group == "admin" %}
+<a class="list-group-item" href="{% url 'user:groupe_add_favoris' slug=group.slug%}">
+    <i class="fa fa-plus" aria-hidden="true"></i> {% trans 'Add favorites' %}
+</a>
+{% else %}
+<a class="list-group-item disabled tooltipInfo" data-toggle="tooltip"
+title="{% trans 'Only administrators can use this functionnality' %}">
+<i class="fa fa-plus" aria-hidden="true"></i> {% trans 'Add favorites' %}
+</a>
+{% endif %}
+
+
+{% if request.user.is_authenticated %}
+{% if request.user|is_member:group.slug %}
+<form action="{% url 'user:groupe_leave' %}" method="post">
+    {% csrf_token %}
+    <input name="groupe_id" value="{{group.id}}" hidden>
+    <button type="submit" class="list-group-item">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> {% trans 'Leave this group' %}
+    </button>
+</form>
+{% else %}
+<form action="{% url 'user:groupe_join' %}" method="post">
+    {% csrf_token %}
+    <input name="groupe_id" value="{{group.id}}" hidden>
+    <button type="submit" class="list-group-item">
+        <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans 'Join this group' %}
+    </button>
+</form>
+{% endif %}
+{% else %}
+<button class="list-group-item tooltipInfo disabled" data-toggle="tooltip"
+title="{{not_connected}}">
+<i class="fa fa-sign-in" aria-hidden="true"></i> {% trans 'Join this group' %}e</button>
+{% endif %}
+{% endblock %}
+
+{% block actions_page %}
+
+<div class="row">
+    {% if request.user.is_authenticated %}
+    <a class="btn btn-success" href="{% url 'tune:generateur_group' slug=group.slug%}">
+        <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Generate Sets/Tunes' %}
+    </a>
+    {% else %}
+    <button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+    title="{% trans 'Only administrators can use this functionnality' %}">
+    <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Generate Sets/Tunes' %}
+</button>
+{% endif %}
+</div>
+
+<div class="row">
+    {% if request.user.is_authenticated %}
+    {% if user|role_of_this_group:group == "admin" %}
+    <a class="btn btn-success" href="{% url 'user:groupe_update' slug=group.slug%}">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+    </a>
+    {% else %}
+    <button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+    title="{% trans 'Only administrators can use this functionnality' %}">
+    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+</button>
+{% endif %}
+{% else %}
+<button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+title="{{not_connected}}">
+<i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans 'Update this group' %}
+</button>
+{% endif %}
+</div>
+
+<div class="row">
+    {% if user|role_of_this_group:group == "admin" %}
+    <a class="btn btn-success" href="{% url 'user:groupe_add_favoris' slug=group.slug%}">
+        <i class="fa fa-plus" aria-hidden="true"></i> {% trans 'Add favorites' %}
+    </a>
+    {% else %}
+    <button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+    title="{% trans 'Only administrators can use this functionnality' %}">
+    <i class="fa fa-plus" aria-hidden="true"></i> {% trans 'Add favorites' %}
+</button>
+{% endif %}
+</div>
+
+<div class="row">
+    {% if user|role_of_this_group:group == "admin" %}
+    <a class="btn btn-success" href="{% url 'user:groupe_update_roles' slug=group.slug%}">
+        <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Update members roles' %}
+    </a>
+    {% else %}
+    <button class="btn btn-success disabled tooltipInfo" data-toggle="tooltip"
+    title="{% trans 'Only administrators can use this functionnality' %}">
+        <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Update members roles' %}
+    </button>
+{% endif %}
+</div>
+<div class="row">
+    {% if request.user.is_authenticated %}
+    {% if request.user|is_member:group.slug %}
+    <form action="{% url 'user:groupe_leave' %}" method="post">
+        {% csrf_token %}
+        <input name="groupe_id" value="{{group.id}}" hidden>
+        <button type="submit" class="btn btn-success tooltipInfo" data-toggle="tooltip" title="{% trans 'You are member of this group' %}">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> {% trans 'Leave this group' %}
+        </button>
+    </form>
+    {% else %}
+    <form action="{% url 'user:groupe_join' %}" method="post">
+        {% csrf_token %}
+        <input name="groupe_id" value="{{group.id}}" hidden>
+        <button type="submit" class="btn btn-success tooltipInfo" data-toggle="tooltip" title="{% trans 'You are not member of this group' %}">
+            <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans 'Join this group' %}
+        </button>
+    </form>
+    {% endif %}
+    {% else %}
+    <button class="btn btn-success tooltipInfo" data-toggle="tooltip"
+    title="{{not_connected}}" disabled>
+    <i class="fa fa-sign-in" aria-hidden="true"></i> {% trans 'Join this group' %}</button>
+    {% endif %}
+</div>
+{% endblock %}

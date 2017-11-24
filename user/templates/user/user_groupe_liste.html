@@ -1,0 +1,79 @@
+{% extends "tune/layout.html" %}
+{% load user_filters %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Mes Groupes
+{% endblock %}
+
+{% block jumboTitle %}
+Mes Groupes
+{% endblock %}
+
+{% block jumboMessage %}
+Tous les groupes dont je suis membre ou admin
+{% endblock %}
+
+{% block timtool_body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Filtres</h1>
+        <form method="GET" action="" class="form-inline">
+            <div class="form-group">
+                <label for="q_name">Nom</label>
+                <input type="text" name="q_name" placeholder="filtrer par nom" id="q_name" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Filtrer</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Mes groupes</h1>
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if groups|length == 0 %}
+                <thead><tr><th>Vous n'êtes membre ou admin d'aucun groupe</th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">Nom</th>
+                        <th class="visible-lg">Description</th>
+                        <th class="visible-lg">Mon rôle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for group in groups %}
+                    <tr>
+                        <td class=""><a
+                            href="{% url 'user:groupe_lire' slug=group.slug %}"
+                            class="btn-link tooltipInfo" data-toggle="tooltip"
+                            title="Go to group : {{ group.name }}"><span>{{ group.name|truncatechars:30 }}</span>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></td>
+                        <td>{{group.description|truncatechars:40}}</td>
+                        <td>{{ user|role_of_this_group:group}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Précédente</a> —
+                {% endif %}
+                Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}
+                {% if page_obj.has_next %}
+                — <a href="?page={{ page_obj.next_page_number }}">Suivante</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock timtool_body %}

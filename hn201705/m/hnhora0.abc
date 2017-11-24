@@ -1,0 +1,127 @@
+This file contains 5 horas (#1 - #5).
+You can find more abc tune files at http://www.norbeck.nu/abc/
+
+These horas are dance tunes from Romania.
+
+Note the "strange" key signatures with both sharps and flats. These kinds of scales
+come from Turkish and Arabic music and are common in Balkan music.
+
+Last updated 3 May 2017.
+
+(c) Copyright 2017 Henrik Norbeck. This file:
+- May be distributed with restrictions below.
+- May not be used for commercial purposes (such as printing a tune book to sell).
+- This file (or parts of it) may not be made available on a web page for
+  download without permission from me.
+- This copyright notice must be kept, except when e-mailing individual tunes.
+- May be printed on paper for personal use.
+- Questions? E-mail: henrik@norbeck.nu
+
+R:hora
+M:C|
+L:1/8
+Z:id:hn-%R-%X
+
+X:1
+T:Hora Lautareasca
+R:hora
+O:Romania
+Z:id:hn-hora-1
+M:C|
+L:1/8
+Q:1/2=120
+K:Bphr ^d =c
+B^df |: "B"b^a^c'b "B/F#"bac'b | "B"b^a^c'^a "B/F#"b3^g |
+   "Am-5"=a^gba "Am-5/D#"agba | "Am-5"a^gbg "Am-5/D#"a2B2 |
+   "Em"z^def "Em/B"=ge^ab | "Em"^c'2b^a "Em/B"gefg |
+   [1 "A#dim"=a2gf "A#dim/E"e^deg | "B"f3B "B/F#"^dfa2 :|
+   [2 "A#dim"=a2gf "A#dim/E"efe^d | "B"^dB=cA "B/F#"B3e ||
+|: "B"^defg "B/F#"afg2 | "B"e^deg "B/F#"fffB |
+   "Em/G"ggg2 "B7/F#"fffB | "Em/G"ggg2 "B7/F#"fffe |
+   "B"^defg "B/F#"afg2 | "B"e^deg "B/F#"fffB |
+   "Am-5"g2fg "Am-5/D#"efe^d |1 "B"^dB=cA "B/F#"B3e :|2 "B"^dB=cA "B/F#"B3B ||
+|: "Am-5"B=cAB "Am-5/D#"cABc | "Am-5"^dB=cd "Am-5/D#"edcB |
+   "Am-5"AB=c^d "Am-5/D#"efe^d |1 "B"^dB=cA "B/F#"Bdf2 |
+   "Am-5"B=cAB "Am-5/D#"cABc | "Am-5"^dB=cd "Am-5/D#"e3a |
+   "Am-5"aggf "Am-5/D#"efe^d | "B"^dB=cA "B/F#"B3B :|2 "B"^dB=cA "B/F#"B3g |
+   "Am-5"a^gba "Am-5/D#"a=ggf | "Am-5"fee^d "Am-5/D#"d=ccB | 
+   "Am-5"AB=c^d "Am-5/D#"efed | "B"^dB=cA "B/F#"B ||
+
+X:2
+T:Hora ca din la caval
+R:hora
+H:A version of #3
+O:Romania
+Z:id:hn-hora-2
+M:C|
+L:1/8
+Q:1/2=120
+K:Ador ^d =c
+"Am"e2^d2 "Am/E"e2d2 | "Am"cAc2 "D#dim"^d3c | 
+   "E"e2^d2 "E/G#"cAc2 | "Am"^deec "Am/E"e4 |
+   [1 "Am"e2^d2 "Am7/G"e2d2 | "F#m7b5"cAc2 "D#dim"^d3c | 
+      "E"e2^d2 "E/G#"ceec | "Am"A4 A4 :|
+   [2 "Am"ABc^d "Am7/G"e2^d2 | "F#m7b5"cAc2 "D#dim"^d3c | 
+      "E"e2^d2 "E/G#"ceec | "Am"A4 A4 || 
+|: "Am"ABc^d "Am/E"e2^d2 | "Am"cAc2 "D#dim"^d3c | 
+   "E"e2^d2 "E/G#"cAc2 | "Am"^deec "Am/E"e4 | 
+   "Am"ABc^d "Am7/G"e2^d2 | "F#m7b5"cAc2 "D#dim"^d3c | 
+   "E"e2^d2 "E/G#"ceec | "Am"A4 A4 :| 
+|: "C"efgf "C/G"aggf | "C"fee^d "D#dim"dddc | 
+   "E"e2^d2 "E/G#"cAc2 | "Am"^deec "Am/E"e4 | 
+   "Am"a2a2-"Am7/G"a2g2 | "F#m7b5"fefe "D#dim"^dddc | 
+   "E"e2^d2 "E/G#"ceec | "Am"A4 A4 :| 
+
+X:3
+T:Hora batrineasca
+R:hora
+H:First part also played one octave down
+H:See also #2
+O:Romania
+Z:id:hn-hora-3
+M:C|
+K:Ador ^d =c
+|: ABc^d eA^de | cABc ^d3c | eA^de cAc2 | ^deec e4 |
+   ABc^d eA^de | cABc ^d3c | eA^de cAec | Aece A4 :|
+|: aefg afgf | e3c ^d3c | eA^dA cAc2 | ^deec e4 |
+   g2a2- a2g2 | fefe ^dddc | e2^d2 cAec | Aece A4 :|
+|: eA^de eA^de | cAc2 ^d3c | eA^de cAc2 | ^deec e4 |
+   [1 eA^de eA^de | cAc2 ^d3c | eA^de cAec | Aece A4 :|
+   [2 ABc^d eA^de | cAc2 ^d3c | eA^de cAec | Aece A4 || 
+
+X:4
+T:Hora
+R:hora
+S:Youtube "Hora Nr.172"
+O:Romania
+Z:id:hn-hora-4
+M:C|
+L:1/8
+K:Ephr ^g =f
+|: d^c=cB ABAG | GEFD EGB2 | d^c=cB ABAG | GEFD E4 :|
+|: EEB,E EEEE | FEDF EEEB, | EFGA BBAG | GEFD EGB2 |
+   EEB,E EEEE | FEDF EEEB, | EFGA BBAG | GEFD E4 :|
+|: AGAB ccBA | AGAB cABc | ddcB BAAG | GEFD EGB2 |
+   AGAB ccBA | AGAB cABc | ddcB BAAG | GEFD E4 :|
+|: dcBA ABAG | GEFD EGB2 | dcBA ABAG | GEFD E4 :|
+
+X:5
+T:Hora Din Arges
+R:hora
+S:Youtube "Hora Nr 137"
+O:Romania
+Z:id:hn-hora-5
+M:C|
+L:1/8
+K:Bphr ^d =c
+|: BcAc BBBF | BcAc BBBF | Bcde fed2 | dBde f4 |
+   aaaf gag2 | gefg dddB | cdc2 cABc | B2F2 B4 :|
+|: B2f2 fede | ddcd cBcA | B2f2 fede | d2cd cBcA |
+   B2f2 fede | fgab c'bag | agf2 fed2 | cBAc B4 :|
+|: BcAc BBBF | BcAc BBBF | Bcde fed2 | dBde f4 |
+   aaaf gag2 | gefg dddB | cdc2 cBAc | B2F2 B4 :|
+|: Bcde fed2 | dBde fffc | defg agf2 | fdfg a4 |
+   fgab c'ba2 | agfg fffc | ded2 cBAc | B2F2 B4 :|
+|: BcAc BBBF | BcAc BBBF | Bcde fed2 | dBde f4 |
+   aaaf gag2 | gefg dddB | cdc2 cBAc | B2F2 B4 :|
+

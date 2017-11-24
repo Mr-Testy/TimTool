@@ -1,0 +1,65 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load user_filters %}
+{% load i18n %}
+
+{% block title %}
+{{ group.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Update roles of'%} {{ group.name|truncatechars:30 }}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Update the roles of any user of this group'%}
+{% endblock %}
+
+{% block timtool_body %}
+      <h1>{% trans 'Group members' %}</h1>
+      <div class="panel panel-primary wrappedTable">
+        <table class="table table-striped table-hover">
+            {% if group.user_roles.all|length == 0 %}
+            <thead><tr><th>{% trans 'This group has not any member yet.' %}</th></tr></thead>
+            {% else %}
+            <thead>
+                <tr>
+                    <th class="widthCell">{% trans 'Username' %}</th>
+                    <th>{% trans 'Role' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user_role in group.user_roles.all %}
+                <tr>
+                    <td class="">{{ user_role.of_user.username }}</td>
+                    <td class="">  
+                        <select class="form-control choose_role" data-id="{{user_role.id}}">
+                            {% if user_role.role == "admin" %}
+    <option>Admin</option>
+    <option>Member</option>
+    {% else %}
+    <option>Member</option>
+    <option>Admin</option>
+    {% endif %}
+  </select></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% endif %}
+        </table>
+        </div>
+</div>
+</div>
+{% endblock %}
+
+{% block actions %}
+        <a class="list-group-item" href="{% url 'user:groupe_lire' slug=group.slug %}">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {% trans 'Back to the description' %}
+        </a>
+{% endblock %}
+
+    {% block actions_page %}
+        <a class="btn btn-success" href="{% url 'user:groupe_lire' slug=group.slug %}">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> {% trans 'Back to the description' %}
+        </a>
+    {% endblock %}

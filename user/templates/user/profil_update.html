@@ -1,0 +1,26 @@
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Modify' %} "{{user.username}}" 
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Modify' %} "{{user.username}}" 
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Update user' %} "{{user.username}}" {% trans 'filling the following form' %}
+{% endblock %}
+
+{% block timtool_body %}
+<div class="col-xs-12 col-sm-11 col-md-10 col-lg-9">
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|as_bootstrap }}
+    <input type="submit" class="btn btn-success" value="{% trans 'Update' %}" />
+</form>
+</div>
+{% endblock timtool_body %}
