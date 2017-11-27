@@ -1,3 +1,10 @@
 /timtool/settings.py
 __pycache__
 migrations
+backup tunes sql.csv
+cheatSheet
+cheatsheet-emmet.pdf
+django.po
+newabc.csv
+newtune.csv
+tune_recover.csv
