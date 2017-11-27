@@ -85,6 +85,13 @@ class ListeTunesFavoris(ListView):
 
 
 @login_required
+def tunes_favoris_dashboard(request):
+    tunes_favoris = request.user.tunes_favoris.all()
+    dashboard = []
+    return render(request, "tune/dashboard.html", {"tunes_favoris": tunes_favoris})
+
+
+@login_required
 def generateur(request):
     sets = ""
     tunes = ""

@@ -17,6 +17,7 @@ from django.conf.urls import url
 from tune.views import (
     ListeTunes,
     ListeTunesFavoris,
+    tunes_favoris_dashboard,
     generateur,
     generateur_group,
     comparateur,
@@ -34,6 +35,7 @@ from tune.views import (
 urlpatterns = [
     url(r'^liste/$', ListeTunes.as_view(), name="tune_liste",),
     url(r'^liste_favoris/$', ListeTunesFavoris.as_view(), name="tune_liste_favoris",),
+    url(r'^liste_favoris/dashboard/$', tunes_favoris_dashboard, name="tunes_favoris_dashboard",),
     url(r'^generateur/$', generateur, name="generateur",),
     url(r'^generateur/(?P<slug>[\w-]*)$', generateur_group, name="generateur_group",),
     url(r'^comparateur/$', comparateur, name="comparateur",),
