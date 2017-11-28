@@ -1,3 +1,18 @@
-{% for type in types %}
-{{type}}
-{% endfor %}
+{% extends "tune/layout.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Dashboard' %}
+{% endblock %}
+
+{% block jumboTitle %}
+{% trans 'Dashboard' %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% trans 'Dashboard of my favorite Tunes' %}
+{% endblock %}
+
+{% block timtool_body %}
+{% endblock %}

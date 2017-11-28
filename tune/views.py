@@ -86,6 +86,7 @@ class ListeTunesFavoris(ListView):
 
 @login_required
 def tunes_favoris_dashboard(request):
+    total = 0
     tunes_favoris = request.user.tunes_favoris.all()
     tunes = Tune.objects.filter(tunefavori__in=tunes_favoris)
     types = list(tunes.order_by('type').values('type').distinct())
@@ -96,7 +97,9 @@ def tunes_favoris_dashboard(request):
         learned = tunes_favoris.filter(of_tune__type=type, status=True).count()
         not_learned = tunes_favoris.filter(of_tune__type=type, status=False).count()
         dashboard[type] = [all, learned, not_learned]
-    return render(request, "tune/dashboard.html", {"tunes_favoris": tunes_favoris,
+
+    return render(request, "tune/dashboard.html", {"dashboard": dashboard,
+        "total": total
         })
 
 
