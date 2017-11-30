@@ -111,11 +111,17 @@
             <a class="list-group-item" href="{% url 'tune:generateur' %}">
                 <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Training !' %}
             </a>
+            <a class="list-group-item" href="{% url 'tune:tunes_favoris_dashboard' %}">
+                <i class="fa fa-tachometer" aria-hidden="true"></i> {% trans 'Dashboard !' %}
+            </a>
     {% endblock %}
 
         {% block actions_page %}
         <a class="btn btn-success" href="{% url 'tune:generateur' %}">
             <i class="fa fa-heartbeat" aria-hidden="true"></i> {% trans 'Training !' %}
+        </a>
+        <a class="btn btn-success" href="{% url 'tune:tunes_favoris_dashboard' %}">
+            <i class="fa fa-tachometer" aria-hidden="true"></i> {% trans 'Dashboard !' %}
         </a>
 
     {% endblock %}

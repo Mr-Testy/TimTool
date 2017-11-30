@@ -15,4 +15,37 @@
 {% endblock %}
 
 {% block timtool_body %}
+<div class="row">
+    <div class="col-sm-12 well">
+        <h1>{% trans "Total Tunes in favorites"%} : {{dashboard.all.0}}</h1>
+        <h2>{% trans "Total learned Tunes in favorites"%} : <span class="darkgreen">{{dashboard.all.1}}</span></h2>
+        <h2>{% trans "Total not learned Tunes in favorites"%} : <span class="darkred">{{dashboard.all.2}}</span></h2>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-12 well">
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="widthCell">{% trans 'All' %}</th>
+                        <th class="widthCell darkgreen">{% trans 'Learned' %}</th>
+                        <th class="widthCell darkred">{% trans 'Not learned yet' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, list in dashboard.items %}
+                    <tr>
+                            <th>{{key}}</th>
+                            <td>{{list.0}}</td>
+                            <td class="darkgreen">{{list.1}}</td>
+                            <td class="darkred">{{list.2}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-24 19:51+0100\n"
+"POT-Creation-Date: 2017-11-30 18:32+0100\n"
 "PO-Revision-Date: 2017-11-15 20:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -830,7 +830,7 @@ msgstr "Retirer un favori"
 #: .\tune\templates\tune\about.html:150
 #: .\user\templates\user\user_groupe_liste.html:7
 #: .\user\templates\user\user_groupe_liste.html:11
-#: .\user\templates\user\user_groupe_liste.html:32
+#: .\user\templates\user\user_groupe_liste.html:33
 msgid "My groups"
 msgstr "Mes Groupes"
 
@@ -846,7 +846,7 @@ msgstr "Afficher les détails d'un groupe"
 #: .\tune\templates\tune\tune_liste.html:38
 #: .\tune\templates\tune\tune_liste_favoris.html:38
 #: .\user\templates\user\groupe_liste.html:27
-#: .\user\templates\user\user_groupe_liste.html:26
+#: .\user\templates\user\user_groupe_liste.html:27
 msgid "Filter"
 msgstr "Filtrer"
 
@@ -1047,8 +1047,8 @@ msgstr "Aucun Tune trouvé"
 #: .\user\templates\user\groupe_liste.html:24
 #: .\user\templates\user\groupe_liste.html:41
 #: .\user\templates\user\profile.html:45 .\user\templates\user\profile.html:75
-#: .\user\templates\user\user_groupe_liste.html:23
-#: .\user\templates\user\user_groupe_liste.html:40
+#: .\user\templates\user\user_groupe_liste.html:24
+#: .\user\templates\user\user_groupe_liste.html:41
 msgid "Name"
 msgstr "Nom"
 
@@ -1196,6 +1196,39 @@ msgstr "Aucun Tune que je n'ai pas"
 #: .\tune\templates\tune\comparateur.html:113
 msgid "No tune only me have"
 msgstr "Aucun Tune que j'ai en plus"
+
+#: .\tune\templates\tune\dashboard.html:6
+#: .\tune\templates\tune\dashboard.html:10
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: .\tune\templates\tune\dashboard.html:14
+msgid "Dashboard of my favorite Tunes"
+msgstr "Tableau de bord de mes Tunes favoris"
+
+#: .\tune\templates\tune\dashboard.html:20
+msgid "Total Tunes in favorites"
+msgstr "Total des Tunes en favoris"
+
+#: .\tune\templates\tune\dashboard.html:21
+msgid "Total learned Tunes in favorites"
+msgstr "Total des Tunes appris en favoris"
+
+#: .\tune\templates\tune\dashboard.html:22
+msgid "Total not learned Tunes in favorites"
+msgstr "Total des Tunes non appris en favoris"
+
+#: .\tune\templates\tune\dashboard.html:32
+msgid "All"
+msgstr "Tous"
+
+#: .\tune\templates\tune\dashboard.html:33
+msgid "Learned"
+msgstr "Appris"
+
+#: .\tune\templates\tune\dashboard.html:34
+msgid "Not learned yet"
+msgstr "Pas appris"
 
 #: .\tune\templates\tune\generateur.html:8
 #: .\tune\templates\tune\generateur.html:12
@@ -1500,7 +1533,7 @@ msgstr "Pas de fichier audio ajouté à ce favori"
 #: .\user\templates\user\groupe_lire.html:29
 #: .\user\templates\user\groupe_liste.html:42
 #: .\user\templates\user\profile.html:46 .\user\templates\user\profile.html:78
-#: .\user\templates\user\user_groupe_liste.html:41
+#: .\user\templates\user\user_groupe_liste.html:42
 msgid "Description"
 msgstr "Description"
 
@@ -1518,8 +1551,8 @@ msgid "Add a sound"
 msgstr "Ajouter un son"
 
 #: .\tune\templates\tune\tune_favori_lire.html:74
-#: .\tune\templates\tune\tune_favori_lire.html:87 .\tune\views.py:490
-#: .\tune\views.py:493 .\user\models.py:103
+#: .\tune\templates\tune\tune_favori_lire.html:87 .\tune\views.py:509
+#: .\tune\views.py:512 .\user\models.py:103
 msgid "Only administrators of the group can use this functionnality"
 msgstr "Seuls les administrateurs de ce groupe peuvent utiliser cette fonctionnalité"
 
@@ -1546,7 +1579,7 @@ msgstr "Les champs 'Type' et 'Tonalité' sont sensibles aux majuscules/minuscule
 #: .\tune\templates\tune\tune_liste.html:23
 #: .\tune\templates\tune\tune_liste_favoris.html:23
 #: .\user\templates\user\groupe_liste.html:21
-#: .\user\templates\user\user_groupe_liste.html:20
+#: .\user\templates\user\user_groupe_liste.html:21
 msgid "Filters"
 msgstr "Filtres"
 
@@ -1566,13 +1599,13 @@ msgstr "Ajouté par"
 #: .\tune\templates\tune\tune_liste.html:102
 #: .\tune\templates\tune\tune_liste_favoris.html:97
 #: .\user\templates\user\groupe_liste.html:66
-#: .\user\templates\user\user_groupe_liste.html:67
+#: .\user\templates\user\user_groupe_liste.html:68
 msgid "Previous"
 msgstr "Précédent"
 
 #: .\tune\templates\tune\tune_liste.html:106
 #: .\tune\templates\tune\tune_liste_favoris.html:101
-#: .\user\templates\user\user_groupe_liste.html:71
+#: .\user\templates\user\user_groupe_liste.html:72
 msgid "Next"
 msgstr "Suivant"
 
@@ -1618,80 +1651,87 @@ msgid "Remove '%(name)s' from your favorites ?"
 msgstr "Retirer '%(name)s' de vos favoris ?"
 
 #: .\tune\templates\tune\tune_liste_favoris.html:112
-#: .\tune\templates\tune\tune_liste_favoris.html:118
+#: .\tune\templates\tune\tune_liste_favoris.html:121
 msgid "Training !"
 msgstr "Entrainement !"
+
+#: .\tune\templates\tune\tune_liste_favoris.html:115
+#: .\tune\templates\tune\tune_liste_favoris.html:124
+#: .\user\templates\user\profile.html:126
+#: .\user\templates\user\profile.html:135
+msgid "Dashboard !"
+msgstr "Tableau de bord !"
 
 #: .\tune\views.py:53 .\tune\views.py:79
 #, python-format
 msgid "The following filters have been applied : \"name\" contains \"%(name)s\" | \"type\" = \"%(type)s\" | \"key\" = \"%(key)s\""
 msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\""
 
-#: .\tune\views.py:112 .\tune\views.py:125 .\tune\views.py:137
-#: .\tune\views.py:146 .\tune\views.py:243 .\tune\views.py:256
-#: .\tune\views.py:268 .\tune\views.py:277
+#: .\tune\views.py:131 .\tune\views.py:144 .\tune\views.py:156
+#: .\tune\views.py:165 .\tune\views.py:262 .\tune\views.py:275
+#: .\tune\views.py:287 .\tune\views.py:296
 #, python-format
 msgid "The list of \"%(list_of)s\" among \"%(among)s\" is empty. Modify your search criterias."
 msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" est vide. Modifiez votre recherche."
 
-#: .\tune\views.py:195 .\tune\views.py:324
+#: .\tune\views.py:214 .\tune\views.py:343
 #, python-format
 msgid "The list of \"%(list_of)s\" among \"%(among)s\" has been generated"
 msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" a été générée"
 
-#: .\tune\views.py:219
+#: .\tune\views.py:238
 #, python-format
 msgid "The group \"%(slug)s\" doesn't exist"
 msgstr "Le groupe \"%(slug)s\" n'existe pas"
 
-#: .\tune\views.py:223
+#: .\tune\views.py:242
 #, python-format
 msgid "There are several groupes \"%(slug)s\". Impossible to generate tunes."
 msgstr "Il y a plusieurs groupes \"%(slug)s\". Impossible de générer des tunes."
 
-#: .\tune\views.py:368
+#: .\tune\views.py:387
 #, python-format
 msgid "The comparison of \"%(to_compare)s\" with user \"%(username)s\" is a success."
 msgstr "La comparaison de \"%(to_compare)s\" avec l'utilisateur \"%(username)s\" est un succès."
 
-#: .\tune\views.py:389
+#: .\tune\views.py:408
 #, python-format
 msgid "The comparison of \"%(to_compare)s\" with group \"%(groupname)s\" is a success."
 msgstr "La comparaison de \"%(to_compare)s\" avec le groupe \"%(groupname)s\" est un succès."
 
-#: .\tune\views.py:396
+#: .\tune\views.py:415
 msgid "The comparison of tunes has failed. An error appeared with name of the user or group"
 msgstr "La comparaison de tunes a échoué. Une erreur est survenue avec le nom de l'utilisateur ou du groupe"
 
-#: .\tune\views.py:402
+#: .\tune\views.py:421
 #, python-format
 msgid "The user \"%(username)s\" doesn't exist. Please enter an existing user"
 msgstr "L'utilisateur \"%(username)s\" n'existe pas. Entrez un utilisateur existant"
 
-#: .\tune\views.py:408
+#: .\tune\views.py:427
 #, python-format
 msgid "The group \"%(groupname)s\" doesn't exist. Please enter an existing group"
 msgstr "Le groupe \"%(groupname)s\" n'existe pas. Entrez un groupe existant"
 
-#: .\tune\views.py:414
+#: .\tune\views.py:433
 #, python-format
 msgid "There are several users \"%(username)s\". Impossible to compare Tunes."
 msgstr "Il y a plusieurs utilisateurs \"%(username)s\". Impossible de comparer les Tunes."
 
-#: .\tune\views.py:418
+#: .\tune\views.py:437
 #, python-format
 msgid "There are several groups \"%(groupname)s\". Impossible to compare Tunes."
 msgstr "Il y a plusieurs groupes \"%(groupname)s\". Impossible de comparer les Tunes."
 
-#: .\tune\views.py:447 .\tune\views.py:482
+#: .\tune\views.py:466 .\tune\views.py:501
 msgid "This Tune is not among your favorites !"
 msgstr "Ce Tune est absent de vos favoris !"
 
-#: .\tune\views.py:454
+#: .\tune\views.py:473
 msgid "This is the page of the favorite Tune. If you wish to go to the global Tune, go there : "
 msgstr "Cette page est la page personnelle du Tune favori. Si vous souhaitez afficher le Tune global, rendez-vous ici : "
 
-#: .\tune\views.py:523 .\tune\views.py:526
+#: .\tune\views.py:542 .\tune\views.py:545
 msgid "Processus successfully ended !"
 msgstr "Traitement terminé avec succès !"
 
@@ -1923,6 +1963,7 @@ msgid "All groups from Timtool"
 msgstr "Tous les Tunes de Timtool"
 
 #: .\user\templates\user\groupe_liste.html:25
+#: .\user\templates\user\user_groupe_liste.html:25
 msgid "Filter by name"
 msgstr "Filtrer par nom"
 
@@ -1969,7 +2010,7 @@ msgstr "Modifier l'utilisateur"
 
 #: .\user\templates\user\profil_update.html:23
 #: .\user\templates\user\profile.html:123
-#: .\user\templates\user\profile.html:129
+#: .\user\templates\user\profile.html:132
 msgid "Update"
 msgstr "Modifier"
 
@@ -2017,56 +2058,56 @@ msgstr "Je n'ai pas ajouté de Tunes à Timtool"
 msgid "All groups where I am member or Administrator"
 msgstr "Tous les groupes pour lesquels je suis admin ou membre"
 
-#: .\user\templates\user\user_groupe_liste.html:36
+#: .\user\templates\user\user_groupe_liste.html:37
 msgid "You are not member or admin in any group"
 msgstr "Vous n'êtes membre ou administrateur d'aucun groupe"
 
-#: .\user\templates\user\user_groupe_liste.html:42
+#: .\user\templates\user\user_groupe_liste.html:43
 msgid "My role"
 msgstr "Mon rôle"
 
-#: .\user\views.py:48
+#: .\user\views.py:41
 msgid "Your email has successfully been sent !"
 msgstr "Votre message a bien été envoyé !"
 
-#: .\user\views.py:83 .\user\views.py:275
+#: .\user\views.py:76 .\user\views.py:268
 #, python-format
 msgid "The following filter has been applied : \"name\" contains \"%(name)s\""
 msgstr "Le filtre suivant a été appliqué : \"nom\" contient \"%(name)s\""
 
-#: .\user\views.py:103
+#: .\user\views.py:96
 #, python-format
 msgid "The group \"%(groupname)s\" has been created."
 msgstr "Le groupe \"%(groupname)s\" a été créé."
 
-#: .\user\views.py:108 .\user\views.py:139
+#: .\user\views.py:101 .\user\views.py:132
 #, python-format
 msgid "The group \"%(groupname)s\" already exists !"
 msgstr "Le groupe \"%(groupname)s\" existe déjà !"
 
-#: .\user\views.py:146
+#: .\user\views.py:139
 #, python-format
 msgid "The group \"%(groupname)s\" has been updated"
 msgstr "Le groupe \"%(groupname)s\" a été mis à jour"
 
-#: .\user\views.py:167
+#: .\user\views.py:160
 #, python-format
 msgid "The user \"%(username)s\" already exists"
 msgstr "L'utilisateur \"%(username)s\" existe déjà"
 
-#: .\user\views.py:175
+#: .\user\views.py:168
 msgid "Your profile has been updated"
 msgstr "Votre profil a été mis à jour"
 
-#: .\user\views.py:188
+#: .\user\views.py:181
 msgid "You have joined the group"
 msgstr "Vous avez rejoint le groupe"
 
-#: .\user\views.py:197
+#: .\user\views.py:190
 msgid "You can't leave this group because you are the last administrator"
 msgstr "Vous ne pouvez pas quitter ce groupe car vous êtes le dernier administrateur"
 
-#: .\user\views.py:201
+#: .\user\views.py:194
 msgid "You left this group"
 msgstr "Vous avez quitté ce groupe"
 
