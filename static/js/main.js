@@ -176,7 +176,7 @@ $(function () {
         $(this).click(function () {
             var submit = $(this);
             if (submit.attr("id")=="unfavori") {
-                var label="lol";
+                var label= submit.attr("data-id");
             } else {
             var label = submit.parents("tr").last().attr("data-id");
             }

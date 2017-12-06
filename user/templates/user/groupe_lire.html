@@ -16,14 +16,19 @@
 {% endblock %}
 
 {% block timtool_body %}
-<ul  class="nav nav-pills well">
+        <div class="row well">
+            <div class="col-xs-12">
+<ul  class="nav nav-pills">
     <li class="active">
         <a  href="#1a" data-toggle="tab">{% trans 'Description' %}</a>
     </li>
     <li><a href="#2a" data-toggle="tab">{% trans 'Favorite Tunes' %}</a></li>
     <li><a href="#3a" data-toggle="tab">{% trans 'Members' %}</a></li>
 </ul>
-
+</div>
+</div>
+        <div class="row well">
+            <div class="col-xs-12">
 <div class="tab-content clearfix">
   <div class="tab-pane active" id="1a">
       <h1>{% trans 'Description' %}</h1>
@@ -113,7 +118,10 @@
         </table>
         </div>
 </div>
+</div> 
 </div>
+</div>
+{% include 'disqus.html' with PAGE_IDENTIFIER="Group : "|add:group.slug %}
 {% endblock %}
 
 {% block actions %}

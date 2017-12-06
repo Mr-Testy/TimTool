@@ -20,15 +20,20 @@
 {% endblock %}
 
 {% block timtool_body %}
+        <div class="row well">
+            <div class="col-xs-12">
 <h1>{% trans 'Audio files' %}</h1>
 {% if type == "user" %}
     {% if tune_favori.audio_clyp_user_favori_set.all|length == 0 %}
-        {% trans 'No audio file added to this favorite' %}
+        <p>{% trans 'No audio file added to this favorite' %}</p>
     {% else %}
         {% for clyp in tune_favori.audio_clyp_user_favori_set.all %}
-        <div class="temp">
+                <div class="row">
+            <div class="col-xs-12">
         <h2>{% trans 'Title' %} : {{clyp.name}}</h2>
         <p>{% trans 'Description' %} : {{clyp.description}}</p>
+    </div>
+</div>
         <div class="row">
             <div class="col-xs-11">
             <iframe width="100%" height="150" src="{{clyp.href}}/widget" frameborder="0"></iframe>
@@ -39,16 +44,19 @@
                                     </button>
                                 </div>
         </div>
-        </div>
         {% endfor %}
     {% endif %}
 {% else %}
     {% if tune_favori.audio_clyp_group_favori_set.all|length == 0 %}
-        {% trans 'No audio file added to this favorite' %}
+        <p>{% trans 'No audio file added to this favorite' %}</p>
     {% else %}
         {% for clyp in tune_favori.audio_clyp_group_favori_set.all %}
+                <div class="row">
+            <div class="col-xs-12">
         <h2>{% trans 'Title' %} : {{clyp.name}}</h2>
         <p>{% trans 'Description' %} : {{clyp.description}}</p>
+    </div>
+</div>
         <div class="row">
             <div class="col-xs-11">
             <iframe width="100%" height="150" src="{{clyp.href}}/widget" frameborder="0"></iframe>
@@ -62,6 +70,9 @@
         {% endfor %}
     {% endif %}
 {% endif %}
+</div>
+</div>
+{% include 'disqus.html' with PAGE_IDENTIFIER="Favorite Tune : "|add:tune_favori.slug %}
 {% endblock %}
 
     {% block actions_page %}
