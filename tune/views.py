@@ -6,9 +6,10 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
+from django.template.defaultfilters import slugify
 import random
 
-from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori
+from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori, Audio_clyp
 from .forms import GenerateurForm, UploadABCFileForm, TextAreaABCForm, ClypForm
 from user.models import User, GroupExtend
 from user.forms import CompareUserForm
@@ -68,6 +69,7 @@ class ListeTunesFavoris(ListView):
         q_name = self.request.GET.get("q_name", None)
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
+        q_status = self.request.GET.get("q_status", None)
         tunes_favoris = TuneFavori_user.objects.filter(of_user=self.request.user)
         if q_name:
             tunes_favoris = tunes_favoris.filter(of_tune__name__icontains=q_name)
@@ -75,11 +77,16 @@ class ListeTunesFavoris(ListView):
             tunes_favoris = tunes_favoris.filter(of_tune__type=q_type)
         if q_key:
             tunes_favoris = tunes_favoris.filter(of_tune__key=q_key)
-        if q_name or q_type or q_key:
-            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s"') % {
+        if q_status == "Learned":
+            tunes_favoris = tunes_favoris.filter(status=True)
+        elif q_status == "Not learned":
+            tunes_favoris = tunes_favoris.filter(status=False)
+        if q_name or q_type or q_key or q_status == "Learned" or q_status == "Not learned":
+            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "status" = "%(status)s"') % {
                 'name': q_name,
                 'type': q_type,
-                'key': q_key
+                'key': q_key,
+                'status': q_status
             })
         return tunes_favoris
 
@@ -524,7 +531,12 @@ def tune_favori_add_sound(request, slug):
         audio_clyp.name = form.cleaned_data["name"]
         audio_clyp.href = form.cleaned_data["href"]
         audio_clyp.added_by = request.user
-        audio_clyp.save()
+        try:
+            obj = Audio_clyp.objects.get(slug=slugify(audio_clyp.href + "-" + request.user.username))
+            messages.error(request, _('You have already linked this sound to another favorite'))
+            return redirect("tune:tune_favori_add_sound", slug=slug)
+        except Audio_clyp.DoesNotExist:
+            audio_clyp.save()
         return redirect("tune:tune_favori_lire", slug=slug)
 
     return render(request, 'tune/tune_favori_add_sound.html', {

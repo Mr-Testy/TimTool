@@ -80,6 +80,11 @@ class TuneFavori_user(TuneFavori):
             self.of_user.username
         )
 
+    def has_audio(self):
+        if self.audio_clyp_user_favori_set.count() > 0:
+            return True
+        return False
+
 
 def create_tune_favori_slug_group(sender, instance, **kwargs):
     instance.slug = instance.of_tune.slug + "-" + instance.of_group.name + "-group"

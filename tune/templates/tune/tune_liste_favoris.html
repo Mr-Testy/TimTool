@@ -35,6 +35,14 @@
                 <label for="q_key">{% trans 'Key' %}</label>
                 <input type="text" name="q_key" placeholder="A, Edor, Em, Dmix..." id="q_key" class="form-control">
             </div>
+            <div class="form-group">
+                <label for="q_status">{% trans 'Status' %}</label>
+                <select class="form-control" name="q_status">
+  <option>{% trans 'Choose' %}</option>
+  <option>{% trans 'Learned' %}</option>
+  <option>{% trans 'Not learned' %}</option>
+</select>
+        </div>
             <button type="submit" class="btn btn-success">{% trans 'Filter' %}</button>
         </form>
     </div>
@@ -42,6 +50,7 @@
 <div class="row">
     <div class="col-sm-12">
         <h1>{% trans 'List of your favorite Tunes' %}</h1>
+        {% trans "This tune has sound linked to it !" as music %}
         <div class="panel panel-primary wrappedTable">
             <table class="table table-striped table-hover">
                 {% if all_tunes_favoris|length == 0 %}
@@ -63,7 +72,11 @@
                             href="{% url 'tune:tune_favori_lire' slug=tune_favori.slug %}"
                             class="btn-link tooltipInfo" data-toggle="tooltip"
                             title="Go to favorite: {{ tune_favori.of_tune.name }}"><span>{{ tune_favori.of_tune.name }}</span>
-                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></td>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+                            {% if tune_favori|tune_favori_has_sound %}
+                            {% include 'music.html' with message=music %}
+                            {% endif %}
+                        </td>
                             <td class="">{{ tune_favori.of_tune.type }}</td>
                             <td class="">{{ tune_favori.of_tune.key }}</td>
                             <td>

@@ -18,3 +18,7 @@ def group_has_tune_favori(self, tune):
     else:
         return False
 
+
+@register.filter(name='tune_favori_has_sound')
+def tune_favori_has_sound(self):
+    return self.has_audio()
