@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 19:50+0100\n"
+"POT-Creation-Date: 2017-12-11 22:05+0100\n"
 "PO-Revision-Date: 2017-11-15 20:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -377,6 +377,10 @@ msgstr ""
 #, python-format
 msgid "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
 msgstr "<strong>Remarque: </strong> vous pouvez toujours <a href=\"%(email_url)s\">modifier votre adresse électronique</a>."
+
+#: .\templates\disqus.html:5
+msgid "Discussion about :"
+msgstr "Discussion à propos de :"
 
 #: .\templates\openid\login.html:9
 msgid "OpenID Sign In"
@@ -1682,6 +1686,7 @@ msgid "The following filters have been applied : \"name\" contains \"%(name)s\" 
 msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\""
 
 #: .\tune\views.py:85
+#, python-format
 msgid "The following filters have been applied : \"name\" contains \"%(name)s\" | \"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | \"status\" = \"%(status)s\""
 msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | \"status\" = \"%(status)s\""
 
