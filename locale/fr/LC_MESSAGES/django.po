@@ -1792,7 +1792,7 @@ msgstr "Cochez si vous souhaitez recevoir une copie de l'e-mail envoyé"
 
 #: .\user\forms.py:23
 msgid "Only my favorite learned Tunes"
-msgstr "Tous mes Tunes favoris"
+msgstr "Seulement mes Tunes favoris appris"
 
 #: .\user\forms.py:23
 msgid "All my favorite Tunes"
