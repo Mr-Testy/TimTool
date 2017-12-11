@@ -102,9 +102,9 @@ msgstr ""
 "\n"
 "Vous recevez ce message car l'utilisateur %(user_display)s essaie d'associer son compte avec vôtre email.\n"
 "\n"
-"Afin confirmer que vous êtes bien à l'origine de cette demande, rendez-vous au lien suivant : %(activate_url)s\n"
+"Afin de confirmer que vous êtes bien à l'origine de cette demande, rendez-vous au lien suivant : %(activate_url)s\n"
 "\n"
-"Sinon, ne tenez pas en compte de ce message.\n"
+"Sinon, ne tenez pas compte de ce message.\n"
 
 #: .\templates\account\email\email_confirmation_message.txt:9
 #, python-format
@@ -527,7 +527,7 @@ msgstr "Le lien doit commencer par \"https://clyp.it/\""
 #: .\tune\templates\tune\about.html:6 .\tune\templates\tune\about.html:131
 #: .\tune\templates\tune\accueil.html:21 .\tune\templates\tune\layout.html:103
 msgid "About"
-msgstr "A propos"
+msgstr "A propos de"
 
 #: .\tune\templates\tune\about.html:10
 msgid "About Timtool"
