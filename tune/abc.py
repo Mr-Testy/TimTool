@@ -1,6 +1,8 @@
 from .models import ABCTune, Tune
 from django.template.defaultfilters import slugify
 from django.contrib import messages
+from os import remove
+from music21 import converter
 
 
 def handle_uploaded_file(file, request):
@@ -128,3 +130,48 @@ def handle_text_area(str, request):
                 messages.success(request, "le tune " + tune.slug + " a bien été créé")
         else:
             messages.error(request, "abc incomplet ou erroné. Les champs T: (titre), K: (tonalité) et R: (type) sont obligatoires")
+
+
+def constructABC_from_tune(tune, path, temp_path):
+    file = open(temp_path, 'w')
+    file.write("X:" + str(tune.id) + "\n")
+    if tune.abc.T:
+        file.write("T:" + tune.abc.T + "\n")
+    if tune.abc.R:
+        file.write("R:" + tune.abc.R + "\n")
+    if tune.abc.C:
+        file.write("C:" + tune.abc.C + "\n")
+    if tune.abc.D:
+        file.write("D:" + tune.abc.D + "\n")
+    if tune.abc.Z:
+        file.write("Z:" + tune.abc.Z + "\n")
+    if tune.abc.M:
+        file.write("M:" + tune.abc.M + "\n")
+    if tune.abc.L:
+        file.write("L:" + tune.abc.L + "\n")
+    if tune.abc.Q:
+        file.write("Q:" + tune.abc.Q + "\n")
+    if tune.abc.K:
+        file.write("K:" + tune.abc.K + "\n")
+    if tune.abc.W:
+        file.write("W:" + tune.abc.W + "\n")
+    file.write(tune.abc.content)
+    file.close()
+    with open(temp_path, 'r+') as infile, open(path, 'w') as outfile:
+        for line in infile:
+            if not line.isspace():
+                outfile.write(line)
+    remove(temp_path)
+
+
+def constructSVG_from_ABC(path_abc, path_svg):
+    print(path_abc)
+    file = converter.parse(str(path_abc))
+    path_svg = str(path_svg).replace('.svg', '')
+    file.write('lily.svg', str(path_svg))
+    remove(path_svg)
+
+
+def constructMIDI_from_ABC(path_abc, path_midi):
+    file = converter.parse(str(path_abc))
+    file.write('midi', str(path_midi))

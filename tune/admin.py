@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tune, TuneFavori, TuneFavori_user, TuneFavori_group, Audio_clyp_tune, Audio_clyp_user_favori, Audio_clyp_group_favori
+from .models import Tune, TuneFavori, TuneFavori_user, TuneFavori_group, Audio_clyp_tune, Audio_clyp_user_favori, Audio_clyp_group_favori, ABCTune
 
 # Register your models here.
 
@@ -19,3 +19,4 @@ admin.site.register(TuneFavori_group)
 admin.site.register(Audio_clyp_group_favori)
 admin.site.register(Audio_clyp_user_favori)
 admin.site.register(Audio_clyp_tune)
+admin.site.register(ABCTune)

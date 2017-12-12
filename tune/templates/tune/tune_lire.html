@@ -37,9 +37,11 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
             <div class="col-xs-12">
 <ul  class="nav nav-pills">
   <li class="active">
-    <a  href="#1a" data-toggle="tab">{% trans 'Description' %}</a>
+    <a  href="#1a" data-toggle="tab">{% trans 'Music sheet' %}</a>
   </li>
   <li><a href="#2a" data-toggle="tab">ABC</a></li>
+  <li><a href="#3a" data-toggle="tab">Audio</a></li>
+  <li><a href="#4a" data-toggle="tab">{% trans 'Description' %}</a></li>
 </ul>
 </div>
 </div>
@@ -48,12 +50,23 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
             <div class="col-xs-12">
 <div class="tab-content clearfix">
   <div class="tab-pane active" id="1a">
-    <h1>{% trans 'Description' %}</h1>
-    <p>{{tune.description}}</p>
+    <h1>{% trans 'Music sheet' %}</h1>
+    <img src="{{tune.path_svg}}" alt="music sheet">
   </div>
+
   <div class="tab-pane" id="2a">
     <h1>ABC</h1>
     <p>{{tune.abc.content|linebreaksbr}}</p>
+  </div>
+
+  <div class="tab-pane" id="3a">
+    <h1>ABC</h1>
+    <p>{{tune.abc.content|linebreaksbr}}</p>
+  </div>
+
+  <div class="tab-pane" id="4a">
+    <h1>{% trans 'Description' %}</h1>
+    <p>{{tune.description}}</p>
   </div>
 </div>
 </div>

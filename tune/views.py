@@ -1,19 +1,21 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.core.urlresolvers import reverse_lazy
+from django.conf import settings
 from django.utils.decorators import method_decorator
 from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
 from django.template.defaultfilters import slugify
+from pathlib import Path
 import random
 
 from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori, Audio_clyp
 from .forms import GenerateurForm, UploadABCFileForm, TextAreaABCForm, ClypForm
 from user.models import User, GroupExtend
 from user.forms import CompareUserForm
-from tune.abc import handle_uploaded_file, handle_text_area
+from tune.abc import handle_uploaded_file, handle_text_area, constructABC_from_tune, constructSVG_from_ABC, constructMIDI_from_ABC
 
 
 class LoginRequiredMixin(object):
@@ -459,6 +461,20 @@ class LireTune(DetailView):
     def get_object(self):
         tune = super(LireTune, self).get_object()
         tune.nb_vues = tune.nb_vues + 1
+        path_abc = Path(settings.STATIC_URL + "tune_abc/" + tune.slug + ".abc")
+        path_svg = Path(settings.STATIC_URL + "tune_svg/" + tune.slug + ".svg")
+        path_midi = Path(settings.STATIC_URL + "tune_midi/" + tune.slug + ".midi")
+        temp_path = Path(settings.STATIC_URL + "tune_abc/" + tune.slug + "temp.abc")
+        if not path_abc.is_file():
+            constructABC_from_tune(tune, path_abc, temp_path)
+            tune.path_abc = path_abc
+        if not path_svg.is_file():
+            constructSVG_from_ABC(path_abc, path_svg)
+            tune.path_svg = path_svg
+        if not path_midi.is_file():
+            constructMIDI_from_ABC(path_abc, path_midi)
+            tune.path_midi = path_midi
+        print(tune.path_svg)
         tune.save()
         return tune
 
