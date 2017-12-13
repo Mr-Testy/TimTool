@@ -33,9 +33,6 @@ class Tune(models.Model):
     added_by = models.ForeignKey(User, null=False, blank=False)
     nb_vues = models.IntegerField(default=0)
     abc = models.OneToOneField(ABCTune)
-    path_abc = models.CharField(max_length=150, null=True, blank=False)
-    path_midi = models.CharField(max_length=150, null=True, blank=False)
-    path_svg = models.CharField(max_length=150, null=True, blank=False)
 
     def __str__(self):
         return self.name

@@ -461,20 +461,17 @@ class LireTune(DetailView):
     def get_object(self):
         tune = super(LireTune, self).get_object()
         tune.nb_vues = tune.nb_vues + 1
-        path_abc = Path(settings.STATIC_URL + "tune_abc/" + tune.slug + ".abc")
-        path_svg = Path(settings.STATIC_URL + "tune_svg/" + tune.slug + ".svg")
-        path_midi = Path(settings.STATIC_URL + "tune_midi/" + tune.slug + ".midi")
-        temp_path = Path(settings.STATIC_URL + "tune_abc/" + tune.slug + "temp.abc")
+        path_abc = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + ".abc")
+        path_svg = Path(settings.MEDIA_ROOT + "tune_svg/" + tune.slug + ".svg")
+        path_midi = Path(settings.MEDIA_ROOT + "tune_midi/" + tune.slug + ".mid")
+        path_wav = Path(settings.MEDIA_ROOT + "tune_wav/" + tune.slug + ".wav")
+        temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "temp.abc")
         if not path_abc.is_file():
             constructABC_from_tune(tune, path_abc, temp_path)
-            tune.path_abc = path_abc
         if not path_svg.is_file():
             constructSVG_from_ABC(path_abc, path_svg)
-            tune.path_svg = path_svg
         if not path_midi.is_file():
-            constructMIDI_from_ABC(path_abc, path_midi)
-            tune.path_midi = path_midi
-        print(tune.path_svg)
+            constructMIDI_from_ABC(path_abc, path_midi, path_wav)
         tune.save()
         return tune
 

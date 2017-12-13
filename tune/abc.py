@@ -3,6 +3,7 @@ from django.template.defaultfilters import slugify
 from django.contrib import messages
 from os import remove
 from music21 import converter
+# from midi2audio import FluidSynth
 
 
 def handle_uploaded_file(file, request):
@@ -141,8 +142,6 @@ def constructABC_from_tune(tune, path, temp_path):
         file.write("R:" + tune.abc.R + "\n")
     if tune.abc.C:
         file.write("C:" + tune.abc.C + "\n")
-    if tune.abc.D:
-        file.write("D:" + tune.abc.D + "\n")
     if tune.abc.Z:
         file.write("Z:" + tune.abc.Z + "\n")
     if tune.abc.M:
@@ -165,13 +164,14 @@ def constructABC_from_tune(tune, path, temp_path):
 
 
 def constructSVG_from_ABC(path_abc, path_svg):
-    print(path_abc)
     file = converter.parse(str(path_abc))
     path_svg = str(path_svg).replace('.svg', '')
     file.write('lily.svg', str(path_svg))
     remove(path_svg)
 
 
-def constructMIDI_from_ABC(path_abc, path_midi):
+def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
     file = converter.parse(str(path_abc))
     file.write('midi', str(path_midi))
+    # fs = FluidSynth()
+    # fs.midi_to_audio(str(path_midi), str(path_wav))

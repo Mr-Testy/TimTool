@@ -51,7 +51,7 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
 <div class="tab-content clearfix">
   <div class="tab-pane active" id="1a">
     <h1>{% trans 'Music sheet' %}</h1>
-    <img src="{{tune.path_svg}}" alt="music sheet">
+    <img src="https://files.timtool.ovh/tune_svg/{{tune.slug}}.svg" alt="music sheet">
   </div>
 
   <div class="tab-pane" id="2a">
@@ -60,8 +60,8 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
   </div>
 
   <div class="tab-pane" id="3a">
-    <h1>ABC</h1>
-    <p>{{tune.abc.content|linebreaksbr}}</p>
+    <h1>Audio</h1>
+    <audio src="https://files.timtool.ovh/tune_midi/{{tune.slug}}.midi" controls preload="none"></audio>
   </div>
 
   <div class="tab-pane" id="4a">
