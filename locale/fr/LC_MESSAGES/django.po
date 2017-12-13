@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-11 22:05+0100\n"
-"PO-Revision-Date: 2017-11-15 20:24+0100\n"
+"POT-Creation-Date: 2017-12-13 23:56+0100\n"
+"PO-Revision-Date: 2017-12-14 00:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -72,8 +72,13 @@ msgid "Warning:"
 msgstr "Attention:"
 
 #: .\templates\account\email.html:43
-msgid "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc."
-msgstr "Vous n'avez actuellement aucune adresse e-mail configurée. Nous vous conseillons vraiment d'ajouter une adresse e-mail afin que vous puissiez recevoir des notifications, réinitialiser votre mot de passe, etc."
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Vous n'avez actuellement aucune adresse e-mail configurée. Nous vous "
+"conseillons vraiment d'ajouter une adresse e-mail afin que vous puissiez "
+"recevoir des notifications, réinitialiser votre mot de passe, etc."
 
 #: .\templates\account\email.html:48
 msgid "Add E-mail Address"
@@ -92,7 +97,8 @@ msgstr "Voulez-vous vraiment supprimer l'adresse e-mail sélectionnée?"
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this message because user %(user_display)s tries to link his %(site_name)s account with your email.\n"
+"You're receiving this message because user %(user_display)s tries to link "
+"his %(site_name)s account with your email.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 "\n"
@@ -100,9 +106,11 @@ msgid ""
 msgstr ""
 "Bonjour de %(site_name)s!\n"
 "\n"
-"Vous recevez ce message car l'utilisateur %(user_display)s essaie d'associer son compte avec vôtre email.\n"
+"Vous recevez ce message car l'utilisateur %(user_display)s essaie d'associer "
+"son compte avec vôtre email.\n"
 "\n"
-"Afin de confirmer que vous êtes bien à l'origine de cette demande, rendez-vous au lien suivant : %(activate_url)s\n"
+"Afin de confirmer que vous êtes bien à l'origine de cette demande, rendez-"
+"vous au lien suivant : %(activate_url)s\n"
 "\n"
 "Sinon, ne tenez pas compte de ce message.\n"
 
@@ -124,18 +132,24 @@ msgstr "Merci de confirmer votre adresse e-mail"
 msgid ""
 "Hello from %(site_name)s!\n"
 "\n"
-"You're receiving this e-mail because you or someone else has requested a password for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
 "Bonjour de %(site_name)s!\n"
 "\n"
-"Vous recevez cet message car vous ou quelqu'un d'autre a demandé un mot de passe pour votre compte utilisateur.\n"
-"Il peut être ignoré en toute sécurité si vous n'avez pas demandé une réinitialisation de mot de passe. Cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe."
+"Vous recevez cet message car vous ou quelqu'un d'autre a demandé un mot de "
+"passe pour votre compte utilisateur.\n"
+"Il peut être ignoré en toute sécurité si vous n'avez pas demandé une "
+"réinitialisation de mot de passe. Cliquez sur le lien ci-dessous pour "
+"réinitialiser votre mot de passe."
 
 #: .\templates\account\email\password_reset_key_message.txt:8
 #, python-format
 msgid "In case you forgot, your username is %(username)s."
-msgstr "Au cas où vous l'avez oublié, votre nom d'utilisateur est %(username)s."
+msgstr ""
+"Au cas où vous l'avez oublié, votre nom d'utilisateur est %(username)s."
 
 #: .\templates\account\email\password_reset_key_message.txt:10
 #, python-format
@@ -157,13 +171,22 @@ msgstr "Confirmez votre adresse email"
 
 #: .\templates\account\email_confirm.html:15
 #, python-format
-msgid "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail address for user %(user_display)s."
-msgstr "Veuillez confirmer que <a href=\"mailto:%(email)s\">%(email)s</a> est une adresse mail pour l'utilisateur %(user_display)s."
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Veuillez confirmer que <a href=\"mailto:%(email)s\">%(email)s</a> est une "
+"adresse mail pour l'utilisateur %(user_display)s."
 
 #: .\templates\account\email_confirm.html:19
 #, python-format
-msgid "This e-mail confirmation link expired or is invalid. Please <a href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
-msgstr "Ce lien de confirmation par e-mail est expiré ou n'est pas valide. Veuillez <a href =\"%(email_url)s\"> émettre une nouvelle demande de confirmation par courrier électronique </a>."
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Ce lien de confirmation par e-mail est expiré ou n'est pas valide. Veuillez "
+"<a href =\"%(email_url)s\"> émettre une nouvelle demande de confirmation par "
+"courrier électronique </a>."
 
 #: .\templates\account\email_confirm.html:31
 msgid "Confirm"
@@ -178,21 +201,25 @@ msgstr "Se connecter"
 #, python-format
 msgid ""
 "Please sign in with one\n"
-"of your existing third party accounts. Or, <a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">sign up</a>\n"
+"of your existing third party accounts. Or, <a class=\"btn btn-success btn-xs"
+"\" href=\"%(signup_url)s\">sign up</a>\n"
 "for a %(site_name)s account and sign in below:"
 msgstr ""
 "Veuillez vous connecter avec un\n"
-"de vos comptes tiers existants. Ou, <a class =\" btn btn-success btn-xs \" href=\"%(signup_url)s\">inscrivez-vous</a>\n"
+"de vos comptes tiers existants. Ou, <a class =\" btn btn-success btn-xs \" "
+"href=\"%(signup_url)s\">inscrivez-vous</a>\n"
 "pour un compte %(site_name)s et connectez-vous ci-dessous:"
 
 #: .\templates\account\login.html:15
 #, python-format
 msgid ""
 "If you have not created an account yet, then please\n"
-"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">sign up</a> first."
+"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">sign up</a> "
+"first."
 msgstr ""
 "Si vous n'avez pas encore créé de compte, alors\n"
-"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">créez un compte</a>."
+"<a class=\"btn btn-success btn-xs\" href=\"%(signup_url)s\">créez un compte</"
+"a>."
 
 #: .\templates\account\login.html:32
 msgid "or"
@@ -214,7 +241,8 @@ msgstr "Êtes-vous certain de vouloir vous déconnecter?"
 #: .\templates\account\messages\cannot_delete_primary_email.txt:2
 #, python-format
 msgid "You cannot remove your primary e-mail address (%(email)s)."
-msgstr "Vous ne pouvez pas supprimer votre adresse e-mail principale (%(email)s)."
+msgstr ""
+"Vous ne pouvez pas supprimer votre adresse e-mail principale (%(email)s)."
 
 #: .\templates\account\messages\email_confirmation_sent.txt:2
 #, python-format
@@ -274,16 +302,24 @@ msgid "Password Reset"
 msgstr "Réinitialiser le mot de passe"
 
 #: .\templates\account\password_reset.html:9
-msgid "Forgotten your password? Enter your e-mail address below, and we'll send you an e-mail allowing you to reset it."
-msgstr "Mot de passe oublié ? Entrez votre adresse e-mail ci-dessous, et nous vous enverrons un e-mail vous permettant de le réinitialiser."
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"Mot de passe oublié ? Entrez votre adresse e-mail ci-dessous, et nous vous "
+"enverrons un e-mail vous permettant de le réinitialiser."
 
 #: .\templates\account\password_reset.html:19
 msgid "Reset My Password"
 msgstr "Réinitialiser mon mot de passe"
 
 #: .\templates\account\password_reset_done.html:8
-msgid "We have sent you an e-mail. Please contact us if you do not receive it within a few minutes."
-msgstr "Nous vous avons envoyé un e-mail. Contactez-nous si vous ne le recevez pas d'ici quelques minutes."
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Nous vous avons envoyé un e-mail. Contactez-nous si vous ne le recevez pas "
+"d'ici quelques minutes."
 
 #: .\templates\account\password_reset_from_key.html:7
 msgid "Bad Token"
@@ -291,8 +327,14 @@ msgstr "Mauvais Token"
 
 #: .\templates\account\password_reset_from_key.html:11
 #, python-format
-msgid "The password reset link was invalid, possibly because it has already been used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>."
-msgstr "Le lien de réinitialisation du mot de passe n'était pas valide, peut-être parce qu'il a déjà été utilisé. Veuillez demander une <a href=\"%(passwd_reset_url)s\"> nouvelle réinitialisation du mot de passe </a>."
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"Le lien de réinitialisation du mot de passe n'était pas valide, peut-être "
+"parce qu'il a déjà été utilisé. Veuillez demander une <a href="
+"\"%(passwd_reset_url)s\"> nouvelle réinitialisation du mot de passe </a>."
 
 #: .\templates\account\password_reset_from_key.html:15
 #: .\templates\account\password_reset_from_key_done.html:7
@@ -309,7 +351,7 @@ msgstr "changer le mot de passe"
 msgid "Set Password"
 msgstr "Définir le mot de passe"
 
-#: .\templates\account\signup.html:6 .\templates\socialaccount\signup.html:5
+#: .\templates\account\signup.html:6
 msgid "Signup"
 msgstr "S'inscrire"
 
@@ -321,8 +363,12 @@ msgstr "S'inscrire"
 
 #: .\templates\account\signup.html:9
 #, python-format
-msgid "Already have an account? Then please <a href=\"%(login_url)s\" class=\"btn btn-success btn-xs\">sign in</a>."
-msgstr "Vous avez déjà un compte? Alors, <a href=\"%(login_url)s\" class=\"btn btn-success btn-xs\"> connectez-vous </a>."
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\" class=\"btn "
+"btn-success btn-xs\">sign in</a>."
+msgstr ""
+"Vous avez déjà un compte? Alors, <a href=\"%(login_url)s\" class=\"btn btn-"
+"success btn-xs\"> connectez-vous </a>."
 
 #: .\templates\account\signup_closed.html:5
 #: .\templates\account\signup_closed.html:8
@@ -350,8 +396,14 @@ msgid "Verify Your E-mail Address"
 msgstr "Vérifiez votre adresse e-mail"
 
 #: .\templates\account\verification_sent.html:8
-msgid "We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. Please contact us if you do not receive it within a few minutes."
-msgstr "Nous vous avons envoyé un e-mail de vérification. Suivez le lien fourni afin de finalisez le processus d'inscription. Veuillez nous contacter si vous ne le recevez pas d'ici quelques minutes."
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Nous vous avons envoyé un e-mail de vérification. Suivez le lien fourni afin "
+"de finalisez le processus d'inscription. Veuillez nous contacter si vous ne "
+"le recevez pas d'ici quelques minutes."
 
 #: .\templates\account\verified_email_required.html:12
 msgid ""
@@ -375,8 +427,12 @@ msgstr ""
 
 #: .\templates\account\verified_email_required.html:20
 #, python-format
-msgid "<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-mail address</a>."
-msgstr "<strong>Remarque: </strong> vous pouvez toujours <a href=\"%(email_url)s\">modifier votre adresse électronique</a>."
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Remarque: </strong> vous pouvez toujours <a href=\"%(email_url)s"
+"\">modifier votre adresse électronique</a>."
 
 #: .\templates\disqus.html:5
 msgid "Discussion about :"
@@ -392,8 +448,11 @@ msgid "Social Network Login Failure"
 msgstr "Échec de connexion au réseau social"
 
 #: .\templates\socialaccount\authentication_error.html:10
-msgid "An error occurred while attempting to login via your social network account."
-msgstr "Une erreur s'est produite lors de la tentative de connexion via votre compte de réseau social."
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr ""
+"Une erreur s'est produite lors de la tentative de connexion via votre compte "
+"de réseau social."
 
 #: .\templates\socialaccount\connections.html:5
 #: .\templates\socialaccount\connections.html:8
@@ -401,12 +460,18 @@ msgid "Account Connections"
 msgstr "Connexions de compte"
 
 #: .\templates\socialaccount\connections.html:11
-msgid "You can sign in to your account using any of the following third party accounts:"
-msgstr "Vous pouvez vous connecter à votre compte en utilisant l'un des comptes tiers suivants :"
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr ""
+"Vous pouvez vous connecter à votre compte en utilisant l'un des comptes "
+"tiers suivants :"
 
 #: .\templates\socialaccount\connections.html:43
-msgid "You currently have no social network accounts connected to this account."
-msgstr "Vous n'avez actuellement aucun compte de réseau social connecté à ce compte."
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+"Vous n'avez actuellement aucun compte de réseau social connecté à ce compte."
 
 #: .\templates\socialaccount\connections.html:46
 msgid "Add a 3rd Party Account"
@@ -419,8 +484,14 @@ msgstr "Connexion annulée"
 
 #: .\templates\socialaccount\login_cancelled.html:13
 #, python-format
-msgid "You decided to cancel logging in to our site using one of your existing accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s\">sign in</a>."
-msgstr "Vous avez décidé d'annuler la connexion à notre site en utilisant l'un de vos comptes. Si cela était une erreur, allez à <a href=\"%(login_url)s\">connectez-vous</a>."
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
+msgstr ""
+"Vous avez décidé d'annuler la connexion à notre site en utilisant l'un de "
+"vos comptes. Si cela était une erreur, allez à <a href=\"%(login_url)s"
+"\">connectez-vous</a>."
 
 #: .\templates\socialaccount\messages\account_connected.txt:2
 msgid "The social account has been connected."
@@ -440,7 +511,8 @@ msgid ""
 "You are about to use your %(provider_name)s account to login to\n"
 "%(site_name)s. As a final step, please complete the following form:"
 msgstr ""
-"Vous êtes sur le point d'utiliser votre compte %(provider_name)s pour vous connecter à\n"
+"Vous êtes sur le point d'utiliser votre compte %(provider_name)s pour vous "
+"connecter à\n"
 "%(site_name)s. En dernière étape, veuillez remplir le formulaire suivant:"
 
 #: .\tune\forms.py:7
@@ -513,8 +585,12 @@ msgid "Description of the sound to add"
 msgstr "Description du son à ajouter"
 
 #: .\tune\forms.py:67
-msgid "Recording of the Tune \"xxx\" that I have learned from \"Abcdef\" on \"yyy\" festival"
-msgstr "L'enregistrement du Tune \"xxx\" que j'ai appris de \"Abcdef\" au festival du \"yyy\""
+msgid ""
+"Recording of the Tune \"xxx\" that I have learned from \"Abcdef\" on \"yyy\" "
+"festival"
+msgstr ""
+"L'enregistrement du Tune \"xxx\" que j'ai appris de \"Abcdef\" au festival "
+"du \"yyy\""
 
 #: .\tune\forms.py:72
 msgid "Link of the audio Clyp sound"
@@ -528,8 +604,8 @@ msgstr "Le lien du son est obligatoire"
 msgid "The link must start with \"https://clyp.it/\""
 msgstr "Le lien doit commencer par \"https://clyp.it/\""
 
-#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\about.html:131
-#: .\tune\templates\tune\accueil.html:21 .\tune\templates\tune\layout.html:103
+#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\accueil.html:21
+#: .\tune\templates\tune\layout.html:103
 msgid "About"
 msgstr "A propos de"
 
@@ -541,25 +617,44 @@ msgstr "A propos de Timtool"
 msgid "Information about the Timtool Web application"
 msgstr "Informations à propos de l'application web Timtool"
 
-#: .\tune\templates\tune\about.html:21 .\tune\templates\tune\about.html:28
+#: .\tune\templates\tune\about.html:21
 msgid "The project of a lifetime"
 msgstr "Le projet d'une vie"
 
-#: .\tune\templates\tune\about.html:23 .\tune\templates\tune\about.html:51
+#: .\tune\templates\tune\about.html:23
 msgid "Feature tree"
 msgstr "Arbres des fonctionnalités"
 
 #: .\tune\templates\tune\about.html:29
-msgid "This application is the project of a lifetime, and will not cease evolving according to your needs. To make learning Irish traditional music easier. To manage known tunes more efficiently (and thus avoid forgetting tunes as you progress). To learn the tunes that your friends already know (and so to avoid learning a tune that nobody knows...). To generate sets of Tunes and thus randomly discover nice sets. To simply review the tunes that you know. Or to share all the information needed to manage a session."
-msgstr "Cette application est le projet d'une vie et ne cessera d'évoluer selon vos besoins. Que ce soit pour faciliter l'apprentissage de la musique traditionnelle irlandaise, pour gérer les morceaux connus plus efficacement (et évitez ainsi d'oublier les morceaux lorsque vous progressez). Pour apprendre les morceaux que vos amis connaissent déjà (et donc éviter d'apprendre un Tune que personne ne connait ...). Pour générer des sets de Tunes aléatoires et trouver la perle rare. Ou pour simplement réviser les morceaux que vous connaissez, partager toutes les informations nécessaires pour gérer une session..."
+msgid ""
+"This application is the project of a lifetime, and will not cease evolving "
+"according to your needs. To make learning Irish traditional music easier. To "
+"manage known tunes more efficiently (and thus avoid forgetting tunes as you "
+"progress). To learn the tunes that your friends already know (and so to "
+"avoid learning a tune that nobody knows...). To generate sets of Tunes and "
+"thus randomly discover nice sets. To simply review the tunes that you know. "
+"Or to share all the information needed to manage a session."
+msgstr ""
+"Cette application est le projet d'une vie et ne cessera d'évoluer selon vos "
+"besoins. Que ce soit pour faciliter l'apprentissage de la musique "
+"traditionnelle irlandaise, pour gérer les morceaux connus plus efficacement "
+"(et évitez ainsi d'oublier les morceaux lorsque vous progressez). Pour "
+"apprendre les morceaux que vos amis connaissent déjà (et donc éviter "
+"d'apprendre un Tune que personne ne connait ...). Pour générer des sets de "
+"Tunes aléatoires et trouver la perle rare. Ou pour simplement réviser les "
+"morceaux que vous connaissez, partager toutes les informations nécessaires "
+"pour gérer une session..."
 
 #: .\tune\templates\tune\about.html:30
 msgid "Work required"
 msgstr "Travail requis"
 
 #: .\tune\templates\tune\about.html:31
-msgid "Web application development is like music: it is a hobby that takes time."
-msgstr "Le développement d'applications Web, c'est comme la musique: c'est un passe-temps qui prend du temps."
+msgid ""
+"Web application development is like music: it is a hobby that takes time."
+msgstr ""
+"Le développement d'applications Web, c'est comme la musique: c'est un passe-"
+"temps qui prend du temps."
 
 #: .\tune\templates\tune\about.html:32
 msgid "Like music, it requires:"
@@ -601,7 +696,7 @@ msgstr "Fonctionnalités existantes"
 msgid "Upcoming features"
 msgstr "Fonctionnalités à venir"
 
-#: .\tune\templates\tune\about.html:54 .\tune\templates\tune\about.html:193
+#: .\tune\templates\tune\about.html:54
 msgid "General"
 msgstr "Général"
 
@@ -617,7 +712,7 @@ msgstr "Menu Horizontal"
 msgid "Hide/Show menu"
 msgstr "Afficher/Cacher menu"
 
-#: .\tune\templates\tune\about.html:62 .\tune\templates\tune\layout.html:65
+#: .\tune\templates\tune\about.html:62
 #: .\tune\templates\tune\new_from_abc.html:42
 msgid "Search for a Tune"
 msgstr "Rechercher un Tune"
@@ -630,8 +725,7 @@ msgstr "Menu gauche vertical"
 msgid "Links and Actions"
 msgstr "Liens et actions"
 
-#: .\tune\templates\tune\about.html:71 .\tune\templates\tune\accueil.html:7
-#: .\tune\templates\tune\accueil.html:11 .\tune\templates\tune\layout.html:92
+#: .\tune\templates\tune\about.html:71 .\tune\templates\tune\accueil.html:11
 msgid "Home"
 msgstr "Accueil"
 
@@ -647,11 +741,11 @@ msgstr "Derniers Tunes, Groupes, Utilisateurs créés"
 msgid "Show the list of tunes"
 msgstr "Afficher la liste des Tunes"
 
-#: .\tune\templates\tune\about.html:82 .\tune\templates\tune\about.html:148
+#: .\tune\templates\tune\about.html:82
 msgid "Show a Tune"
 msgstr "Afficher un Tune"
 
-#: .\tune\templates\tune\about.html:84 .\tune\templates\tune\about.html:95
+#: .\tune\templates\tune\about.html:84
 msgid "Add/Remove this Tune to/from your favorites"
 msgstr "Ajouter/Retirer ce Tune à/de vos favoris"
 
@@ -707,7 +801,7 @@ msgstr "Créer un Tune en copiant/collant un fichier .abc"
 msgid "Create a Tune from an .abc file"
 msgstr "Créer un Tune depuis un fichier .abc"
 
-#: .\tune\templates\tune\about.html:103 .\tune\templates\tune\layout.html:100
+#: .\tune\templates\tune\about.html:103
 #: .\user\templates\user\groupe_liste.html:7
 #: .\user\templates\user\groupe_liste.html:11
 msgid "Groups"
@@ -782,8 +876,7 @@ msgstr "Envoyer un email à tous les membres du groupe"
 msgid "Create a group"
 msgstr "Créer un groupe"
 
-#: .\tune\templates\tune\about.html:125 .\user\templates\user\contact.html:7
-#: .\user\templates\user\contact.html:11
+#: .\tune\templates\tune\about.html:125 .\user\templates\user\contact.html:11
 msgid "Contact"
 msgstr "Contact"
 
@@ -807,7 +900,7 @@ msgstr "Informations"
 msgid "Vote for the most wanted features"
 msgstr "Voter pour les fonctionnalités les plus souhaitées"
 
-#: .\tune\templates\tune\about.html:139 .\tune\templates\tune\layout.html:112
+#: .\tune\templates\tune\about.html:139
 msgid "Personal"
 msgstr "Personnel"
 
@@ -876,12 +969,17 @@ msgid "Sets and tunes generator"
 msgstr "Générateur de Sets et de listes de Tunes"
 
 #: .\tune\templates\tune\about.html:167
-msgid "Generate a list of sets according to all possible criterias (for a user)"
-msgstr "Générer une liste de Sets/Tunes en fonction des critères (pour un utilisateur)"
+msgid ""
+"Generate a list of sets according to all possible criterias (for a user)"
+msgstr ""
+"Générer une liste de Sets/Tunes en fonction des critères (pour un "
+"utilisateur)"
 
 #: .\tune\templates\tune\about.html:168
-msgid "Generate a list of sets according to all possible criteria (for a group)"
-msgstr "Générer une liste de Sets/Tunes en fonction des critères (pour un groupe)"
+msgid ""
+"Generate a list of sets according to all possible criteria (for a group)"
+msgstr ""
+"Générer une liste de Sets/Tunes en fonction des critères (pour un groupe)"
 
 #: .\tune\templates\tune\about.html:169
 msgid "Add criteria \"Never two times the same key in a row"
@@ -927,11 +1025,11 @@ msgstr "Afficher le tableau de bord des Tunes"
 msgid "Managing user accounts"
 msgstr "Gérer les comptes utilisateurs"
 
-#: .\tune\templates\tune\about.html:187 .\tune\templates\tune\layout.html:43
+#: .\tune\templates\tune\about.html:187
 msgid "Log in"
 msgstr "Connexion"
 
-#: .\tune\templates\tune\about.html:188 .\tune\templates\tune\layout.html:47
+#: .\tune\templates\tune\about.html:188
 msgid "Log out"
 msgstr "Déconnexion"
 
@@ -978,52 +1076,87 @@ msgstr "Bienvenue sur"
 #: .\tune\templates\tune\accueil.html:22
 msgid ""
 "<strong>Timtool</strong> means \"Traditional Irish Music Tool.\" <br/>\n"
-"             <strong>Timtool</strong> is a web application project (and soon available on Android). The application is <strong>completely free</strong> and without advertising, designed by a traditional Irish music lover, for lovers of traditional Irish music. <br/>\n"
-"             This application is not intended to replace existing applications (TheSession, or the excellent and indispensable Tunepal). On the other hand, it allows: "
+"             <strong>Timtool</strong> is a web application project (and soon "
+"available on Android). The application is <strong>completely free</strong> "
+"and without advertising, designed by a traditional Irish music lover, for "
+"lovers of traditional Irish music. <br/>\n"
+"             This application is not intended to replace existing "
+"applications (TheSession, or the excellent and indispensable Tunepal). On "
+"the other hand, it allows: "
 msgstr ""
 "<strong>Timtool</strong> signifie \"Traditional Irish Music Tool.\" <br/>\n"
-"<strong>Timtool</strong> est un projet d'application web (bientôt Android). L'application est <strong>complètement gratuite</strong> et sans publicité, conçue par un amateur de musique traditionnelle irlandaise, pour les amateurs de musique traditionnelle irlandaise. <br/>Cette application n'est pas destinée à remplacer des applications existantes (TheSession, ou l'excellent et indispensable Tunepal). D'autre part, cela permet: "
+"<strong>Timtool</strong> est un projet d'application web (bientôt Android). "
+"L'application est <strong>complètement gratuite</strong> et sans publicité, "
+"conçue par un amateur de musique traditionnelle irlandaise, pour les "
+"amateurs de musique traditionnelle irlandaise. <br/>Cette application n'est "
+"pas destinée à remplacer des applications existantes (TheSession, ou "
+"l'excellent et indispensable Tunepal). D'autre part, cela permet: "
 
 #: .\tune\templates\tune\accueil.html:26
 msgid "Save and <strong>manage your personal Tune library</strong>,"
-msgstr "Sauvegarder et <strong>gérer sa bibliothèque de Tunes personnelle</strong>,"
+msgstr ""
+"Sauvegarder et <strong>gérer sa bibliothèque de Tunes personnelle</strong>,"
 
 #: .\tune\templates\tune\accueil.html:27
-msgid "<strong>Generate random sets/lists</strong> of tunes based on filters and criterias,"
-msgstr "<strong>Générer des Sets et listes de Tunes aléatoires</strong> selon beaucoup de critères,"
+msgid ""
+"<strong>Generate random sets/lists</strong> of tunes based on filters and "
+"criterias,"
+msgstr ""
+"<strong>Générer des Sets et listes de Tunes aléatoires</strong> selon "
+"beaucoup de critères,"
 
 #: .\tune\templates\tune\accueil.html:28
 msgid "<strong>Compare your tunes with other users</strong>,"
 msgstr "<strong>Comparer vos Tunes avec d'autres utilisateurs</strong>,"
 
 #: .\tune\templates\tune\accueil.html:29
-msgid "<strong>Create groups (sessions)</strong> to share common information and tunes,"
-msgstr "<strong>Créer des groupes (sessions)</strong> afin de partager les Tunes en communs ainsi que les informations importantes,"
+msgid ""
+"<strong>Create groups (sessions)</strong> to share common information and "
+"tunes,"
+msgstr ""
+"<strong>Créer des groupes (sessions)</strong> afin de partager les Tunes en "
+"communs ainsi que les informations importantes,"
 
 #: .\tune\templates\tune\accueil.html:31
 #, python-format
 msgid ""
 "\n"
-"                And much more ... (see <a href='%(url_about)s' class=\"btn btn-xs btn-success\">about Timtool</a> to see the exhaustiveness of common features and coming from ones<strong> of Timtool</strong>)\n"
+"                And much more ... (see <a href='%(url_about)s' class=\"btn "
+"btn-xs btn-success\">about Timtool</a> to see the exhaustiveness of common "
+"features and coming from ones<strong> of Timtool</strong>)\n"
 "                "
 msgstr ""
 "\n"
-"                Et bien plus... (allez à <a href='%(url_about)s' class=\"btn btn-xs btn-success\">à propos de Timtool</a> afin de voir l'exhaustivité des fonctionnalités existantes ainsi que celles à venir<strong> de Timtool</strong>)\n"
+"                Et bien plus... (allez à <a href='%(url_about)s' class=\"btn "
+"btn-xs btn-success\">à propos de Timtool</a> afin de voir l'exhaustivité des "
+"fonctionnalités existantes ainsi que celles à venir<strong> de Timtool</"
+"strong>)\n"
 "                "
 
 #: .\tune\templates\tune\accueil.html:36
-msgid "<strong>Timtool v1.0</strong> is the first version of the application. Other versions of the app remain to come, with even more features, more design, more fun!"
-msgstr "<strong>Timtool v1.0</strong> est la première version de l'application. D'autres versions sont à venir, avec plus de fonctionnalités, plus de design, plus de fun!"
+msgid ""
+"<strong>Timtool v1.0</strong> is the first version of the application. Other "
+"versions of the app remain to come, with even more features, more design, "
+"more fun!"
+msgstr ""
+"<strong>Timtool v1.0</strong> est la première version de l'application. "
+"D'autres versions sont à venir, avec plus de fonctionnalités, plus de "
+"design, plus de fun!"
 
 #: .\tune\templates\tune\accueil.html:39
 #, python-format
 msgid ""
 "\n"
-"                Any ideas ? Recommendations ? Suggestions ? Questions ? Bug ? Need support ? Do not hesitate to contact me thanks to the <a href=\"%(url_contact)s\" class=\"btn btn-xs btn-success\">contact form !</a>\n"
+"                Any ideas ? Recommendations ? Suggestions ? Questions ? "
+"Bug ? Need support ? Do not hesitate to contact me thanks to the <a href="
+"\"%(url_contact)s\" class=\"btn btn-xs btn-success\">contact form !</a>\n"
 "                "
 msgstr ""
 "\n"
-"                Des idées ? Des recommendations ? Des suggestions ? Des questions ? Un bug ? Besoin de support ? N'hésitez pas à me contacter grâce au <a href=\"%(url_contact)s\" class=\"btn btn-xs btn-success\">formulaire de contact !</a>\n"
+"                Des idées ? Des recommendations ? Des suggestions ? Des "
+"questions ? Un bug ? Besoin de support ? N'hésitez pas à me contacter grâce "
+"au <a href=\"%(url_contact)s\" class=\"btn btn-xs btn-success\">formulaire "
+"de contact !</a>\n"
 "                "
 
 #: .\tune\templates\tune\accueil.html:49
@@ -1162,7 +1295,7 @@ msgid "Compare your Tunes with other users or groups"
 msgstr "Comparer vos Tunes avec d'autres utilisateurs ou groupes"
 
 #: .\tune\templates\tune\comparateur.html:21
-#: .\tune\templates\tune\layout.html:67 .\tune\templates\tune\layout.html:82
+#: .\tune\templates\tune\layout.html:67
 msgid "Search"
 msgstr "Chercher"
 
@@ -1282,7 +1415,9 @@ msgstr "Tunes appris"
 
 #: .\tune\templates\tune\generateur.html:174
 msgid "Use the above generator to generate a list of Tunes or Sets"
-msgstr "Utiliser le générateur ci-dessus afin de générer une liste de Tunes ou de Sets"
+msgstr ""
+"Utiliser le générateur ci-dessus afin de générer une liste de Tunes ou de "
+"Sets"
 
 #: .\tune\templates\tune\layout.html:10
 msgid "TIMTOOL beta version"
@@ -1424,8 +1559,13 @@ msgid "Send"
 msgstr "Envoyer"
 
 #: .\tune\templates\tune\new_from_abc.html:74
-msgid "You do not have the rights to upload a file. You can add a Tune by copying an .abc file into the \"Copy/Paste an .abc file\""
-msgstr "Vous n'avez pas la permission d'uploader un fichier. Vous pouvez ajouter un Tune en copiant un fichier .abc dans la section \"Copier/Coller un fichier .abc\""
+msgid ""
+"You do not have the rights to upload a file. You can add a Tune by copying "
+"an .abc file into the \"Copy/Paste an .abc file\""
+msgstr ""
+"Vous n'avez pas la permission d'uploader un fichier. Vous pouvez ajouter un "
+"Tune en copiant un fichier .abc dans la section \"Copier/Coller un fichier ."
+"abc\""
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:8
 #: .\tune\templates\tune\tune_favori_add_sound.html:12
@@ -1473,6 +1613,7 @@ msgid "If you are lost, go "
 msgstr "Si vous êtes perdus, rendez-vous "
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:31
+#: .\tune\templates\tune\tune_lire.html:64
 #: .\user\templates\user\groupe_add_favoris.html:26
 msgid "here"
 msgstr "ici"
@@ -1490,12 +1631,20 @@ msgid "Give it a name, a description, and even a picture if you wish"
 msgstr "Donnez-lui un nom, une description, eventuellement une image"
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:33
-msgid "VERY IMPORTANT : Let checked 'This Clyp is Public', otherwise, it won't be seen by Timtool =("
-msgstr "TRES IMPORTANT : LAISSEZ COCHÉ 'This Clyp is Public', sinon, il ne sera pas accessible par Timtool =("
+msgid ""
+"VERY IMPORTANT : Let checked 'This Clyp is Public', otherwise, it won't be "
+"seen by Timtool =("
+msgstr ""
+"TRES IMPORTANT : LAISSEZ COCHÉ 'This Clyp is Public', sinon, il ne sera pas "
+"accessible par Timtool =("
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:33
-msgid "TIP : Let checked 'Download', and you will be able to download this Tune directly from Timtool =)"
-msgstr "ASTUCE : Laissez coché 'Download', et vous serez en mesure de télécharger ce Tune directement depuis Timtool =)"
+msgid ""
+"TIP : Let checked 'Download', and you will be able to download this Tune "
+"directly from Timtool =)"
+msgstr ""
+"ASTUCE : Laissez coché 'Download', et vous serez en mesure de télécharger ce "
+"Tune directement depuis Timtool =)"
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:34
 msgid "Click on the name of your Tune in order to go to the Tune page"
@@ -1510,12 +1659,20 @@ msgid "this one"
 msgstr "celui-ci"
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:35
-msgid "Copy the link in \"DIRECT LINK\" field. It must start with \"https://clyp.it/\""
-msgstr "Copiez le lien du champ \"DIRECT LINK\". Il doit commencer par \"https://clyp.it/\""
+msgid ""
+"Copy the link in \"DIRECT LINK\" field. It must start with \"https://clyp.it/"
+"\""
+msgstr ""
+"Copiez le lien du champ \"DIRECT LINK\". Il doit commencer par \"https://"
+"clyp.it/\""
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:36
-msgid "Come back on Timtool, paste the link into the link section of the form above, a description, and click on \"Add\" button."
-msgstr "Revenez sur Timtool, copiez le lien dans le champ 'lien' du formulaire ci-dessus, ajoutez une description, et cliquez sur le bouton 'Ajouter'."
+msgid ""
+"Come back on Timtool, paste the link into the link section of the form "
+"above, a description, and click on \"Add\" button."
+msgstr ""
+"Revenez sur Timtool, copiez le lien dans le champ 'lien' du formulaire ci-"
+"dessus, ajoutez une description, et cliquez sur le bouton 'Ajouter'."
 
 #: .\tune\templates\tune\tune_favori_lire.html:17
 msgid "Favorite Tune of"
@@ -1532,8 +1689,8 @@ msgstr "Pas de fichier audio ajouté à ce favori"
 
 #: .\tune\templates\tune\tune_favori_lire.html:34
 #: .\tune\templates\tune\tune_favori_lire.html:57
-#: .\tune\templates\tune\tune_lire.html:40
-#: .\tune\templates\tune\tune_lire.html:51
+#: .\tune\templates\tune\tune_lire.html:44
+#: .\tune\templates\tune\tune_lire.html:68
 #: .\tune\templates\tune\tune_liste.html:56
 #: .\user\templates\user\groupe_lire.html:23
 #: .\user\templates\user\groupe_lire.html:34
@@ -1557,16 +1714,26 @@ msgid "Add a sound"
 msgstr "Ajouter un son"
 
 #: .\tune\templates\tune\tune_favori_lire.html:85
-#: .\tune\templates\tune\tune_favori_lire.html:98 .\tune\views.py:516
-#: .\tune\views.py:519 .\user\models.py:103
+#: .\tune\templates\tune\tune_favori_lire.html:98 .\tune\views.py:529
+#: .\tune\views.py:532 .\user\models.py:103
 msgid "Only administrators of the group can use this functionnality"
-msgstr "Seuls les administrateurs de ce groupe peuvent utiliser cette fonctionnalité"
+msgstr ""
+"Seuls les administrateurs de ce groupe peuvent utiliser cette fonctionnalité"
 
 #: .\tune\templates\tune\tune_lire.html:32
 #: .\user\templates\user\groupe_lire.html:15
 #, python-format
 msgid "Seen %(nb_vues)s times"
 msgstr "Vu %(nb_vues)s fois"
+
+#: .\tune\templates\tune\tune_lire.html:40
+#: .\tune\templates\tune\tune_lire.html:53
+msgid "Music sheet"
+msgstr "Partition"
+
+#: .\tune\templates\tune\tune_lire.html:64
+msgid "Download the sound (.mid file)"
+msgstr "Télécharger le son (fichier .mid)"
 
 #: .\tune\templates\tune\tune_liste.html:15
 msgid "All the tunes from Timtool"
@@ -1575,12 +1742,19 @@ msgstr "Tous les Tunes de Timtool"
 #: .\tune\templates\tune\tune_liste.html:21
 #: .\tune\templates\tune\tune_liste_favoris.html:21
 msgid "You can filter by name, type, or key. You can combine the filters."
-msgstr "Vous pouvez filtrer par nom, type ou tonalité. Vous pouvez combiner les filtres."
+msgstr ""
+"Vous pouvez filtrer par nom, type ou tonalité. Vous pouvez combiner les "
+"filtres."
 
 #: .\tune\templates\tune\tune_liste.html:22
 #: .\tune\templates\tune\tune_liste_favoris.html:22
-msgid "The 'Type' and 'Key' fields are case-sensitive. Use tiny letters for Type (reel, jig) and use the following format for Keys (A, Am, Ador, Amix)"
-msgstr "Les champs 'Type' et 'Tonalité' sont sensibles aux majuscules/minuscules. Utilisez des minuscules pour le Type (reel, jig) et utilisez les formats suivants pour les tonalités (A, Am, Ador, Amix)"
+msgid ""
+"The 'Type' and 'Key' fields are case-sensitive. Use tiny letters for Type "
+"(reel, jig) and use the following format for Keys (A, Am, Ador, Amix)"
+msgstr ""
+"Les champs 'Type' et 'Tonalité' sont sensibles aux majuscules/minuscules. "
+"Utilisez des minuscules pour le Type (reel, jig) et utilisez les formats "
+"suivants pour les tonalités (A, Am, Ador, Amix)"
 
 #: .\tune\templates\tune\tune_liste.html:23
 #: .\tune\templates\tune\tune_liste_favoris.html:23
@@ -1651,7 +1825,8 @@ msgstr "Ce Tune a un son lié !"
 
 #: .\tune\templates\tune\tune_liste_favoris.html:57
 msgid "No Tune. Refine your search or add tunes to your favorites:"
-msgstr "Aucun Tune. Compléter votre recherche ou ajouter des Tunes à vos favoris :"
+msgstr ""
+"Aucun Tune. Compléter votre recherche ou ajouter des Tunes à vos favoris :"
 
 #: .\tune\templates\tune\tune_liste_favoris.html:84
 #: .\user\templates\user\groupe_lire.html:65
@@ -1680,85 +1855,120 @@ msgstr "Entrainement !"
 msgid "Dashboard !"
 msgstr "Tableau de bord !"
 
-#: .\tune\views.py:54
+#: .\tune\views.py:56
 #, python-format
-msgid "The following filters have been applied : \"name\" contains \"%(name)s\" | \"type\" = \"%(type)s\" | \"key\" = \"%(key)s\""
-msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\""
+msgid ""
+"The following filters have been applied : \"name\" contains \"%(name)s\" | "
+"\"type\" = \"%(type)s\" | \"key\" = \"%(key)s\""
+msgstr ""
+"Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | "
+"\"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\""
 
-#: .\tune\views.py:85
+#: .\tune\views.py:87
 #, python-format
-msgid "The following filters have been applied : \"name\" contains \"%(name)s\" | \"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | \"status\" = \"%(status)s\""
-msgstr "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | \"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | \"status\" = \"%(status)s\""
+msgid ""
+"The following filters have been applied : \"name\" contains \"%(name)s\" | "
+"\"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | \"status\" = \"%(status)s\""
+msgstr ""
+"Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | "
+"\"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | \"status\" = "
+"\"%(status)s\""
 
-#: .\tune\views.py:138 .\tune\views.py:151 .\tune\views.py:163
-#: .\tune\views.py:172 .\tune\views.py:269 .\tune\views.py:282
-#: .\tune\views.py:294 .\tune\views.py:303
+#: .\tune\views.py:140 .\tune\views.py:153 .\tune\views.py:165
+#: .\tune\views.py:174 .\tune\views.py:271 .\tune\views.py:284
+#: .\tune\views.py:296 .\tune\views.py:305
 #, python-format
-msgid "The list of \"%(list_of)s\" among \"%(among)s\" is empty. Modify your search criterias."
-msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" est vide. Modifiez votre recherche."
+msgid ""
+"The list of \"%(list_of)s\" among \"%(among)s\" is empty. Modify your search "
+"criterias."
+msgstr ""
+"La liste de \"%(list_of)s\" parmis \"%(among)s\" est vide. Modifiez votre "
+"recherche."
 
-#: .\tune\views.py:221 .\tune\views.py:350
+#: .\tune\views.py:223 .\tune\views.py:352
 #, python-format
 msgid "The list of \"%(list_of)s\" among \"%(among)s\" has been generated"
 msgstr "La liste de \"%(list_of)s\" parmis \"%(among)s\" a été générée"
 
-#: .\tune\views.py:245
+#: .\tune\views.py:247
 #, python-format
 msgid "The group \"%(slug)s\" doesn't exist"
 msgstr "Le groupe \"%(slug)s\" n'existe pas"
 
-#: .\tune\views.py:249
+#: .\tune\views.py:251
 #, python-format
 msgid "There are several groupes \"%(slug)s\". Impossible to generate tunes."
-msgstr "Il y a plusieurs groupes \"%(slug)s\". Impossible de générer des tunes."
+msgstr ""
+"Il y a plusieurs groupes \"%(slug)s\". Impossible de générer des tunes."
 
-#: .\tune\views.py:394
+#: .\tune\views.py:396
 #, python-format
-msgid "The comparison of \"%(to_compare)s\" with user \"%(username)s\" is a success."
-msgstr "La comparaison de \"%(to_compare)s\" avec l'utilisateur \"%(username)s\" est un succès."
+msgid ""
+"The comparison of \"%(to_compare)s\" with user \"%(username)s\" is a success."
+msgstr ""
+"La comparaison de \"%(to_compare)s\" avec l'utilisateur \"%(username)s\" est "
+"un succès."
 
-#: .\tune\views.py:415
+#: .\tune\views.py:417
 #, python-format
-msgid "The comparison of \"%(to_compare)s\" with group \"%(groupname)s\" is a success."
-msgstr "La comparaison de \"%(to_compare)s\" avec le groupe \"%(groupname)s\" est un succès."
+msgid ""
+"The comparison of \"%(to_compare)s\" with group \"%(groupname)s\" is a "
+"success."
+msgstr ""
+"La comparaison de \"%(to_compare)s\" avec le groupe \"%(groupname)s\" est un "
+"succès."
 
-#: .\tune\views.py:422
-msgid "The comparison of tunes has failed. An error appeared with name of the user or group"
-msgstr "La comparaison de tunes a échoué. Une erreur est survenue avec le nom de l'utilisateur ou du groupe"
+#: .\tune\views.py:424
+msgid ""
+"The comparison of tunes has failed. An error appeared with name of the user "
+"or group"
+msgstr ""
+"La comparaison de tunes a échoué. Une erreur est survenue avec le nom de "
+"l'utilisateur ou du groupe"
 
-#: .\tune\views.py:428
+#: .\tune\views.py:430
 #, python-format
 msgid "The user \"%(username)s\" doesn't exist. Please enter an existing user"
-msgstr "L'utilisateur \"%(username)s\" n'existe pas. Entrez un utilisateur existant"
+msgstr ""
+"L'utilisateur \"%(username)s\" n'existe pas. Entrez un utilisateur existant"
 
-#: .\tune\views.py:434
+#: .\tune\views.py:436
 #, python-format
-msgid "The group \"%(groupname)s\" doesn't exist. Please enter an existing group"
+msgid ""
+"The group \"%(groupname)s\" doesn't exist. Please enter an existing group"
 msgstr "Le groupe \"%(groupname)s\" n'existe pas. Entrez un groupe existant"
 
-#: .\tune\views.py:440
+#: .\tune\views.py:442
 #, python-format
 msgid "There are several users \"%(username)s\". Impossible to compare Tunes."
-msgstr "Il y a plusieurs utilisateurs \"%(username)s\". Impossible de comparer les Tunes."
+msgstr ""
+"Il y a plusieurs utilisateurs \"%(username)s\". Impossible de comparer les "
+"Tunes."
 
-#: .\tune\views.py:444
+#: .\tune\views.py:446
 #, python-format
-msgid "There are several groups \"%(groupname)s\". Impossible to compare Tunes."
-msgstr "Il y a plusieurs groupes \"%(groupname)s\". Impossible de comparer les Tunes."
+msgid ""
+"There are several groups \"%(groupname)s\". Impossible to compare Tunes."
+msgstr ""
+"Il y a plusieurs groupes \"%(groupname)s\". Impossible de comparer les Tunes."
 
-#: .\tune\views.py:473 .\tune\views.py:508
+#: .\tune\views.py:486 .\tune\views.py:521
 msgid "This Tune is not among your favorites !"
 msgstr "Ce Tune est absent de vos favoris !"
 
-#: .\tune\views.py:480
-msgid "This is the page of the favorite Tune. If you wish to go to the global Tune, go there : "
-msgstr "Cette page est la page personnelle du Tune favori. Si vous souhaitez afficher le Tune global, rendez-vous ici : "
+#: .\tune\views.py:493
+msgid ""
+"This is the page of the favorite Tune. If you wish to go to the global Tune, "
+"go there : "
+msgstr ""
+"Cette page est la page personnelle du Tune favori. Si vous souhaitez "
+"afficher le Tune global, rendez-vous ici : "
 
-#: .\tune\views.py:536
+#: .\tune\views.py:549
 msgid "You have already linked this sound to another favorite"
 msgstr "Vous avez déjà lié ce son à un autre favoris"
 
-#: .\tune\views.py:554 .\tune\views.py:557
+#: .\tune\views.py:567 .\tune\views.py:570
 msgid "Processus successfully ended !"
 msgstr "Traitement terminé avec succès !"
 
@@ -1824,7 +2034,8 @@ msgstr "Vous devez choisir un utilisateur ou un groupe"
 
 #: .\user\forms.py:51
 msgid "You must choose a user OR a group, but not both"
-msgstr "Vous ne devez choisir QU'UN utilisateur ou QU'UN groupe, mais pas les deux"
+msgstr ""
+"Vous ne devez choisir QU'UN utilisateur ou QU'UN groupe, mais pas les deux"
 
 #: .\user\forms.py:56
 msgid "Group"
@@ -1854,7 +2065,9 @@ msgstr "Un utilisateur doit avoir une adresse email."
 
 #: .\user\models.py:52
 msgid "The user cannot contain other special characters than : '. @ + -'"
-msgstr "L'utilisateur ne peut pas contenir de caractères spéciaux autres que : '. @ + -'"
+msgstr ""
+"L'utilisateur ne peut pas contenir de caractères spéciaux autres que : '. @ "
+"+ -'"
 
 #: .\user\models.py:127
 #, python-format
@@ -2132,7 +2345,8 @@ msgstr "Vous avez rejoint le groupe"
 
 #: .\user\views.py:190
 msgid "You can't leave this group because you are the last administrator"
-msgstr "Vous ne pouvez pas quitter ce groupe car vous êtes le dernier administrateur"
+msgstr ""
+"Vous ne pouvez pas quitter ce groupe car vous êtes le dernier administrateur"
 
 #: .\user\views.py:194
 msgid "You left this group"
@@ -2143,11 +2357,15 @@ msgstr "Vous avez quitté ce groupe"
 
 #~ msgid ""
 #~ "\n"
-#~ "                Do you like the application? Would you like to support/encourage the guy behind it ? Feel free to <a href=\"%(url_donate)s\" class=\"btn btn-xs btn-success\">Make a present !</a>\n"
+#~ "                Do you like the application? Would you like to support/"
+#~ "encourage the guy behind it ? Feel free to <a href=\"%(url_donate)s\" "
+#~ "class=\"btn btn-xs btn-success\">Make a present !</a>\n"
 #~ "                "
 #~ msgstr ""
 #~ "\n"
-#~ "                Vous aimez l'application ? Vous souhaitez supporter/encourager le gars derrière tout ça ? Vous pouvez <a href=\"%(url_donate)s\" class=\"btn btn-xs btn-success\">lui faire un cadeau !</a>\n"
+#~ "                Vous aimez l'application ? Vous souhaitez supporter/"
+#~ "encourager le gars derrière tout ça ? Vous pouvez <a href=\"%(url_donate)s"
+#~ "\" class=\"btn btn-xs btn-success\">lui faire un cadeau !</a>\n"
 #~ "                "
 
 #~ msgid "Make a gift to the developer"
