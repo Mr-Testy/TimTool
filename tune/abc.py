@@ -134,7 +134,7 @@ def handle_text_area(str, request):
 
 
 def constructABC_from_tune(tune, path, temp_path):
-    file = open(temp_path, 'w')
+    file = open(str(temp_path), 'w')
     file.write("X:" + str(tune.id) + "\n")
     if tune.abc.T:
         file.write("T:" + tune.abc.T + "\n")
@@ -156,11 +156,11 @@ def constructABC_from_tune(tune, path, temp_path):
         file.write("W:" + tune.abc.W + "\n")
     file.write(tune.abc.content)
     file.close()
-    with open(temp_path, 'r+') as infile, open(path, 'w') as outfile:
+    with open(str(temp_path), 'r+') as infile, open(str(path), 'w') as outfile:
         for line in infile:
             if not line.isspace():
                 outfile.write(line)
-    remove(temp_path)
+    remove(str(temp_path))
 
 
 def constructSVG_from_ABC(path_abc, path_svg):
