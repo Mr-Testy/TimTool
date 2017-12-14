@@ -4,6 +4,7 @@ from django.contrib import messages
 from os import remove
 from music21 import converter
 # from midi2audio import FluidSynth
+from subprocess import run
 
 
 def handle_uploaded_file(file, request):
@@ -166,12 +167,9 @@ def constructABC_from_tune(tune, path, temp_path):
 def constructSVG_from_ABC(path_abc, path_svg):
     file = converter.parse(str(path_abc))
     path_svg = str(path_svg).replace('.svg', '')
-    file.write('lily.svg', str(path_svg))
+    file.write(fmt='lily.svg', fp=str(path_svg))
     remove(path_svg)
 
 
 def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
-    file = converter.parse(str(path_abc))
-    file.write('midi', str(path_midi))
-    # fs = FluidSynth()
-    # fs.midi_to_audio(str(path_midi), str(path_wav))
+    run(["abc2midi", str(path_abc), "-o", str(path_midi)])
