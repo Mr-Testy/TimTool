@@ -163,7 +163,7 @@ def constructABC_from_tune(tune, path, temp_path):
 
 
 def constructSVG_from_ABC(path_abc, path_svg):
-    run(["abcm2ps", "-g", str(path_abc), "-O", str(path_svg)])
+    run(["abcm2ps", "-g", str(path_abc), "-O", "/var/www/media-root/tune_svg", "test"])
 
 
 def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
