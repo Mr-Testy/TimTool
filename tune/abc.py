@@ -1,7 +1,7 @@
 from .models import ABCTune, Tune
 from django.template.defaultfilters import slugify
 from django.contrib import messages
-from os import remove
+from os import remove, rename
 from subprocess import run
 
 
@@ -164,6 +164,7 @@ def constructABC_from_tune(tune, path, temp_path):
 
 def constructSVG_from_ABC(path_abc, path_svg):
     run(["abcm2ps", "-g", str(path_abc), "-O", str(path_svg)])
+    rename(str(path_svg).replace(".svg", "001.svg"), str(path_svg))
 
 
 def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
