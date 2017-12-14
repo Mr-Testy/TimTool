@@ -2,8 +2,6 @@ from .models import ABCTune, Tune
 from django.template.defaultfilters import slugify
 from django.contrib import messages
 from os import remove
-from music21 import converter
-# from midi2audio import FluidSynth
 from subprocess import run
 
 
@@ -165,10 +163,7 @@ def constructABC_from_tune(tune, path, temp_path):
 
 
 def constructSVG_from_ABC(path_abc, path_svg):
-    file = converter.parse(str(path_abc))
-    path_svg = str(path_svg).replace('.svg', '')
-    file.write(fmt='lily.svg', fp=str(path_svg))
-    remove(path_svg)
+    run(["abcm2ps", str(path_abc), "-g", str(path_svg)])
 
 
 def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
