@@ -465,16 +465,22 @@ class LireTune(DetailView):
         path_abc = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + ".abc")
         path_svg = Path(settings.MEDIA_ROOT + "tune_svg/" + tune.slug + ".svg")
         path_midi = Path(settings.MEDIA_ROOT + "tune_midi/" + tune.slug + ".mid")
-        path_wav = Path(settings.MEDIA_ROOT + "tune_wav/" + tune.slug + ".wav")
         temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "temp.abc")
         if not path_abc.is_file():
             constructABC_from_tune(tune, path_abc, temp_path)
-        if not path_svg.is_file():
+        if not path_svg.is_file() and settings.DEBUG == False:
             constructSVG_from_ABC(path_abc, path_svg)
-        if not path_midi.is_file():
+        if not path_midi.is_file() and settings.DEBUG == False:
             constructMIDI_from_ABC(path_abc, path_midi, path_wav)
         tune.save()
         return tune
+
+    def get_context_data(self, **kwargs):
+        tune = super(LireTune, self).get_object()
+        context = super().get_context_data(**kwargs)
+        context['user_clyps'] = Audio_clyp_user_favori.objects.filter(of_tune_favori_user__of_tune=tune)
+        context['group_clyps'] = Audio_clyp_group_favori.objects.filter(of_tune_favori_group__of_tune=tune)
+        return context
 
 
 @login_required

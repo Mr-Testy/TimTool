@@ -47,6 +47,7 @@ Tunes
                 {% if all_tunes|length == 0 %}
                 <thead><tr><th>{% trans 'No tune found' %}</th></tr></thead>
                 {% else %}
+                        {% trans "This tune has recordings linked to it !" as music %}
                 <thead>
                     <tr>
                         <th class="widthCell">{% trans 'Name' %}</th>
@@ -64,7 +65,11 @@ Tunes
                             href="{% url 'tune:tune_lire' slug=tune.slug %}"
                             class="btn-link tooltipInfo" data-toggle="tooltip"
                             title="Go to tune : {{ tune.name }}"><span>{{ tune.name|truncatechars:30 }}</span>
-                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></td>
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+                            {% if tune|tune_has_sound %}
+                            {% include 'music.html' with message=music %}
+                            {% endif %}
+                        </td>
                             <td class="hidden-xs">{{ tune.type }}</td>
                             <td class="hidden-xs">{{ tune.key }}</td>
                             <td class="hidden-xs hidden-sm">{{ tune.added_by }}</td>

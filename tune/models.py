@@ -45,6 +45,11 @@ class Tune(models.Model):
     class Meta:
         ordering = ["-date_creation"]
 
+    def has_audio(self):
+        if Audio_clyp_user_favori.objects.filter(of_tune_favori_user__of_tune=self).count() > 0 or Audio_clyp_group_favori.objects.filter(of_tune_favori_group__of_tune=self).count() > 0:
+            return True
+        return False
+
 
 class TuneFavori(models.Model):
     personal_note = models.TextField(null=True, blank=True)
@@ -67,6 +72,11 @@ class TuneFavori_group(TuneFavori):
             self.of_tune.key,
             self.of_group.name
         )
+
+    def has_audio(self):
+        if self.audio_clyp_group_favori_set.count() > 0:
+            return True
+        return False
 
 
 class TuneFavori_user(TuneFavori):

@@ -63,7 +63,7 @@ class User(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
 
-    tunes_favoris = models.ManyToManyField('tune.TuneFavori')
+    tunes_favoris = models.ManyToManyField('tune.TuneFavori_user')
     groupe_roles = models.ManyToManyField('user.UserGroupRole')
 
     objects = UserManager()
@@ -113,7 +113,7 @@ class GroupExtendManager(models.Manager):
 
 class GroupExtend(models.Model):
     name = models.CharField(max_length=155)
-    tunes_favoris = models.ManyToManyField('tune.TuneFavori')
+    tunes_favoris = models.ManyToManyField('tune.TuneFavori_group')
     description = models.TextField(null=False)
     nb_vues = models.IntegerField(default=0)
     slug = models.SlugField(max_length=120, unique=True)
