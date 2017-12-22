@@ -139,6 +139,22 @@
         </div>
     </div>
     <div class="col-md-12 well">
+                <h1>{% trans 'Last recordings added' %}</h1>
+        {% for clyp in clyps %}
+                <div class="row">
+            <div class="col-xs-12">
+        <h2>{% trans 'Title' %} : {{clyp.name}}</h2>
+        <p>{% trans 'Description' %} : {{clyp.description}}</p>
+    </div>
+</div>
+        <div class="row">
+            <div class="col-xs-12">
+            <iframe width="100%" height="150" src="{{clyp.href}}/widget" frameborder="0"></iframe>
+        </div>
+        </div>
+        {% endfor %}
+        </div>
+            <div class="col-md-12 well">
                 <h1>{% trans 'Last registered users' %}</h1>
                                         <div class="panel panel-primary wrappedTable">
             <table class="table table-striped table-hover">

@@ -28,7 +28,8 @@ def home(request, lang=None):
     tunes = Tune.objects.all()[:10]
     groups = GroupExtend.objects.all()[:10]
     users = User.objects.all()[:10]
-    return render(request, 'tune/accueil.html', {"tunes": tunes, "groups": groups, "users": users})
+    clyps = Audio_clyp.objects.all()[:5]
+    return render(request, 'tune/accueil.html', {"tunes": tunes, "groups": groups, "users": users, "clyps": clyps})
 
 
 def about(request):
