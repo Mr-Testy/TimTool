@@ -167,5 +167,5 @@ def constructSVG_from_ABC(path_abc, path_svg):
     rename(str(path_svg).replace(".svg", "001.svg"), str(path_svg))
 
 
-def constructMIDI_from_ABC(path_abc, path_midi, path_wav):
+def constructMIDI_from_ABC(path_abc, path_midi):
     run(["abc2midi", str(path_abc), "-o", str(path_midi)])

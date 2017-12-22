@@ -485,7 +485,7 @@ class LireTune(DetailView):
         if not path_svg.is_file() and settings.DEBUG == False:
             constructSVG_from_ABC(path_abc, path_svg)
         if not path_midi.is_file() and settings.DEBUG == False:
-            constructMIDI_from_ABC(path_abc, path_midi, path_wav)
+            constructMIDI_from_ABC(path_abc, path_midi)
         tune.save()
         return tune
 
