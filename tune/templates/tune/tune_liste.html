@@ -35,6 +35,14 @@ Tunes
                 <label for="q_key">{% trans 'Key' %}</label>
                 <input type="text" name="q_key" placeholder="A, Edor, Em, Dmix..." id="q_key" class="form-control">
             </div>
+                                <div class="form-group">
+                <label for="q_sounds">{% trans 'Recordings' %}</label>
+                <select class="form-control" name="q_sounds">
+  <option value="Choose">{% trans 'Choose' %}</option>
+  <option value="HasSound">{% trans 'Has recordings' %}</option>
+  <option value="NoSound">{% trans "Hasn't recordings" %}</option>
+</select>
+        </div>
             <button type="submit" class="btn btn-success">{% trans 'Filter' %}</button>
         </form>
     </div>

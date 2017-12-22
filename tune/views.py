@@ -9,6 +9,8 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.template.defaultfilters import slugify
 from pathlib import Path
+from django.db.models import Count
+from django.db.models import Q
 import random
 
 from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori, Audio_clyp
@@ -46,6 +48,7 @@ class ListeTunes(ListView):
         q_name = self.request.GET.get("q_name", None)
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
+        q_sounds = self.request.GET.get("q_sounds", None)
         tunes = Tune.objects.all()
         if q_name:
             tunes = tunes.filter(name__icontains=q_name)
@@ -53,11 +56,16 @@ class ListeTunes(ListView):
             tunes = tunes.filter(type=q_type)
         if q_key:
             tunes = tunes.filter(key=q_key)
-        if q_name or q_type or q_key:
-            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s"') % {
+        if q_sounds == "HasSound":
+            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user__gt=0) | Q(num_audio_group__gt=0))
+        elif q_sounds == "NoSound":
+            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user=0) & Q(num_audio_group=0))
+        if q_name or q_type or q_key or not q_sounds == "Choose":
+            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | %(recording)s') % {
                 'name': q_name,
                 'type': q_type,
-                'key': q_key
+                'key': q_key,
+                'recording' : q_sounds
             })
         return tunes
 

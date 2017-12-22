@@ -43,6 +43,14 @@
   <option value="Not learned">{% trans 'Not learned' %}</option>
 </select>
         </div>
+                    <div class="form-group">
+                <label for="q_sounds">{% trans 'Recordings' %}</label>
+                <select class="form-control" name="q_sounds">
+  <option value="Choose">{% trans 'Choose' %}</option>
+  <option value="HasSound">{% trans 'Has recordings' %}</option>
+  <option value="NoSound">{% trans "Hasn't recordings" %}</option>
+</select>
+        </div>
             <button type="submit" class="btn btn-success">{% trans 'Filter' %}</button>
         </form>
     </div>
