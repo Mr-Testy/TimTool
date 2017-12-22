@@ -81,6 +81,7 @@ class ListeTunesFavoris(ListView):
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
         q_status = self.request.GET.get("q_status", None)
+        q_sounds = self.request.GET.get("q_sounds", None)
         tunes_favoris = TuneFavori_user.objects.filter(of_user=self.request.user)
         if q_name:
             tunes_favoris = tunes_favoris.filter(of_tune__name__icontains=q_name)
@@ -92,12 +93,17 @@ class ListeTunesFavoris(ListView):
             tunes_favoris = tunes_favoris.filter(status=True)
         elif q_status == "Not learned":
             tunes_favoris = tunes_favoris.filter(status=False)
-        if q_name or q_type or q_key or q_status == "Learned" or q_status == "Not learned":
-            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "status" = "%(status)s"') % {
+        if q_sounds == "HasSound":
+            tunes_favoris = tunes_favoris.annotate(num_audio_user=Count("audio_clyp_user_favori")).filter(Q(num_audio_user__gt=0))
+        elif q_sounds == "NoSound":
+            tunes_favoris = tunes_favoris.annotate(num_audio_user=Count("audio_clyp_user_favori")).filter(Q(num_audio_user=0))
+        if q_name or q_type or q_key or q_status == "Learned" or q_status == "Not learned" or not q_sounds == "Choose":
+            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "status" = "%(status)s" | %(recording)s') % {
                 'name': q_name,
                 'type': q_type,
                 'key': q_key,
-                'status': q_status
+                'status': q_status,
+                'recording' : q_sounds
             })
         return tunes_favoris
 
