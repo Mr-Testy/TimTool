@@ -82,7 +82,7 @@ class ListeTunesFavoris(ListView):
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
         q_status = self.request.GET.get("q_status", None)
-        q_sounds = self.request.GET.get("q_sounds", None)
+        q_sounds = self.request.GET.get("q_sounds", "Choose")
         tunes_favoris = TuneFavori_user.objects.filter(of_user=self.request.user)
         if q_name:
             tunes_favoris = tunes_favoris.filter(of_tune__name__icontains=q_name)
