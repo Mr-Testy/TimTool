@@ -48,7 +48,7 @@ class ListeTunes(ListView):
         q_name = self.request.GET.get("q_name", None)
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
-        q_sounds = self.request.GET.get("q_sounds", None)
+        q_sounds = self.request.GET.get("q_sounds", "Choose")
         tunes = Tune.objects.all()
         if q_name:
             tunes = tunes.filter(name__icontains=q_name)
@@ -67,6 +67,7 @@ class ListeTunes(ListView):
                 'key': q_key,
                 'recording' : q_sounds
             })
+        print(q_sounds)
         return tunes
 
 
