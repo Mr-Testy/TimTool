@@ -120,6 +120,9 @@ class Audio_clyp(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
     added_by = models.ForeignKey(User, null=False, blank=False)
 
+    class Meta:
+        ordering = ["-date_creation"]
+
 
 class Audio_clyp_tune(Audio_clyp):
     of_tune = models.ForeignKey(Tune, null=False, blank=False)
