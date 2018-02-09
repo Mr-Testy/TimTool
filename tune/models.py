@@ -4,35 +4,15 @@ from django.template.defaultfilters import slugify
 from django.db.models.signals import pre_save
 
 
-class ABCTune(models.Model):
-    X = models.IntegerField()
-    T = models.CharField(max_length=150, null=False, blank=False)
-    R = models.CharField(max_length=30, null=False, blank=False)
-    C = models.CharField(max_length=150)
-    S = models.CharField(max_length=150)
-    H = models.TextField()
-    D = models.CharField(max_length=150)
-    Z = models.CharField(max_length=150)
-    M = models.CharField(max_length=10, null=False, blank=False)
-    L = models.CharField(max_length=10, null=False, blank=False)
-    Q = models.CharField(max_length=10, null=False, blank=False)
-    K = models.CharField(max_length=10, null=False, blank=False)
-    W = models.TextField()
-    content = models.TextField(null=False, blank=False)
-    created_by = models.CharField(max_length=30)
-    other_title = models.CharField(max_length=100)
-
-
 class Tune(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
     key = models.CharField(max_length=6, null=False, blank=False)
     type = models.CharField(max_length=15, null=False, blank=False)
-    slug = models.SlugField(max_length=120, unique=True, null=False, blank=False)  # concat name-key-mode-type
+    slug = models.SlugField(max_length=160, unique=True, null=False, blank=False)  # concat name-key-type
     description = models.TextField(null=True, blank=True)
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
     added_by = models.ForeignKey(User, null=False, blank=False)
     nb_vues = models.IntegerField(default=0)
-    abc = models.OneToOneField(ABCTune)
 
     def __str__(self):
         return self.name
@@ -51,6 +31,58 @@ class Tune(models.Model):
         return False
 
 
+class Title(models.Model):
+    name = models.CharField(max_length=150, null=False, blank=False)
+    slug = models.SlugField(max_length=160, unique=True, null=False, blank=False)  # concat name-key-type
+    date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
+    belong_to_tunes = models.ManyToManyField(Tune, related_name='titles')
+
+
+class Composer(models.Model):
+    name = models.CharField(max_length=150, null=False, blank=False, unique=True)
+    date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
+    composed_tunes = models.ManyToManyField(Tune, related_name='composers')
+
+
+class Source(models.Model):
+    name = models.CharField(max_length=150, null=False, blank=False, unique=True)
+    date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
+    of_tunes = models.ManyToManyField(Tune, related_name='sources')
+
+
+class Discography(models.Model):
+    name = models.CharField(max_length=150, null=False, blank=False, unique=True)
+    date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
+    composed_tunes = models.ManyToManyField(Tune, related_name='discographies')
+
+
+class ABCTune(models.Model):
+    date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
+    X = models.IntegerField()
+    T = models.CharField(max_length=150, null=False, blank=False)
+    R = models.CharField(max_length=30, null=False, blank=False)
+    C = models.CharField(max_length=150)
+    S = models.CharField(max_length=150)
+    H = models.TextField()
+    D = models.CharField(max_length=150)
+    Z = models.CharField(max_length=150, null=True, blank=False)
+    M = models.CharField(max_length=10, null=False, blank=False)
+    L = models.CharField(max_length=10, null=False, blank=False)
+    Q = models.CharField(max_length=10, null=False, blank=False)
+    K = models.CharField(max_length=10, null=False, blank=False)
+    W = models.TextField()
+    N = models.TextField(null=True)
+    Z = models.CharField(max_length=150, null=True, blank=False)
+    content = models.TextField(null=False, blank=False)
+    created_by = models.CharField(max_length=30)
+    other_title = models.CharField(max_length=100, null=True)
+    other_title2 = models.CharField(max_length=100, null=True)
+    other_composer = models.CharField(max_length=150, null=True)
+    other_composer2 = models.CharField(max_length=150, null=True)
+    version = models.CharField(max_length=150, null=False, blank=False)
+    tune = models.ForeignKey(Tune, null=False, blank=False, related_name='abcs')
+
+    
 class TuneFavori(models.Model):
     personal_note = models.TextField(null=True, blank=True)
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
