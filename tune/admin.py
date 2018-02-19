@@ -3,12 +3,20 @@ from .models import Tune, TuneFavori, TuneFavori_user, TuneFavori_group, Audio_c
 
 # Register your models here.
 
+
+class ABCInline(admin.TabularInline):
+    model = ABCTune
+
+
 class TuneAdmin(admin.ModelAdmin):
     list_display = ('name', 'key', 'type', 'slug', 'nb_vues')
     list_filter = ('name', 'key', 'type')
     #  date_hierarchy = 'date'
     ordering = ('date_creation', )
     search_fields = ('name',)
+    inlines = [
+        ABCInline,
+    ]
 
 
 class TitleAdmin(admin.ModelAdmin):

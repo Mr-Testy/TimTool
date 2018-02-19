@@ -76,27 +76,29 @@ def handle_uploaded_file(file, version, request):
                 slug3 = ""
             titles = Title.objects.filter(Q(slug=slug) | Q(slug=slug2) | Q(slug=slug3))
 
-            if titles.count()>0:
+            if titles.count() > 0:
                 for title in titles:
-                    messages.info(request,
-                    _('The Title "%(title)s" has been found !') % {'title': title.slug})
+                    messages.info(
+                        request,
+                        _('The Title "%(title)s" has been found !') % {'title': title.slug}
+                    )
                     try:
                         tune = Tune.objects.get(slug=title.slug)
 
                         new_title, created = Title.objects.get_or_create(
-                            name=abc.T, slug=slug, belong_to_tune=tune)
+                            slug=slug, defaults={'belong_to_tune': tune, 'name': abc.T})
                         if created:
                             messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title.slug})
 
                         if abc.other_title:
                             new_title2, created2 = Title.objects.get_or_create(
-                                name=abc.other_title, slug=slug2, belong_to_tune=tune)
+                                slug=slug2, defaults={'belong_to_tune': tune, 'name': abc.other_title})
                             if created2:
                                 messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title2.slug})
 
                         if abc.other_title2:
                             new_title3, created3 = Title.objects.get_or_create(
-                                name=abc.other_title2, slug=slug3, belong_to_tune=tune)
+                                slug=slug3, defaults={'belong_to_tune': tune, 'name': abc.other_title2})
                             if created3:
                                 messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title3.slug})
 
@@ -104,13 +106,21 @@ def handle_uploaded_file(file, version, request):
                             abc.tune = tune
                             abc.version = version
                             abc.save()
-                            messages.info(request,
-                            _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {'version': abc.version,
-                            'tune': tune.slug})
+                            messages.info(
+                                request,
+                                _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {
+                                'version': abc.version,
+                                'tune': tune.slug
+                                }
+                            )
                         else:
-                            messages.warning(request,
-                            _('The .abc version "%(version)s" of Tune "%(tune)s" already exists !') % {'version': version,
-                            'tune': tune.slug})
+                            messages.warning(
+                                request,
+                                _('The .abc version "%(version)s" of Tune "%(tune)s" already exists !') % {
+                                'version': version,
+                                'tune': tune.slug
+                                }
+                            )
                     except Tune.DoesNotExist:
                         pass
             else:
@@ -118,16 +128,19 @@ def handle_uploaded_file(file, version, request):
                 tune.name = abc.T
                 tune.key = abc.K
                 tune.type = abc.R
-                tune.description = abc.H
                 tune.added_by = request.user
                 tune.save()
                 messages.success(request, _('The tune "%(tune)s" a has been created') % {'tune': tune.slug})
                 abc.tune = tune
                 abc.version = version
                 abc.save()
-                messages.info(request,
-                _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {'version': abc.version,
-                'tune': tune.slug})
+                messages.info(
+                    request,
+                    _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {
+                    'version': abc.version,
+                    'tune': tune.slug
+                    }
+                )
                 title = Title(name=abc.T, slug=slug)
                 title.belong_to_tune = tune
                 title.save()

@@ -29,7 +29,7 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
 
 {% block jumboMessage %}
 {% blocktrans with type=tune.type key=tune.key %}{{ type }} in {{ key }}{% endblocktrans %}. 
-{% blocktrans with nb_vues=tune.nb_vues %}Seen {{ nb_vues }} times{% endblocktrans %}
+{% blocktrans with nb_vues=tune.nb_vues %}Seen {{ nb_vues }} times{% endblocktrans %}.
 {% endblock %}
 
 {% block timtool_body %}
@@ -37,11 +37,10 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
             <div class="col-xs-12">
 <ul  class="nav nav-pills">
   <li class="active">
-    <a  href="#1a" data-toggle="tab">{% trans 'Music sheet' %}</a>
+    <a  href="#1a" data-toggle="tab">{% trans 'Versions' %}</a>
   </li>
-  <li><a href="#2a" data-toggle="tab">ABC</a></li>
-  <li><a href="#3a" data-toggle="tab">Audio</a></li>
-  <li><a href="#4a" data-toggle="tab">{% trans 'Description' %}</a></li>
+  <li><a href="#2a" data-toggle="tab">Audio</a></li>
+  <li><a href="#3a" data-toggle="tab">{% trans 'Other titles' %}</a></li>
 </ul>
 </div>
 </div>
@@ -50,25 +49,47 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
             <div class="col-xs-12">
 <div class="tab-content clearfix">
   <div class="tab-pane active" id="1a">
-    <h1>{% trans 'Music sheet' %}</h1>
-    <img src="https://files.timtool.ovh/tune_svg/{{tune.slug}}.svg" alt="music sheet">
+<div class="row">
+    <div class="col-sm-12">
+        <h1>{% trans 'Versions of this Tune : '%}</h1>
+        <div class="panel panel-primary wrappedTable">
+            <table class="table table-striped table-hover">
+                {% if tune.abcs.all|length == 0 %}
+                <thead><tr><th>{% trans 'No version found' %}</th></tr></thead>
+                {% else %}
+                <thead>
+                    <tr>
+                        <th class="widthCell">{% trans 'Version' %}</th>
+                        <th class="widthCell">{% trans 'ABC...' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for version in tune.abcs.all %} 
+                    <tr>
+                          <td class=""><a
+                              href="{% url 'tune:tune_lire_version' slug=tune.slug version=version.version %}"
+                              class="btn-link tooltipInfo" data-toggle="tooltip"
+                              title="Go to version : {{version.version}} of Tune : {{ tune.name }}"><span>{{ version.version|truncatechars:30 }}</span>
+                              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+                          </td>
+                          <td>{{version.content|truncatechars:40}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+</div>
   </div>
 
   <div class="tab-pane" id="2a">
-    <h1>ABC</h1>
-    <p>{{tune.abc.content|linebreaksbr}}</p>
-  </div>
-
-  <div class="tab-pane" id="3a">
-                <div class="row ">
-            <div class="col-xs-12">
-    <h1>Audio</h1>
-    <p>{% trans 'Download the sound (.mid file)'%} <a class="btn btn-success btn-sm" href="https://files.timtool.ovh/tune_midi/{{tune.slug}}.mid">{% trans 'here'%} !</a></p>
-  </div>
-</div>
             <div class="row ">
             <div class="col-xs-12">
 <h1>{% trans 'Audio files' %}</h1>
+{% if user_clyps|length == 0 and group_clyps|length == 0 %}
+<p>{% trans 'There is not audio file for this Tune' %}</p>
+{% else %}
         {% for clyp in user_clyps %}
                 <div class="row">
             <div class="col-xs-12">
@@ -98,14 +119,23 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
         </div>
         </div>
         {% endfor %}
+        {% endif %}
 </div>
 </div>
   </div>
+  <div class="tab-pane" id="3a">
+            <div class="row ">
+            <div class="col-xs-12">
+<h1>{% trans 'Other titles of this Tune' %}</h1>
+{% for titl in tune.titles.all %}
+{% if not titl.name == tune.name %}
+<li>{{titl.name}}</li>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
 
-  <div class="tab-pane" id="4a">
-    <h1>{% trans 'Description' %}</h1>
-    <p>{{tune.description}}</p>
-  </div>
 </div>
 </div>
 </div>

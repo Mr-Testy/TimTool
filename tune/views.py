@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.core.urlresolvers import reverse_lazy
 from django.conf import settings
@@ -65,7 +65,7 @@ class ListeTunes(ListView):
                 'name': q_name,
                 'type': q_type,
                 'key': q_key,
-                'recording' : q_sounds
+                'recording': q_sounds
             })
         return titles
 
@@ -468,10 +468,23 @@ def comparateur(request):
                                                      })
 
 
-class LireTune(DetailView):
+def tune_lire(request, slug):
+    tune = get_object_or_404(Tune, slug=slug)
+    tune.nb_vues = tune.nb_vues + 1
+    tune.save()
+    user_clyps = Audio_clyp_user_favori.objects.filter(of_tune_favori_user__of_tune=tune)
+    group_clyps = Audio_clyp_group_favori.objects.filter(of_tune_favori_group__of_tune=tune)
+    return render(request, 'tune/tune_lire.html', {
+        "tune": tune,
+        "user_clyps": user_clyps,
+        "group_clyps": group_clyps
+    })
+
+
+class LireTuneVersion(DetailView):
     context_object_name = "tune"
     model = Tune
-    template_name = "tune/tune_lire.html"
+    template_name = "tune/tune_lire_version.html"
 
     def get_object(self):
         tune = super(LireTune, self).get_object()
