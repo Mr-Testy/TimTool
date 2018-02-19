@@ -46,6 +46,12 @@ class GenerateurForm(forms.Form):
 
 
 class UploadABCFileForm(forms.Form):
+    version = forms.CharField(
+        label=_("Version"),
+        max_length=50,
+        required=True,
+        error_messages={'required': _("Insert name of Tunebook or User")}
+        )
     file = forms.FileField(
         label=_("File "),
         required=True,

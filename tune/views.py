@@ -13,7 +13,7 @@ from django.db.models import Count
 from django.db.models import Q
 import random
 
-from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori, Audio_clyp
+from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_clyp_user_favori, Audio_clyp_group_favori, Audio_clyp, Title
 from .forms import GenerateurForm, UploadABCFileForm, TextAreaABCForm, ClypForm
 from user.models import User, GroupExtend
 from user.forms import CompareUserForm
@@ -40,7 +40,7 @@ def about(request):
 
 class ListeTunes(ListView):
     model = Tune
-    context_object_name = "all_tunes"
+    context_object_name = "titles"
     template_name = "tune/tune_liste.html"
     paginate_by = 100
 
@@ -49,26 +49,25 @@ class ListeTunes(ListView):
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
         q_sounds = self.request.GET.get("q_sounds", "Choose")
-        tunes = Tune.objects.all()
+        titles = Title.objects.all()
         if q_name:
-            tunes = tunes.filter(name__icontains=q_name)
+            titles = titles.filter(name__icontains=q_name)
         if q_type:
-            tunes = tunes.filter(type=q_type)
+            titles = titles.filter(belong_to_tune__type=q_type)
         if q_key:
-            tunes = tunes.filter(key=q_key)
+            titles = titles.filter(belong_to_tune__key=q_key)
         if q_sounds == "HasSound":
-            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user__gt=0) | Q(num_audio_group__gt=0))
+            titles = titles.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user__gt=0) | Q(num_audio_group__gt=0))
         elif q_sounds == "NoSound":
-            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user=0) & Q(num_audio_group=0))
+            titles = titles.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user=0) & Q(num_audio_group=0))
         if q_name or q_type or q_key or not q_sounds == "Choose":
-            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | %(recording)s') % {
+            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "recordings" = "%(recording)s"') % {
                 'name': q_name,
                 'type': q_type,
                 'key': q_key,
                 'recording' : q_sounds
             })
-        print(q_sounds)
-        return tunes
+        return titles
 
 
 class ListeTunesFavoris(ListView):
@@ -99,7 +98,7 @@ class ListeTunesFavoris(ListView):
         elif q_sounds == "NoSound":
             tunes_favoris = tunes_favoris.annotate(num_audio_user=Count("audio_clyp_user_favori")).filter(Q(num_audio_user=0))
         if q_name or q_type or q_key or q_status == "Learned" or q_status == "Not learned" or not q_sounds == "Choose":
-            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "status" = "%(status)s" | %(recording)s') % {
+            messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "status" = "%(status)s" | "recordings" = "%(recording)s"') % {
                 'name': q_name,
                 'type': q_type,
                 'key': q_key,
@@ -588,7 +587,8 @@ def createABCTune(request):
         handle_text_area(request.POST.get("abc"), request)
         messages.success(request, _('Processus successfully ended !'))
     elif formUpload.is_valid() and request.user.is_admin:
-        handle_uploaded_file(request.FILES['file'], request)
+        version = formUpload.cleaned_data["version"]
+        handle_uploaded_file(request.FILES['file'], version, request)
         messages.success(request, _('Processus successfully ended !'))
     else:
         print(formUpload.is_valid())

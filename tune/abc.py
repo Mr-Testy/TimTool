@@ -5,9 +5,10 @@ from os import remove, rename
 from subprocess import run
 from django.core import serializers
 from django.db.models import Q
+from django.utils.translation import ugettext as _
 
 
-def handle_uploaded_file(file, request):
+def handle_uploaded_file(file, version, request):
     content = file.readlines()
     all_abc = []
     flag = False
@@ -20,18 +21,18 @@ def handle_uploaded_file(file, request):
             elif line[0] == "T":
                 if all_abc[-1].T == "":
                     all_abc[-1].T = line[1]
-                elif all_abc[-1].other_title == "":
+                elif not all_abc[-1].other_title:
                     all_abc[-1].other_title = line[1]
-                elif all_abc[-1].other_title2 == "":
+                elif not all_abc[-1].other_title2:
                     all_abc[-1].other_title2 = line[1]
             elif line[0] == "R":
                 all_abc[-1].R = line[1]
             elif line[0] == "C":
                 if all_abc[-1].C == "":
                     all_abc[-1].C = line[1]
-                elif all_abc[-1].other_composer == "":
+                elif not all_abc[-1].other_composer:
                     all_abc[-1].other_composer = line[1]
-                elif all_abc[-1].other_composer2 == "":
+                elif not all_abc[-1].other_composer2:
                     all_abc[-1].other_composer2 = line[1]
             elif line[0] == "S":
                 all_abc[-1].S = line[1]
@@ -76,13 +77,42 @@ def handle_uploaded_file(file, request):
             titles = Title.objects.filter(Q(slug=slug) | Q(slug=slug2) | Q(slug=slug3))
 
             if titles.count()>0:
-                # messages.warning(request, "le tune " + slug + " existe déjà")
-                messages.warning(request, serializers.serialize("json", [abc, ]))
                 for title in titles:
-                    messages.error(request, title.slug)
-                    tune = Tune.objects.get(slug=title.slug)
-                    messages.info(request, serializers.serialize("json", [tune, ]))
-                # messages.info(request, serializers.serialize("json", [tune, ]))
+                    messages.info(request,
+                    _('The Title "%(title)s" has been found !') % {'title': title.slug})
+                    try:
+                        tune = Tune.objects.get(slug=title.slug)
+
+                        new_title, created = Title.objects.get_or_create(
+                            name=abc.T, slug=slug, belong_to_tune=tune)
+                        if created:
+                            messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title.slug})
+
+                        if abc.other_title:
+                            new_title2, created2 = Title.objects.get_or_create(
+                                name=abc.other_title, slug=slug2, belong_to_tune=tune)
+                            if created2:
+                                messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title2.slug})
+
+                        if abc.other_title2:
+                            new_title3, created3 = Title.objects.get_or_create(
+                                name=abc.other_title2, slug=slug3, belong_to_tune=tune)
+                            if created3:
+                                messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title3.slug})
+
+                        if tune.abcs.filter(version=version).count() == 0:
+                            abc.tune = tune
+                            abc.version = version
+                            abc.save()
+                            messages.info(request,
+                            _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {'version': abc.version,
+                            'tune': tune.slug})
+                        else:
+                            messages.warning(request,
+                            _('The .abc version "%(version)s" of Tune "%(tune)s" already exists !') % {'version': version,
+                            'tune': tune.slug})
+                    except Tune.DoesNotExist:
+                        pass
             else:
                 tune = Tune()
                 tune.name = abc.T
@@ -91,20 +121,27 @@ def handle_uploaded_file(file, request):
                 tune.description = abc.H
                 tune.added_by = request.user
                 tune.save()
+                messages.success(request, _('The tune "%(tune)s" a has been created') % {'tune': tune.slug})
                 abc.tune = tune
+                abc.version = version
                 abc.save()
+                messages.info(request,
+                _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {'version': abc.version,
+                'tune': tune.slug})
                 title = Title(name=abc.T, slug=slug)
+                title.belong_to_tune = tune
                 title.save()
-                title.belong_to_tunes.add(tune)
+                messages.success(request, _('The title "%(title)s" has been created') % {'title': title.slug})
                 if abc.other_title:
                     title2 = Title(name=abc.other_title, slug=slug2)
+                    title2.belong_to_tune = tune
                     title2.save()
-                    title2.belong_to_tunes.add(tune)
+                    messages.success(request, _('The title "%(title)s" has been created') % {'title': title2.slug})
                 if abc.other_title2:
                     title3 = Title(name=abc.other_title2, slug=slug3)
+                    title3.belong_to_tune = tune
                     title3.save()
-                    title3.belong_to_tunes.add(tune)
-                messages.success(request, "le tune " + tune.slug + " a bien été créé")
+                    messages.success(request, _('The title "%(title)s" has been created') % {'title': title3.slug})
         else:
             messages.error(request, "abc incomplet ou erroné")
 
@@ -122,18 +159,18 @@ def handle_text_area(str, request):
             elif line[0] == "T":
                 if all_abc[-1].T == "":
                     all_abc[-1].T = line[1]
-                elif all_abc[-1].other_title == "":
+                elif not all_abc[-1].other_title:
                     all_abc[-1].other_title = line[1]
-                elif all_abc[-1].other_title2 == "":
+                elif not all_abc[-1].other_title2:
                     all_abc[-1].other_title2 = line[1]
             elif line[0] == "R":
                 all_abc[-1].R = line[1]
             elif line[0] == "C":
                 if all_abc[-1].C == "":
                     all_abc[-1].C = line[1]
-                elif all_abc[-1].other_composer == "":
+                elif not all_abc[-1].other_composer:
                     all_abc[-1].other_composer = line[1]
-                elif all_abc[-1].other_composer2 == "":
+                elif not all_abc[-1].other_composer2:
                     all_abc[-1].other_composer2 = line[1]
             elif line[0] == "S":
                 all_abc[-1].S = line[1]

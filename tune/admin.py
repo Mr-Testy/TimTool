@@ -19,6 +19,14 @@ class TitleAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
+class ABCAdmin(admin.ModelAdmin):
+    list_display = ('T', 'version',)
+    list_filter = ('T', )
+    #  date_hierarchy = 'date'
+    ordering = ('date_creation', )
+    search_fields = ('T',)
+
+
 admin.site.register(Tune, TuneAdmin)
 admin.site.register(TuneFavori)
 admin.site.register(TuneFavori_user)
@@ -26,5 +34,5 @@ admin.site.register(TuneFavori_group)
 admin.site.register(Audio_clyp_group_favori)
 admin.site.register(Audio_clyp_user_favori)
 admin.site.register(Audio_clyp_tune)
-admin.site.register(ABCTune)
+admin.site.register(ABCTune, ABCAdmin)
 admin.site.register(Title, TitleAdmin)

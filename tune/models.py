@@ -35,7 +35,10 @@ class Title(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
     slug = models.SlugField(max_length=160, unique=True, null=False, blank=False)  # concat name-key-type
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
-    belong_to_tunes = models.ManyToManyField(Tune, related_name='titles')
+    belong_to_tune = models.ForeignKey(Tune, related_name='titles')
+
+    class Meta:
+        ordering = ["-date_creation"]
 
 
 class Composer(models.Model):
