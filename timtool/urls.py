@@ -21,6 +21,7 @@ from tune.views import home, about
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^', include('api.urls')),
     url(r'^$', home, name="accueil"),
     url(r'^(?P<lang>[\w-]*)$', home, name="accueil_lang"),
     url(r'^about/$', about, name="about"),

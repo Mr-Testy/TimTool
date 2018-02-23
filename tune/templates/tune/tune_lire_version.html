@@ -1,0 +1,81 @@
+{% extends "tune/layout.html" %}
+{% load tune_filters %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{{ tune.name }}
+{% endblock %}
+
+{% block jumboTitle %}
+{{ tune.name }}
+{% if request.user.is_authenticated %}
+{% if tune|has_tune_favori:request.user %}
+<button id="unfavori" data-id="{{tune.slug}}" class="btn btn-simple unfavori tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune added to your favorites' %}" type="button">
+  <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+</button>
+{% else %}
+<button data-id="{{tune.slug}}" class="btn btn-simple favori tooltipInfo" data-toggle="tooltip" title="{% trans 'Tune absent from your favorites' %}" type="button">
+  <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+</button>
+{% endif %}
+{% else %}
+<button class="btn btn-simple favori" type="button" data-placement="left" data-toggle="popover" data-trigger="focus"
+title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be able to add this Tune to your favorites.' %}">
+<i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+</button>
+{% endif %}
+{% endblock %}
+
+{% block jumboMessage %}
+{% blocktrans with type=tune.type key=tune.key %}{{ type }} in {{ key }}{% endblocktrans %}. 
+{% blocktrans with nb_vues=tune.nb_vues %}Seen {{ nb_vues }} times{% endblocktrans %}
+{% endblock %}
+
+{% block timtool_body %}
+        <div class="row well">
+            <div class="col-xs-8">
+              <h1>{% trans 'Version'%} : {{abc.version}}</h1>
+<ul  class="nav nav-pills">
+  <li class="active">
+    <a  href="#1a" data-toggle="tab">{% trans 'Music sheet' %}</a>
+  </li>
+  <li><a href="#2a" data-toggle="tab">ABC</a></li>
+    <li><a href="#3a" data-toggle="tab">Midi (Audio)</a></li>
+  <li><a href="#4a" data-toggle="tab">{% trans 'Description' %}</a></li>
+</ul>
+</div>
+</div>
+
+        <div class="row well">
+            <div class="col-xs-12">
+<div class="tab-content clearfix">
+  <div class="tab-pane active" id="1a">
+    <h1>{% trans 'Music sheet' %}</h1>
+    <img src="https://files.timtool.ovh/tune_svg/{{tune.slug}}-{{abc.version}}.svg" alt="music sheet">
+  </div>
+
+  <div class="tab-pane" id="2a">
+    <h1>ABC</h1>
+    <p>{% trans 'Download the ABC (.abc file)'%} <a class="btn btn-success btn-sm" href="https://files.timtool.ovh/tune_abc/{{tune.slug}}-{{abc.version}}.abc" download>{% trans 'here'%} !</a></p>
+    <p>{{abc.content|linebreaksbr}}</p>
+  </div>
+
+  <div class="tab-pane" id="3a">
+                <div class="row ">
+            <div class="col-xs-12">
+    <h1>Audio</h1>
+    <p>{% trans 'Download the sound (.mid file)'%} <a class="btn btn-success btn-sm" href="https://files.timtool.ovh/tune_midi/{{tune.slug}}-{{abc.version}}.mid">{% trans 'here'%} !</a></p>
+  </div>
+</div>
+  </div>
+
+  <div class="tab-pane" id="4a">
+    <h1>{% trans 'Description' %}</h1>
+    <p>{{abc.H}}</p>
+  </div>
+</div>
+</div>
+</div>
+{% include 'disqus.html' with PAGE_IDENTIFIER="Tune : "|add:tune.slug|add:'-'|add:abc.version %}
+{% endblock %}

@@ -234,38 +234,38 @@ def handle_text_area(str, request):
             messages.error(request, "abc incomplet ou erroné. Les champs T: (titre), K: (tonalité) et R: (type) sont obligatoires")
 
 
-def constructABC_from_tune(tune, path, temp_path):
+def constructABC_from_abc(abc, path, temp_path):
     file = open(str(temp_path), 'w')
-    file.write("X:" + str(tune.id) + "\n")
-    if tune.abc.T:
-        file.write("T:" + tune.abc.T + "\n")
-    if tune.abc.other_title:
-        file.write("T:" + tune.abc.other_title + "\n")
-    if tune.abc.other_title2:
-        file.write("T:" + tune.abc.other_title2 + "\n")
-    if tune.abc.R:
-        file.write("R:" + tune.abc.R + "\n")
-    if tune.abc.C:
-        file.write("C:" + tune.abc.C + "\n")
-    if tune.abc.other_composer:
-        file.write("C:" + tune.abc.other_composer + "\n")
-    if tune.abc.other_composer2:
-        file.write("C:" + tune.abc.other_composer2 + "\n")
-    if tune.abc.Z:
-        file.write("Z:" + tune.abc.Z + "\n")
-    if tune.abc.N:
-        file.write("N:" + tune.abc.N + "\n")
-    if tune.abc.M:
-        file.write("M:" + tune.abc.M + "\n")
-    if tune.abc.L:
-        file.write("L:" + tune.abc.L + "\n")
-    if tune.abc.Q:
-        file.write("Q:" + tune.abc.Q + "\n")
-    if tune.abc.K:
-        file.write("K:" + tune.abc.K + "\n")
-    file.write(tune.abc.content)
-    if tune.abc.W:
-        file.write("W:" + tune.abc.W + "\n")
+    file.write("X:" + str(abc.id) + "\n")
+    if abc.T:
+        file.write("T:" + abc.T + "\n")
+    if abc.other_title:
+        file.write("T:" + abc.other_title + "\n")
+    if abc.other_title2:
+        file.write("T:" + abc.other_title2 + "\n")
+    if abc.R:
+        file.write("R:" + abc.R + "\n")
+    if abc.C:
+        file.write("C:" + abc.C + "\n")
+    if abc.other_composer:
+        file.write("C:" + abc.other_composer + "\n")
+    if abc.other_composer2:
+        file.write("C:" + abc.other_composer2 + "\n")
+    if abc.Z:
+        file.write("Z:" + abc.Z + "\n")
+    if abc.N:
+        file.write("N:" + abc.N + "\n")
+    if abc.M:
+        file.write("M:" + abc.M + "\n")
+    if abc.L:
+        file.write("L:" + abc.L + "\n")
+    if abc.Q:
+        file.write("Q:" + abc.Q + "\n")
+    if abc.K:
+        file.write("K:" + abc.K + "\n")
+    file.write(abc.content)
+    if abc.W:
+        file.write("W:" + abc.W + "\n")
     file.close()
     with open(str(temp_path), 'r+') as infile, open(str(path), 'w') as outfile:
         for line in infile:

@@ -17,7 +17,7 @@ from .models import Tune, TuneFavori, TuneFavori_group, TuneFavori_user, Audio_c
 from .forms import GenerateurForm, UploadABCFileForm, TextAreaABCForm, ClypForm
 from user.models import User, GroupExtend
 from user.forms import CompareUserForm
-from tune.abc import handle_uploaded_file, handle_text_area, constructABC_from_tune, constructSVG_from_ABC, constructMIDI_from_ABC
+from tune.abc import handle_uploaded_file, handle_text_area, constructABC_from_abc, constructSVG_from_ABC, constructMIDI_from_ABC
 
 
 class LoginRequiredMixin(object):
@@ -481,33 +481,25 @@ def tune_lire(request, slug):
     })
 
 
-class LireTuneVersion(DetailView):
-    context_object_name = "tune"
-    model = Tune
-    template_name = "tune/tune_lire_version.html"
-
-    def get_object(self):
-        tune = super(LireTune, self).get_object()
-        tune.nb_vues = tune.nb_vues + 1
-        path_abc = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + ".abc")
-        path_svg = Path(settings.MEDIA_ROOT + "tune_svg/" + tune.slug + ".svg")
-        path_midi = Path(settings.MEDIA_ROOT + "tune_midi/" + tune.slug + ".mid")
-        temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "temp.abc")
-        if not path_abc.is_file():
-            constructABC_from_tune(tune, path_abc, temp_path)
-        if not path_svg.is_file() and settings.DEBUG == False:
-            constructSVG_from_ABC(path_abc, path_svg)
-        if not path_midi.is_file() and settings.DEBUG == False:
-            constructMIDI_from_ABC(path_abc, path_midi)
-        tune.save()
-        return tune
-
-    def get_context_data(self, **kwargs):
-        tune = super(LireTune, self).get_object()
-        context = super().get_context_data(**kwargs)
-        context['user_clyps'] = Audio_clyp_user_favori.objects.filter(of_tune_favori_user__of_tune=tune)
-        context['group_clyps'] = Audio_clyp_group_favori.objects.filter(of_tune_favori_group__of_tune=tune)
-        return context
+def tune_lire_version(request, slug, version):
+    tune = get_object_or_404(Tune, slug=slug)
+    tune.nb_vues = tune.nb_vues + 1
+    tune.save()
+    abc = tune.abcs.get(version=version)
+    path_abc = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "-" + version + ".abc")
+    path_svg = Path(settings.MEDIA_ROOT + "tune_svg/" + tune.slug + "-" + version + ".svg")
+    path_midi = Path(settings.MEDIA_ROOT + "tune_midi/" + tune.slug + "-" + version + ".mid")
+    temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "-" + version + "temp.abc")
+    if not path_abc.is_file():
+        constructABC_from_abc(abc, path_abc, temp_path)
+    if not path_svg.is_file() and settings.DEBUG == False:
+        constructSVG_from_ABC(path_abc, path_svg)
+    if not path_midi.is_file() and settings.DEBUG == False:
+        constructMIDI_from_ABC(path_abc, path_midi)
+    return render(request, 'tune/tune_lire_version.html', {
+        "abc": abc,
+        "tune": tune,
+    })
 
 
 @login_required

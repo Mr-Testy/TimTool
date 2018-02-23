@@ -25,7 +25,7 @@
         {% else %}
         <p>{% trans 'For the user:' %} '{{request.user}}'</p>
         {% endif %}
-        <form action="" method="POST" class="form-inline">
+       <!-- <form action="" method="POST" class="form-inline">
             <div class="row">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
@@ -54,7 +54,13 @@
                 <button id="generate_tunes" type="submit" class="btn btn-success">{% trans 'Generate' %}</button>
             </div>
         </div>
-    </form>
+    </form>-->
+
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button id="generate_tunes" type="submit" class="btn btn-success">{% trans 'Generate' %}</button>
+</form>
 </div>
 <tr>
     <div class="row">
