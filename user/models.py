@@ -4,6 +4,9 @@ from django.template.defaultfilters import slugify
 from django.core.validators import RegexValidator
 from django.utils.translation import ugettext_lazy as _
 from django.contrib import messages
+from rest_framework.authtoken.models import Token
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 ROLES = (("admin", "admin"), ("member", "member"), )
 USERNAME_REGEX = '^[a-zA-Z0-9.@+-]*$'
@@ -141,3 +144,10 @@ class UserGroupRole(models.Model):
 
     class Meta:
         ordering = ["-date_creation"]
+
+
+# This receiver handles token creation immediately a new user is created.
+@receiver(post_save, sender=User)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
