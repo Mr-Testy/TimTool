@@ -60,7 +60,7 @@ class ViewTestCase(TestCase):
         response = self.no_client.get(
             reverse('details',
             kwargs={'pk': self.bucketlists.first().pk}), format="json")
-        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_api_can_create_a_bucketlist(self):
         """Test the api has bucket creation capability."""

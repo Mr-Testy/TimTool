@@ -7,6 +7,7 @@ from django.contrib import messages
 from rest_framework.authtoken.models import Token
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.conf import settings
 
 ROLES = (("admin", "admin"), ("member", "member"), )
 USERNAME_REGEX = '^[a-zA-Z0-9.@+-]*$'
@@ -147,7 +148,7 @@ class UserGroupRole(models.Model):
 
 
 # This receiver handles token creation immediately a new user is created.
-@receiver(post_save, sender=User)
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
         Token.objects.create(user=instance)

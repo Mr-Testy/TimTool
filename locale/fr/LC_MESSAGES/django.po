@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-22 13:24+0100\n"
-"PO-Revision-Date: 2017-12-22 13:38+0100\n"
+"POT-Creation-Date: 2018-02-27 19:07+0100\n"
+"PO-Revision-Date: 2018-02-27 19:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: .\templates\account\account_inactive.html:5
 #: .\templates\account\account_inactive.html:8
@@ -515,6 +515,38 @@ msgstr ""
 "connecter à\n"
 "%(site_name)s. En dernière étape, veuillez remplir le formulaire suivant:"
 
+#: .\tune\abc.py:83
+#, python-format
+msgid "The Title \"%(title)s\" has been found !"
+msgstr "Le Titre \"%(title)s\" a été trouvé !"
+
+#: .\tune\abc.py:91 .\tune\abc.py:97 .\tune\abc.py:103 .\tune\abc.py:168
+#: .\tune\abc.py:173 .\tune\abc.py:178
+#, python-format
+msgid "The title \"%(title)s\" has been created"
+msgstr "Le titre \"%(title)s\" a été créé"
+
+#: .\tune\abc.py:110 .\tune\abc.py:117 .\tune\abc.py:124 .\tune\abc.py:185
+#: .\tune\abc.py:192 .\tune\abc.py:199
+#, python-format
+msgid "The composer \"%(name)s\" has been created"
+msgstr "Le compositeur \"%(name)s\" a été créé"
+
+#: .\tune\abc.py:132 .\tune\abc.py:160
+#, python-format
+msgid "The .abc version \"%(version)s\" of Tune \"%(tune)s\" has been added !"
+msgstr "La version .abc \"%(version)s\" du Tune \"%(tune)s\" a été ajouté !"
+
+#: .\tune\abc.py:140
+#, python-format
+msgid "The .abc version \"%(version)s\" of Tune \"%(tune)s\" already exists !"
+msgstr "La version .abc \"%(version)s\" du Tune \"%(tune)s\" existe déjà !"
+
+#: .\tune\abc.py:154
+#, python-format
+msgid "The tune \"%(tune)s\" a has been created"
+msgstr "Le tune \"%(tune)s\" a été créé"
+
 #: .\tune\forms.py:7
 msgid "Only favorite learned Tunes"
 msgstr "Seulement les Tunes favoris appris"
@@ -559,35 +591,44 @@ msgstr "Tonalités "
 msgid "Please select at least a key"
 msgstr "Veuillez sélectionner au moins une tonalité"
 
-#: .\tune\forms.py:50
+#: .\tune\forms.py:50 .\tune\templates\tune\tune_lire.html:64
+#: .\tune\templates\tune\tune_lire_version.html:38
+msgid "Version"
+msgstr "Version"
+
+#: .\tune\forms.py:53
+msgid "Insert name of Tunebook or User"
+msgstr "Entrez le nom du Tunebook ou un Utilisateur"
+
+#: .\tune\forms.py:56
 msgid "File "
 msgstr "Fichier "
 
-#: .\tune\forms.py:52
+#: .\tune\forms.py:58
 msgid "Select a file"
 msgstr "Choisir un fichier"
 
-#: .\tune\forms.py:58
+#: .\tune\forms.py:64
 msgid ".abc file here"
 msgstr "fichier .abc ici"
 
-#: .\tune\forms.py:59
+#: .\tune\forms.py:65
 msgid "Copy / Paste .abc file content"
 msgstr "Copier/Coller le contenu d'un fichier .abc"
 
-#: .\tune\forms.py:63 .\tune\templates\tune\accueil.html:146
+#: .\tune\forms.py:69 .\tune\templates\tune\accueil.html:146
 #: .\tune\templates\tune\tune_favori_lire.html:33
 #: .\tune\templates\tune\tune_favori_lire.html:56
-#: .\tune\templates\tune\tune_lire.html:75
-#: .\tune\templates\tune\tune_lire.html:89
+#: .\tune\templates\tune\tune_lire.html:98
+#: .\tune\templates\tune\tune_lire.html:112
 msgid "Title"
 msgstr "Titre"
 
-#: .\tune\forms.py:65
+#: .\tune\forms.py:71
 msgid "Description of the sound to add"
 msgstr "Description du son à ajouter"
 
-#: .\tune\forms.py:67
+#: .\tune\forms.py:73
 msgid ""
 "Recording of the Tune \"xxx\" that I have learned from \"Abcdef\" on \"yyy\" "
 "festival"
@@ -595,20 +636,19 @@ msgstr ""
 "L'enregistrement du Tune \"xxx\" que j'ai appris de \"Abcdef\" au festival "
 "du \"yyy\""
 
-#: .\tune\forms.py:72
+#: .\tune\forms.py:78
 msgid "Link of the audio Clyp sound"
 msgstr "Lien du son Clyp"
 
-#: .\tune\forms.py:75
+#: .\tune\forms.py:81
 msgid "The link of the sound is mandatory"
 msgstr "Le lien du son est obligatoire"
 
-#: .\tune\forms.py:81
+#: .\tune\forms.py:87
 msgid "The link must start with \"https://clyp.it/\""
 msgstr "Le lien doit commencer par \"https://clyp.it/\""
 
-#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\accueil.html:21
-#: .\tune\templates\tune\layout.html:103
+#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\layout.html:103
 msgid "About"
 msgstr "A propos de"
 
@@ -1175,8 +1215,8 @@ msgstr "Aucun Tune trouvé"
 #: .\tune\templates\tune\comparateur.html:50
 #: .\tune\templates\tune\comparateur.html:77
 #: .\tune\templates\tune\comparateur.html:117
-#: .\tune\templates\tune\generateur.html:119
-#: .\tune\templates\tune\generateur.html:142
+#: .\tune\templates\tune\generateur.html:125
+#: .\tune\templates\tune\generateur.html:148
 #: .\tune\templates\tune\tune_liste.html:27
 #: .\tune\templates\tune\tune_liste.html:61
 #: .\tune\templates\tune\tune_liste_favoris.html:27
@@ -1196,8 +1236,8 @@ msgstr "Nom"
 #: .\tune\templates\tune\comparateur.html:51
 #: .\tune\templates\tune\comparateur.html:78
 #: .\tune\templates\tune\comparateur.html:118
-#: .\tune\templates\tune\generateur.html:120
-#: .\tune\templates\tune\generateur.html:143
+#: .\tune\templates\tune\generateur.html:126
+#: .\tune\templates\tune\generateur.html:149
 #: .\tune\templates\tune\tune_liste.html:31
 #: .\tune\templates\tune\tune_liste.html:62
 #: .\tune\templates\tune\tune_liste_favoris.html:31
@@ -1213,8 +1253,8 @@ msgstr "Type"
 #: .\tune\templates\tune\comparateur.html:52
 #: .\tune\templates\tune\comparateur.html:79
 #: .\tune\templates\tune\comparateur.html:119
-#: .\tune\templates\tune\generateur.html:121
-#: .\tune\templates\tune\generateur.html:144
+#: .\tune\templates\tune\generateur.html:127
+#: .\tune\templates\tune\generateur.html:150
 #: .\tune\templates\tune\tune_liste.html:35
 #: .\tune\templates\tune\tune_liste.html:63
 #: .\tune\templates\tune\tune_liste_favoris.html:35
@@ -1236,7 +1276,8 @@ msgstr "Favori"
 #: .\tune\templates\tune\accueil.html:76
 #: .\tune\templates\tune\comparateur.html:91
 #: .\tune\templates\tune\tune_lire.html:14
-#: .\tune\templates\tune\tune_liste.html:88
+#: .\tune\templates\tune\tune_lire_version.html:14
+#: .\tune\templates\tune\tune_liste.html:96
 #: .\user\templates\user\profile.html:96
 msgid "Tune added to your favorites"
 msgstr "Tune ajouté à vos favoris"
@@ -1244,21 +1285,24 @@ msgstr "Tune ajouté à vos favoris"
 #: .\tune\templates\tune\accueil.html:80
 #: .\tune\templates\tune\comparateur.html:95
 #: .\tune\templates\tune\tune_lire.html:18
-#: .\tune\templates\tune\tune_liste.html:92
+#: .\tune\templates\tune\tune_lire_version.html:18
+#: .\tune\templates\tune\tune_liste.html:100
 #: .\user\templates\user\profile.html:100
 msgid "Tune absent from your favorites"
 msgstr "Tune absent de vos favoris"
 
 #: .\tune\templates\tune\accueil.html:86
 #: .\tune\templates\tune\tune_lire.html:24
-#: .\tune\templates\tune\tune_liste.html:98
+#: .\tune\templates\tune\tune_lire_version.html:24
+#: .\tune\templates\tune\tune_liste.html:106
 #: .\user\templates\user\profile.html:106
 msgid "Trick !"
 msgstr "Astuce !"
 
 #: .\tune\templates\tune\accueil.html:86
 #: .\tune\templates\tune\tune_lire.html:24
-#: .\tune\templates\tune\tune_liste.html:98
+#: .\tune\templates\tune\tune_lire_version.html:24
+#: .\tune\templates\tune\tune_liste.html:106
 #: .\user\templates\user\profile.html:106
 msgid "Sign in or register to be able to add this Tune to your favorites."
 msgstr "Connectez-vous afin d'ajouter ce Tune à vos favoris."
@@ -1287,11 +1331,10 @@ msgstr "Derniers enregistrements ajoutés"
 #: .\tune\templates\tune\accueil.html:147
 #: .\tune\templates\tune\tune_favori_lire.html:34
 #: .\tune\templates\tune\tune_favori_lire.html:57
-#: .\tune\templates\tune\tune_lire.html:44
-#: .\tune\templates\tune\tune_lire.html:76
-#: .\tune\templates\tune\tune_lire.html:90
-#: .\tune\templates\tune\tune_lire.html:106
-#: .\tune\templates\tune\tune_liste.html:65
+#: .\tune\templates\tune\tune_lire.html:99
+#: .\tune\templates\tune\tune_lire.html:113
+#: .\tune\templates\tune\tune_lire_version.html:45
+#: .\tune\templates\tune\tune_lire_version.html:74
 #: .\user\templates\user\groupe_lire.html:24
 #: .\user\templates\user\groupe_lire.html:35
 #: .\user\templates\user\groupe_liste.html:42
@@ -1414,29 +1457,30 @@ msgid "For the user:"
 msgstr "Pour l'utilisateur :"
 
 #: .\tune\templates\tune\generateur.html:54
+#: .\tune\templates\tune\generateur.html:62
 msgid "Generate"
 msgstr "Generer"
 
-#: .\tune\templates\tune\generateur.html:62
+#: .\tune\templates\tune\generateur.html:68
 msgid "Generated list"
 msgstr "Liste Générée"
 
-#: .\tune\templates\tune\generateur.html:145
+#: .\tune\templates\tune\generateur.html:151
 #: .\tune\templates\tune\tune_liste_favoris.html:39
 #: .\tune\templates\tune\tune_liste_favoris.html:72
 #: .\user\templates\user\groupe_lire.html:51
 msgid "Status"
 msgstr "Etat"
 
-#: .\tune\templates\tune\generateur.html:161
+#: .\tune\templates\tune\generateur.html:167
 msgid "Tunes to learn"
 msgstr "Tunes à apprendre"
 
-#: .\tune\templates\tune\generateur.html:165
+#: .\tune\templates\tune\generateur.html:171
 msgid "Tunes learnt"
 msgstr "Tunes appris"
 
-#: .\tune\templates\tune\generateur.html:174
+#: .\tune\templates\tune\generateur.html:180
 msgid "Use the above generator to generate a list of Tunes or Sets"
 msgstr ""
 "Utiliser le générateur ci-dessus afin de générer une liste de Tunes ou de "
@@ -1491,7 +1535,7 @@ msgid "My Account"
 msgstr "Mon compte"
 
 #: .\tune\templates\tune\layout.html:123
-#: .\tune\templates\tune\tune_liste.html:129
+#: .\tune\templates\tune\tune_liste.html:137
 #: .\user\templates\user\groupe_lire.html:134
 #: .\user\templates\user\groupe_liste.html:80
 msgid "You must be logged in to use this feature"
@@ -1598,6 +1642,7 @@ msgstr "Ajouter un son a"
 #: .\tune\templates\tune\tune_favori_add_sound.html:16
 #: .\tune\templates\tune\tune_favori_lire.html:17
 #: .\tune\templates\tune\tune_lire.html:31
+#: .\tune\templates\tune\tune_lire_version.html:31
 #, python-format
 msgid "%(type)s in %(key)s"
 msgstr "%(type)s en %(key)s"
@@ -1636,7 +1681,8 @@ msgid "If you are lost, go "
 msgstr "Si vous êtes perdus, rendez-vous "
 
 #: .\tune\templates\tune\tune_favori_add_sound.html:31
-#: .\tune\templates\tune\tune_lire.html:66
+#: .\tune\templates\tune\tune_lire_version.html:60
+#: .\tune\templates\tune\tune_lire_version.html:68
 #: .\user\templates\user\groupe_add_favoris.html:26
 msgid "here"
 msgstr "ici"
@@ -1702,7 +1748,7 @@ msgid "Favorite Tune of"
 msgstr "Tune favori de"
 
 #: .\tune\templates\tune\tune_favori_lire.html:25
-#: .\tune\templates\tune\tune_lire.html:71
+#: .\tune\templates\tune\tune_lire.html:91
 msgid "Audio files"
 msgstr "Fichiers audios"
 
@@ -1725,34 +1771,90 @@ msgid "Add a sound"
 msgstr "Ajouter un son"
 
 #: .\tune\templates\tune\tune_favori_lire.html:85
-#: .\tune\templates\tune\tune_favori_lire.html:98 .\tune\views.py:550
-#: .\tune\views.py:553 .\user\models.py:103
+#: .\tune\templates\tune\tune_favori_lire.html:98 .\tune\views.py:555
+#: .\tune\views.py:558 .\user\models.py:110
 msgid "Only administrators of the group can use this functionnality"
 msgstr ""
 "Seuls les administrateurs de ce groupe peuvent utiliser cette fonctionnalité"
 
 #: .\tune\templates\tune\tune_lire.html:32
+#: .\tune\templates\tune\tune_lire_version.html:32
 #: .\user\templates\user\groupe_lire.html:16
 #, python-format
 msgid "Seen %(nb_vues)s times"
 msgstr "Vu %(nb_vues)s fois"
 
 #: .\tune\templates\tune\tune_lire.html:40
-#: .\tune\templates\tune\tune_lire.html:53
-msgid "Music sheet"
-msgstr "Partition"
+msgid "Versions"
+msgstr "Versions"
 
-#: .\tune\templates\tune\tune_lire.html:66
-msgid "Download the sound (.mid file)"
-msgstr "Télécharger le son (fichier .mid)"
+#: .\tune\templates\tune\tune_lire.html:43
+#: .\tune\templates\tune\tune_liste.html:64
+msgid "Other titles"
+msgstr "Autres titres"
 
-#: .\tune\templates\tune\tune_lire.html:77
+#: .\tune\templates\tune\tune_lire.html:44
+#: .\tune\templates\tune\tune_lire.html:148
+#: .\tune\templates\tune\tune_liste.html:65
+msgid "Composers"
+msgstr "Compositeurs"
+
+#: .\tune\templates\tune\tune_lire.html:45
+msgid "Who knows it ?"
+msgstr "Qui le connaît ?"
+
+#: .\tune\templates\tune\tune_lire.html:56
+msgid "Versions of this Tune : "
+msgstr "Versions de ce Tune : "
+
+#: .\tune\templates\tune\tune_lire.html:60
+msgid "No version found"
+msgstr "Aucune version trouvée"
+
+#: .\tune\templates\tune\tune_lire.html:65
+msgid "ABC..."
+msgstr "ABC..."
+
+#: .\tune\templates\tune\tune_lire.html:93
+msgid "There is not audio file for this Tune"
+msgstr "Il n'y a pas de fichier audio pour ce Tune"
+
+#: .\tune\templates\tune\tune_lire.html:100
 msgid "Recording from User"
 msgstr "Enregistrement de l'Utilisateur"
 
-#: .\tune\templates\tune\tune_lire.html:91
+#: .\tune\templates\tune\tune_lire.html:114
 msgid "Recording from Group"
 msgstr "Enregistrement du Groupe"
+
+#: .\tune\templates\tune\tune_lire.html:131
+msgid "Other titles of this Tune"
+msgstr "Autres titres de ce Tune"
+
+#: .\tune\templates\tune\tune_lire.html:133
+msgid "There is no other title for this Tune"
+msgstr "Il n'y a pas d'autres titres pour ce Tune"
+
+#: .\tune\templates\tune\tune_lire.html:150
+msgid "There is not any composer for this Tune"
+msgstr "Il n'y a pas de compositeur pour ce Tune"
+
+#: .\tune\templates\tune\tune_lire.html:163
+msgid "Functionnality is coming !"
+msgstr "Fonctionnalité à venir !"
+
+#: .\tune\templates\tune\tune_lire_version.html:41
+#: .\tune\templates\tune\tune_lire_version.html:54
+msgid "Music sheet"
+msgstr "Partition"
+
+#: .\tune\templates\tune\tune_lire_version.html:60
+msgid "Download the ABC (.abc file)"
+msgstr "Télécharger le fichier ABC (fichier .abc)"
+
+#: .\tune\templates\tune\tune_lire_version.html:68
+msgid "Download the sound (.mid file)"
+msgstr "Télécharger le son (fichier .mid)"
 
 #: .\tune\templates\tune\tune_liste.html:15
 msgid "All the tunes from Timtool"
@@ -1816,27 +1918,23 @@ msgstr "Aucun Tune trouvé"
 msgid "This tune has recordings linked to it !"
 msgstr "Ce Tune a un enregistrement lié !"
 
-#: .\tune\templates\tune\tune_liste.html:64
-msgid "Added by"
-msgstr "Ajouté par"
-
-#: .\tune\templates\tune\tune_liste.html:115
+#: .\tune\templates\tune\tune_liste.html:123
 #: .\tune\templates\tune\tune_liste_favoris.html:118
 #: .\user\templates\user\groupe_liste.html:66
 #: .\user\templates\user\user_groupe_liste.html:68
 msgid "Previous"
 msgstr "Précédent"
 
-#: .\tune\templates\tune\tune_liste.html:119
+#: .\tune\templates\tune\tune_liste.html:127
 #: .\tune\templates\tune\tune_liste_favoris.html:122
 #: .\user\templates\user\user_groupe_liste.html:72
 msgid "Next"
 msgstr "Suivant"
 
-#: .\tune\templates\tune\tune_liste.html:132
-#: .\tune\templates\tune\tune_liste.html:137
+#: .\tune\templates\tune\tune_liste.html:140
 #: .\tune\templates\tune\tune_liste.html:145
-#: .\tune\templates\tune\tune_liste.html:150
+#: .\tune\templates\tune\tune_liste.html:153
+#: .\tune\templates\tune\tune_liste.html:158
 msgid "Add a Tune"
 msgstr "Ajouter un Tune"
 
@@ -1900,21 +1998,23 @@ msgstr "Tableau de bord !"
 #, python-format
 msgid ""
 "The following filters have been applied : \"name\" contains \"%(name)s\" | "
-"\"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | %(recording)s"
+"\"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | \"recordings\" = "
+"\"%(recording)s\""
 msgstr ""
 "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | "
-"\"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | %(recording)s"
+"\"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | \"enregistrements\" "
+"=  \"%(recording)s\""
 
 #: .\tune\views.py:101
 #, python-format
 msgid ""
 "The following filters have been applied : \"name\" contains \"%(name)s\" | "
 "\"type\" = \"%(type)s\" | \"key\" = \"%(key)s\" | \"status\" = \"%(status)s"
-"\" | %(recording)s"
+"\" | \"recordings\" = \"%(recording)s\""
 msgstr ""
 "Les filtres suivants ont été appliqués : \"nom\" contient \"%(name)s\" | "
 "\"type\" = \"%(type)s\" | \"tonalité\" = \"%(key)s\" | \"status\" = "
-"\"%(status)s\"| %(recording)s"
+"\"%(status)s\"| \"enregistrements\" = \"%(recording)s\""
 
 #: .\tune\views.py:155 .\tune\views.py:168 .\tune\views.py:180
 #: .\tune\views.py:189 .\tune\views.py:286 .\tune\views.py:299
@@ -1994,11 +2094,11 @@ msgid ""
 msgstr ""
 "Il y a plusieurs groupes \"%(groupname)s\". Impossible de comparer les Tunes."
 
-#: .\tune\views.py:507 .\tune\views.py:542
+#: .\tune\views.py:512 .\tune\views.py:547
 msgid "This Tune is not among your favorites !"
 msgstr "Ce Tune est absent de vos favoris !"
 
-#: .\tune\views.py:514
+#: .\tune\views.py:519
 msgid ""
 "This is the page of the favorite Tune. If you wish to go to the global Tune, "
 "go there : "
@@ -2006,11 +2106,11 @@ msgstr ""
 "Cette page est la page personnelle du Tune favori. Si vous souhaitez "
 "afficher le Tune global, rendez-vous ici : "
 
-#: .\tune\views.py:570
+#: .\tune\views.py:575
 msgid "You have already linked this sound to another favorite"
 msgstr "Vous avez déjà lié ce son à un autre favoris"
 
-#: .\tune\views.py:588 .\tune\views.py:591
+#: .\tune\views.py:593 .\tune\views.py:597
 msgid "Processus successfully ended !"
 msgstr "Traitement terminé avec succès !"
 
@@ -2101,17 +2201,17 @@ msgstr "Nom d'utilisateur"
 msgid "Passwords don't match"
 msgstr "Les mots de passe ne correspondent pas"
 
-#: .\user\models.py:19
+#: .\user\models.py:23
 msgid "A user must have an email address."
 msgstr "Un utilisateur doit avoir une adresse email."
 
-#: .\user\models.py:52
+#: .\user\models.py:56
 msgid "The user cannot contain other special characters than : '. @ + -'"
 msgstr ""
 "L'utilisateur ne peut pas contenir de caractères spéciaux autres que : '. @ "
 "+ -'"
 
-#: .\user\models.py:127
+#: .\user\models.py:134
 #, python-format
 msgid "Group : \"%(groupname)s\""
 msgstr "Groupe : \"%(groupname)s\""
@@ -2393,6 +2493,9 @@ msgstr ""
 #: .\user\views.py:194
 msgid "You left this group"
 msgstr "Vous avez quitté ce groupe"
+
+#~ msgid "Added by"
+#~ msgstr "Ajouté par"
 
 #~ msgid "Registration is currently closed."
 #~ msgstr "L'inscription est actuellement fermée."

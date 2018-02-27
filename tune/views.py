@@ -40,7 +40,7 @@ def about(request):
 
 class ListeTunes(ListView):
     model = Tune
-    context_object_name = "titles"
+    context_object_name = "tunes"
     template_name = "tune/tune_liste.html"
     paginate_by = 100
 
@@ -49,17 +49,17 @@ class ListeTunes(ListView):
         q_type = self.request.GET.get("q_type", None)
         q_key = self.request.GET.get("q_key", None)
         q_sounds = self.request.GET.get("q_sounds", "Choose")
-        titles = Title.objects.all()
+        tunes = Tune.objects.all()
         if q_name:
-            titles = titles.filter(name__icontains=q_name)
+            tunes = tunes.filter(titles__name__icontains=q_name)
         if q_type:
-            titles = titles.filter(belong_to_tune__type=q_type)
+            tunes = tunes.filter(type=q_type)
         if q_key:
-            titles = titles.filter(belong_to_tune__key=q_key)
+            tunes = tunes.filter(key=q_key)
         if q_sounds == "HasSound":
-            titles = titles.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user__gt=0) | Q(num_audio_group__gt=0))
+            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user__gt=0) | Q(num_audio_group__gt=0))
         elif q_sounds == "NoSound":
-            titles = titles.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user=0) & Q(num_audio_group=0))
+            tunes = tunes.annotate(num_audio_user=Count("tunefavori__tunefavori_user__audio_clyp_user_favori"), num_audio_group=Count("tunefavori__tunefavori_group__audio_clyp_group_favori")).filter(Q(num_audio_user=0) & Q(num_audio_group=0))
         if q_name or q_type or q_key or not q_sounds == "Choose":
             messages.success(self.request, _('The following filters have been applied : "name" contains "%(name)s" | "type" = "%(type)s" | "key" = "%(key)s" | "recordings" = "%(recording)s"') % {
                 'name': q_name,
@@ -67,7 +67,7 @@ class ListeTunes(ListView):
                 'key': q_key,
                 'recording': q_sounds
             })
-        return titles
+        return tunes
 
 
 class ListeTunesFavoris(ListView):

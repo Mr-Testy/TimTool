@@ -43,6 +43,7 @@ class Title(models.Model):
 
 class Composer(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False, unique=True)
+    slug = models.SlugField(max_length=160, unique=True, null=False, blank=False)  # concat name-key-type
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
     composed_tunes = models.ManyToManyField(Tune, related_name='composers')
 

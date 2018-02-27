@@ -41,7 +41,8 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
   </li>
   <li><a href="#2a" data-toggle="tab">Audio</a></li>
   <li><a href="#3a" data-toggle="tab">{% trans 'Other titles' %}</a></li>
-  <li><a href="#4a" data-toggle="tab">{% trans 'Who knows it ?' %}</a></li>
+  <li><a href="#4a" data-toggle="tab">{% trans 'Composers' %}</a></li>
+  <li><a href="#5a" data-toggle="tab">{% trans 'Who knows it ?' %}</a></li>
 </ul>
 </div>
 </div>
@@ -128,16 +129,35 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
             <div class="row ">
             <div class="col-xs-12">
 <h1>{% trans 'Other titles of this Tune' %}</h1>
+{% if tune.titles.all|length < 2 %}
+<li>{% trans 'There is no other title for this Tune' %}</li>
+{% else %}
 {% for titl in tune.titles.all %}
 {% if not titl.name == tune.name %}
 <li>{{titl.name}}</li>
 {% endif %}
 {% endfor %}
+{% endif %}
 </div>
 </div>
 </div>
 
   <div class="tab-pane" id="4a">
+            <div class="row ">
+            <div class="col-xs-12">
+<h1>{% trans 'Composers' %}</h1>
+{% if tune.composers.all|length < 1 %}
+<li>{% trans 'There is not any composer for this Tune' %}</li>
+{% else %}
+{% for comp in tune.composers.all %}
+<li>{{comp.name}}</li>
+{% endfor %}
+{% endif %}
+</div>
+</div>
+</div>
+
+  <div class="tab-pane" id="5a">
             <div class="row ">
             <div class="col-xs-12">
 <h1>{% trans 'Functionnality is coming !' %}</h1>

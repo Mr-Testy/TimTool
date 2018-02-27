@@ -1,4 +1,4 @@
-from .models import ABCTune, Tune, Title
+from .models import ABCTune, Tune, Title, Composer
 from django.template.defaultfilters import slugify
 from django.contrib import messages
 from os import remove, rename
@@ -102,6 +102,27 @@ def handle_uploaded_file(file, version, request):
                             if created3:
                                 messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title3.slug})
 
+                        if abc.C:
+                            comp, created = Composer.objects.get_or_create(
+                                slug=slugify(abc.C), defaults={'name': abc.C})
+                            if created:
+                                comp.composed_tunes.add(tune)
+                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp.name})
+
+                        if abc.other_composer:
+                            comp2, created2 = Composer.objects.get_or_create(
+                                slug=slugify(abc.other_composer), defaults={'name': abc.other_composer})
+                            if created2:
+                                comp2.composed_tunes.add(tune)
+                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp2.name})
+
+                        if abc.other_composer2:
+                            comp3, created3 = Composer.objects.get_or_create(
+                                slug=slugify(abc.other_composer2), defaults={'name': abc.other_composer2})
+                            if created3:
+                                comp3.composed_tunes.add(tune)
+                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp3.name})
+
                         if tune.abcs.filter(version=version).count() == 0:
                             abc.tune = tune
                             abc.version = version
@@ -155,6 +176,28 @@ def handle_uploaded_file(file, version, request):
                     title3.belong_to_tune = tune
                     title3.save()
                     messages.success(request, _('The title "%(title)s" has been created') % {'title': title3.slug})
+
+                if abc.C:
+                    comp, created = Composer.objects.get_or_create(
+                        slug=slugify(abc.C), defaults={'name': abc.C})
+                    if created:
+                        comp.composed_tunes.add(tune)
+                        messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp.name})
+
+                if abc.other_composer:
+                    comp2, created2 = Composer.objects.get_or_create(
+                        slug=slugify(abc.other_composer), defaults={'name': abc.other_composer})
+                    if created2:
+                        comp2.composed_tunes.add(tune)
+                        messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp2.name})
+
+                if abc.other_composer2:
+                    comp3, created3 = Composer.objects.get_or_create(
+                        slug=slugify(abc.other_composer2), defaults={'name': abc.other_composer2})
+                    if created3:
+                        comp3.composed_tunes.add(tune)
+                        messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp3.name})
+
         else:
             messages.error(request, "abc incomplet ou erroné")
 
