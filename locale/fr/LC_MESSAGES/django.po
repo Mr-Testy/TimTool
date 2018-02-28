@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-27 19:07+0100\n"
-"PO-Revision-Date: 2018-02-27 19:27+0100\n"
+"POT-Creation-Date: 2018-02-28 18:36+0100\n"
+"PO-Revision-Date: 2018-02-28 18:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -616,7 +616,7 @@ msgstr "fichier .abc ici"
 msgid "Copy / Paste .abc file content"
 msgstr "Copier/Coller le contenu d'un fichier .abc"
 
-#: .\tune\forms.py:69 .\tune\templates\tune\accueil.html:146
+#: .\tune\forms.py:69 .\tune\templates\tune\accueil.html:147
 #: .\tune\templates\tune\tune_favori_lire.html:33
 #: .\tune\templates\tune\tune_favori_lire.html:56
 #: .\tune\templates\tune\tune_lire.html:98
@@ -648,7 +648,8 @@ msgstr "Le lien du son est obligatoire"
 msgid "The link must start with \"https://clyp.it/\""
 msgstr "Le lien doit commencer par \"https://clyp.it/\""
 
-#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\layout.html:103
+#: .\tune\templates\tune\about.html:6 .\tune\templates\tune\accueil.html:21
+#: .\tune\templates\tune\layout.html:103
 msgid "About"
 msgstr "A propos de"
 
@@ -728,190 +729,198 @@ msgid "Bravery"
 msgstr "Du courage"
 
 #: .\tune\templates\tune\about.html:47
+msgid ""
+"I hope that you will have a great experience on Timtool. And if not, I will "
+"do my best to improve !"
+msgstr ""
+"J'espère que vous trouverez votre bonheur sur Timtool. Et si ce n'est pas le "
+"cas, je l'améliorerai en conséquence !"
+
+#: .\tune\templates\tune\about.html:48
 msgid "Enjoy =)"
 msgstr "Enjoy =)"
 
-#: .\tune\templates\tune\about.html:52
+#: .\tune\templates\tune\about.html:53
 msgid "Existing features"
 msgstr "Fonctionnalités existantes"
 
-#: .\tune\templates\tune\about.html:52
+#: .\tune\templates\tune\about.html:53
 msgid "Upcoming features"
 msgstr "Fonctionnalités à venir"
 
-#: .\tune\templates\tune\about.html:54
+#: .\tune\templates\tune\about.html:55
 msgid "General"
 msgstr "Général"
 
-#: .\tune\templates\tune\about.html:56
+#: .\tune\templates\tune\about.html:57
 msgid "Menus"
 msgstr "Menus"
 
-#: .\tune\templates\tune\about.html:59
+#: .\tune\templates\tune\about.html:60
 msgid "Horizontal menu"
 msgstr "Menu Horizontal"
 
-#: .\tune\templates\tune\about.html:61
+#: .\tune\templates\tune\about.html:62
 msgid "Hide/Show menu"
 msgstr "Afficher/Cacher menu"
 
-#: .\tune\templates\tune\about.html:62
+#: .\tune\templates\tune\about.html:63
 #: .\tune\templates\tune\new_from_abc.html:42
 msgid "Search for a Tune"
 msgstr "Rechercher un Tune"
 
-#: .\tune\templates\tune\about.html:65
+#: .\tune\templates\tune\about.html:66
 msgid "Left vertical menu"
 msgstr "Menu gauche vertical"
 
-#: .\tune\templates\tune\about.html:67
+#: .\tune\templates\tune\about.html:68
 msgid "Links and Actions"
 msgstr "Liens et actions"
 
-#: .\tune\templates\tune\about.html:71 .\tune\templates\tune\accueil.html:11
+#: .\tune\templates\tune\about.html:72 .\tune\templates\tune\accueil.html:11
 msgid "Home"
 msgstr "Accueil"
 
-#: .\tune\templates\tune\about.html:74
+#: .\tune\templates\tune\about.html:75
 msgid "Timtool introduction"
 msgstr "Introduction à Timtool"
 
-#: .\tune\templates\tune\about.html:75
+#: .\tune\templates\tune\about.html:76
 msgid "Last created Tunes, Groups, Users"
 msgstr "Derniers Tunes, Groupes, Utilisateurs créés"
 
-#: .\tune\templates\tune\about.html:81
+#: .\tune\templates\tune\about.html:82
 msgid "Show the list of tunes"
 msgstr "Afficher la liste des Tunes"
 
-#: .\tune\templates\tune\about.html:82
+#: .\tune\templates\tune\about.html:83
 msgid "Show a Tune"
 msgstr "Afficher un Tune"
 
-#: .\tune\templates\tune\about.html:84
+#: .\tune\templates\tune\about.html:85
 msgid "Add/Remove this Tune to/from your favorites"
 msgstr "Ajouter/Retirer ce Tune à/de vos favoris"
 
-#: .\tune\templates\tune\about.html:85
+#: .\tune\templates\tune\about.html:86
 msgid "Increase the number of times the Tune has been viewed"
 msgstr "Accroître le nombre de vues du Tune"
 
-#: .\tune\templates\tune\about.html:86
+#: .\tune\templates\tune\about.html:87
 msgid "Show description"
 msgstr "Afficher la description"
 
-#: .\tune\templates\tune\about.html:87
+#: .\tune\templates\tune\about.html:88
 msgid "Show .abc version"
 msgstr "Afficher la version .abc"
 
-#: .\tune\templates\tune\about.html:88
+#: .\tune\templates\tune\about.html:89
 msgid "Show music sheet"
 msgstr "Afficher la partition"
 
-#: .\tune\templates\tune\about.html:89
+#: .\tune\templates\tune\about.html:90
 msgid "Add comments"
 msgstr "Ajouter des commentaires"
 
-#: .\tune\templates\tune\about.html:90
+#: .\tune\templates\tune\about.html:91
 msgid "Modify the Tune"
 msgstr "Modifier le tune"
 
-#: .\tune\templates\tune\about.html:91
+#: .\tune\templates\tune\about.html:92
 msgid "Play Tune sound"
 msgstr "Jouer le Tune"
 
-#: .\tune\templates\tune\about.html:92
+#: .\tune\templates\tune\about.html:93
 msgid "Upload audio file for this Tune"
 msgstr "Uploader un fichier audio pour ce Tune"
 
-#: .\tune\templates\tune\about.html:93
+#: .\tune\templates\tune\about.html:94
 msgid "Display several versions of one the Tune"
 msgstr "Afficher plusieurs version de ce Tune"
 
-#: .\tune\templates\tune\about.html:96
+#: .\tune\templates\tune\about.html:97
 msgid "Filter displayed Tunes"
 msgstr "Filtrer les Tunes affichés"
 
-#: .\tune\templates\tune\about.html:97
+#: .\tune\templates\tune\about.html:98
 msgid "Create a Tune"
 msgstr "Créer un Tune"
 
-#: .\tune\templates\tune\about.html:99
+#: .\tune\templates\tune\about.html:100
 msgid "Create a Tune by Copying/pasting an .abc file"
 msgstr "Créer un Tune en copiant/collant un fichier .abc"
 
-#: .\tune\templates\tune\about.html:100
+#: .\tune\templates\tune\about.html:101
 msgid "Create a Tune from an .abc file"
 msgstr "Créer un Tune depuis un fichier .abc"
 
-#: .\tune\templates\tune\about.html:103
+#: .\tune\templates\tune\about.html:104
 #: .\user\templates\user\groupe_liste.html:7
 #: .\user\templates\user\groupe_liste.html:11
 msgid "Groups"
 msgstr "Groupes"
 
-#: .\tune\templates\tune\about.html:106
+#: .\tune\templates\tune\about.html:107
 msgid "Display the list of groups"
 msgstr "Afficher la liste de groupes"
 
-#: .\tune\templates\tune\about.html:107
+#: .\tune\templates\tune\about.html:108
 msgid "Filter groups"
 msgstr "Filtrer les groupes"
 
-#: .\tune\templates\tune\about.html:108
+#: .\tune\templates\tune\about.html:109
 msgid "Create groups"
 msgstr "Créer des groupes"
 
-#: .\tune\templates\tune\about.html:109
+#: .\tune\templates\tune\about.html:110
 msgid "Show a group"
 msgstr "Afficher un groupe"
 
-#: .\tune\templates\tune\about.html:111
+#: .\tune\templates\tune\about.html:112
 msgid "Display description"
 msgstr "Afficher la description"
 
-#: .\tune\templates\tune\about.html:112
+#: .\tune\templates\tune\about.html:113
 msgid "Display group favorites"
 msgstr "Afficher les favoris du groupe"
 
-#: .\tune\templates\tune\about.html:113
+#: .\tune\templates\tune\about.html:114
 msgid "Display group members"
 msgstr "Afficher les membres du groupe"
 
-#: .\tune\templates\tune\about.html:114
+#: .\tune\templates\tune\about.html:115
 #: .\user\templates\user\groupe_update.html:15
 msgid "Modify the group"
 msgstr "Modifier le groupe"
 
-#: .\tune\templates\tune\about.html:115
+#: .\tune\templates\tune\about.html:116
 msgid "Add/Remove favorite tunes to/from group"
 msgstr "Ajouter/Retirer des Tunes favoris au/du groupe"
 
-#: .\tune\templates\tune\about.html:116
+#: .\tune\templates\tune\about.html:117
 msgid "Join/Leave group"
 msgstr "Rejoindre/Quitter le groupe"
 
-#: .\tune\templates\tune\about.html:117
+#: .\tune\templates\tune\about.html:118
 msgid "Increase number of times the group has been viewed"
 msgstr "Accroître le nombre de vues du groupe"
 
-#: .\tune\templates\tune\about.html:118
+#: .\tune\templates\tune\about.html:119
 msgid "Leave messages to the group"
 msgstr "Laisser un message au groupe"
 
-#: .\tune\templates\tune\about.html:119
+#: .\tune\templates\tune\about.html:120
 msgid "Manage members role"
 msgstr "Gèrer les rôles du groupe"
 
-#: .\tune\templates\tune\about.html:120
+#: .\tune\templates\tune\about.html:121
 msgid "Upload group related audio files"
 msgstr "Uploader un fichier audio aux tunes favoris du groupe"
 
-#: .\tune\templates\tune\about.html:121
+#: .\tune\templates\tune\about.html:122
 msgid "Send a mail to all members of the group"
 msgstr "Envoyer un email à tous les membres du groupe"
 
-#: .\tune\templates\tune\about.html:123
+#: .\tune\templates\tune\about.html:124
 #: .\user\templates\user\groupe_liste.html:83
 #: .\user\templates\user\groupe_liste.html:88
 #: .\user\templates\user\groupe_liste.html:96
@@ -919,70 +928,70 @@ msgstr "Envoyer un email à tous les membres du groupe"
 msgid "Create a group"
 msgstr "Créer un groupe"
 
-#: .\tune\templates\tune\about.html:125 .\user\templates\user\contact.html:11
+#: .\tune\templates\tune\about.html:126 .\user\templates\user\contact.html:11
 msgid "Contact"
 msgstr "Contact"
 
-#: .\tune\templates\tune\about.html:128
+#: .\tune\templates\tune\about.html:129
 msgid "Send me a mail"
 msgstr "Envoyez-moi un email"
 
-#: .\tune\templates\tune\about.html:129
+#: .\tune\templates\tune\about.html:130
 msgid "Receive a copy of the mail"
 msgstr "Recevez une copie de cet email"
 
-#: .\tune\templates\tune\about.html:134
+#: .\tune\templates\tune\about.html:135
 msgid "Display existing features and upcoming ones"
 msgstr "Afficher la liste existantes des fonctionnalités et celles à venir"
 
-#: .\tune\templates\tune\about.html:135
+#: .\tune\templates\tune\about.html:136
 msgid "Information"
 msgstr "Informations"
 
-#: .\tune\templates\tune\about.html:136
+#: .\tune\templates\tune\about.html:137
 msgid "Vote for the most wanted features"
 msgstr "Voter pour les fonctionnalités les plus souhaitées"
 
-#: .\tune\templates\tune\about.html:139
+#: .\tune\templates\tune\about.html:140
 msgid "Personal"
 msgstr "Personnel"
 
-#: .\tune\templates\tune\about.html:141
+#: .\tune\templates\tune\about.html:142
 msgid "My favorite Tunes"
 msgstr "Mes Tunes favoris"
 
-#: .\tune\templates\tune\about.html:144
+#: .\tune\templates\tune\about.html:145
 msgid "Show list of favorite Tunes from the connected user"
 msgstr "Afficher la liste de Tunes favoris de l'utilisateur connecté"
 
-#: .\tune\templates\tune\about.html:145
+#: .\tune\templates\tune\about.html:146
 msgid "Filter by name/type/key"
 msgstr "Filtrer par nom/type/tonalité"
 
-#: .\tune\templates\tune\about.html:146
+#: .\tune\templates\tune\about.html:147
 msgid "Change status"
 msgstr "Changer le status"
 
-#: .\tune\templates\tune\about.html:147
+#: .\tune\templates\tune\about.html:148
 msgid "Remove favorite"
 msgstr "Retirer un favori"
 
-#: .\tune\templates\tune\about.html:150
+#: .\tune\templates\tune\about.html:151
 #: .\user\templates\user\user_groupe_liste.html:7
 #: .\user\templates\user\user_groupe_liste.html:11
 #: .\user\templates\user\user_groupe_liste.html:33
 msgid "My groups"
 msgstr "Mes Groupes"
 
-#: .\tune\templates\tune\about.html:153
+#: .\tune\templates\tune\about.html:154
 msgid "Show groups where I am user or admin"
 msgstr "Afficher les groupes pour lesquels je suis admin ou user"
 
-#: .\tune\templates\tune\about.html:154
+#: .\tune\templates\tune\about.html:155
 msgid "Display group details"
 msgstr "Afficher les détails d'un groupe"
 
-#: .\tune\templates\tune\about.html:155
+#: .\tune\templates\tune\about.html:156
 #: .\tune\templates\tune\tune_liste.html:46
 #: .\tune\templates\tune\tune_liste_favoris.html:54
 #: .\user\templates\user\groupe_liste.html:27
@@ -990,125 +999,125 @@ msgstr "Afficher les détails d'un groupe"
 msgid "Filter"
 msgstr "Filtrer"
 
-#: .\tune\templates\tune\about.html:157
+#: .\tune\templates\tune\about.html:158
 #: .\tune\templates\tune\comparateur.html:12
 msgid "Tune comparator"
 msgstr "Comparateur de Tunes"
 
-#: .\tune\templates\tune\about.html:160
+#: .\tune\templates\tune\about.html:161
 msgid "Compare my Tunes with another user"
 msgstr "Comparer mes Tunes avec d'autres utilisateurs"
 
-#: .\tune\templates\tune\about.html:161
+#: .\tune\templates\tune\about.html:162
 msgid "Compare my Tunes with a group"
 msgstr "Comparer mes Tunes avec un groupe"
 
-#: .\tune\templates\tune\about.html:162
+#: .\tune\templates\tune\about.html:163
 msgid "Display in common tunes, in addition, in less"
 msgstr "Afficher les tunes en communs, que j'ai en plus, ou que j'ai en moins"
 
-#: .\tune\templates\tune\about.html:164
+#: .\tune\templates\tune\about.html:165
 msgid "Sets and tunes generator"
 msgstr "Générateur de Sets et de listes de Tunes"
 
-#: .\tune\templates\tune\about.html:167
+#: .\tune\templates\tune\about.html:168
 msgid ""
 "Generate a list of sets according to all possible criterias (for a user)"
 msgstr ""
 "Générer une liste de Sets/Tunes en fonction des critères (pour un "
 "utilisateur)"
 
-#: .\tune\templates\tune\about.html:168
+#: .\tune\templates\tune\about.html:169
 msgid ""
 "Generate a list of sets according to all possible criteria (for a group)"
 msgstr ""
 "Générer une liste de Sets/Tunes en fonction des critères (pour un groupe)"
 
-#: .\tune\templates\tune\about.html:169
+#: .\tune\templates\tune\about.html:170
 msgid "Add criteria \"Never two times the same key in a row"
 msgstr "Ajouter le critère \"Jamais deux fois la même tonalité d'un coup"
 
-#: .\tune\templates\tune\about.html:170
+#: .\tune\templates\tune\about.html:171
 msgid "Add criteria \"alternate major or mix / minor or dor"
 msgstr "Ajouter le critère \"alterner majeur ou mix / mineur ou dor"
 
-#: .\tune\templates\tune\about.html:171
+#: .\tune\templates\tune\about.html:172
 msgid "Save a set"
 msgstr "Sauvegarder un set"
 
-#: .\tune\templates\tune\about.html:173
+#: .\tune\templates\tune\about.html:174
 msgid "My account"
 msgstr "Mon compte"
 
-#: .\tune\templates\tune\about.html:176
+#: .\tune\templates\tune\about.html:177
 msgid "User overview"
 msgstr "Utilisateur Overview"
 
-#: .\tune\templates\tune\about.html:177
+#: .\tune\templates\tune\about.html:178
 msgid "Update overview"
 msgstr "Modifier l'overview"
 
-#: .\tune\templates\tune\about.html:178
+#: .\tune\templates\tune\about.html:179
 msgid "Show groups created by the user"
 msgstr "Afficher les groupes créés par l'utilisateur"
 
-#: .\tune\templates\tune\about.html:179
+#: .\tune\templates\tune\about.html:180
 msgid "Show Tunes added by the user"
 msgstr "Afficher les Tunes ajoutés par l'utilisateur"
 
-#: .\tune\templates\tune\about.html:180
+#: .\tune\templates\tune\about.html:181
 msgid "Upload profile picture"
 msgstr "Uploader une photo de profil"
 
-#: .\tune\templates\tune\about.html:181
+#: .\tune\templates\tune\about.html:182
 msgid "Display Tune dashboard"
 msgstr "Afficher le tableau de bord des Tunes"
 
-#: .\tune\templates\tune\about.html:184
+#: .\tune\templates\tune\about.html:185
 msgid "Managing user accounts"
 msgstr "Gérer les comptes utilisateurs"
 
-#: .\tune\templates\tune\about.html:187
+#: .\tune\templates\tune\about.html:188
 msgid "Log in"
 msgstr "Connexion"
 
-#: .\tune\templates\tune\about.html:188
+#: .\tune\templates\tune\about.html:189
 msgid "Log out"
 msgstr "Déconnexion"
 
-#: .\tune\templates\tune\about.html:189
+#: .\tune\templates\tune\about.html:190
 msgid "Password forgotten"
 msgstr "Mot de passe oublié"
 
-#: .\tune\templates\tune\about.html:190
+#: .\tune\templates\tune\about.html:191
 msgid "Register"
 msgstr "S'inscrire"
 
-#: .\tune\templates\tune\about.html:191
+#: .\tune\templates\tune\about.html:192
 msgid "Confirm registration"
 msgstr "Confirmer l'inscription"
 
-#: .\tune\templates\tune\about.html:196
+#: .\tune\templates\tune\about.html:197
 msgid "Cross-platform"
 msgstr "Cross-platform"
 
-#: .\tune\templates\tune\about.html:197
+#: .\tune\templates\tune\about.html:198
 msgid "English/French"
 msgstr "Anglais/Français"
 
-#: .\tune\templates\tune\about.html:198
+#: .\tune\templates\tune\about.html:199
 msgid "Android version"
 msgstr "Version Android"
 
-#: .\tune\templates\tune\about.html:199
+#: .\tune\templates\tune\about.html:200
 msgid "Custom domain name"
 msgstr "Nom de domaine personnalisé"
 
-#: .\tune\templates\tune\about.html:200
+#: .\tune\templates\tune\about.html:201
 msgid "Testing environment"
 msgstr "Environnement de test"
 
-#: .\tune\templates\tune\about.html:201
+#: .\tune\templates\tune\about.html:202
 msgid "Unit testing"
 msgstr "Tests unitaires"
 
@@ -1124,8 +1133,8 @@ msgid ""
 "and without advertising, designed by a traditional Irish music lover, for "
 "lovers of traditional Irish music. <br/>\n"
 "             This application is not intended to replace existing "
-"applications (TheSession, or the excellent and indispensable Tunepal). On "
-"the other hand, it allows: "
+"applications (TheSession, or the excellent and indispensable Tunepal). \n"
+"             On the other hand, it allows: "
 msgstr ""
 "<strong>Timtool</strong> signifie \"Traditional Irish Music Tool.\" <br/>\n"
 "<strong>Timtool</strong> est un projet d'application web (bientôt Android). "
@@ -1133,14 +1142,15 @@ msgstr ""
 "conçue par un amateur de musique traditionnelle irlandaise, pour les "
 "amateurs de musique traditionnelle irlandaise. <br/>Cette application n'est "
 "pas destinée à remplacer des applications existantes (TheSession, ou "
-"l'excellent et indispensable Tunepal). D'autre part, cela permet: "
+"l'excellent et indispensable Tunepal).<br/>\n"
+"D'autre part, cela permet de : "
 
-#: .\tune\templates\tune\accueil.html:26
+#: .\tune\templates\tune\accueil.html:27
 msgid "Save and <strong>manage your personal Tune library</strong>,"
 msgstr ""
 "Sauvegarder et <strong>gérer sa bibliothèque de Tunes personnelle</strong>,"
 
-#: .\tune\templates\tune\accueil.html:27
+#: .\tune\templates\tune\accueil.html:28
 msgid ""
 "<strong>Generate random sets/lists</strong> of tunes based on filters and "
 "criterias,"
@@ -1148,11 +1158,11 @@ msgstr ""
 "<strong>Générer des Sets et listes de Tunes aléatoires</strong> selon "
 "beaucoup de critères,"
 
-#: .\tune\templates\tune\accueil.html:28
+#: .\tune\templates\tune\accueil.html:29
 msgid "<strong>Compare your tunes with other users</strong>,"
 msgstr "<strong>Comparer vos Tunes avec d'autres utilisateurs</strong>,"
 
-#: .\tune\templates\tune\accueil.html:29
+#: .\tune\templates\tune\accueil.html:30
 msgid ""
 "<strong>Create groups (sessions)</strong> to share common information and "
 "tunes,"
@@ -1160,7 +1170,7 @@ msgstr ""
 "<strong>Créer des groupes (sessions)</strong> afin de partager les Tunes en "
 "communs ainsi que les informations importantes,"
 
-#: .\tune\templates\tune\accueil.html:31
+#: .\tune\templates\tune\accueil.html:32
 #, python-format
 msgid ""
 "\n"
@@ -1176,7 +1186,7 @@ msgstr ""
 "strong>)\n"
 "                "
 
-#: .\tune\templates\tune\accueil.html:36
+#: .\tune\templates\tune\accueil.html:37
 msgid ""
 "<strong>Timtool v1.0</strong> is the first version of the application. Other "
 "versions of the app remain to come, with even more features, more design, "
@@ -1186,7 +1196,7 @@ msgstr ""
 "D'autres versions sont à venir, avec plus de fonctionnalités, plus de "
 "design, plus de fun!"
 
-#: .\tune\templates\tune\accueil.html:39
+#: .\tune\templates\tune\accueil.html:40
 #, python-format
 msgid ""
 "\n"
@@ -1202,23 +1212,23 @@ msgstr ""
 "de contact !</a>\n"
 "                "
 
-#: .\tune\templates\tune\accueil.html:49
+#: .\tune\templates\tune\accueil.html:50
 msgid "Last Tunes added"
 msgstr "Derniers Tunes ajoutés"
 
-#: .\tune\templates\tune\accueil.html:53
+#: .\tune\templates\tune\accueil.html:54
 msgid "No Tune found"
 msgstr "Aucun Tune trouvé"
 
-#: .\tune\templates\tune\accueil.html:57 .\tune\templates\tune\accueil.html:116
-#: .\tune\templates\tune\accueil.html:166
+#: .\tune\templates\tune\accueil.html:58 .\tune\templates\tune\accueil.html:117
+#: .\tune\templates\tune\accueil.html:167
 #: .\tune\templates\tune\comparateur.html:50
 #: .\tune\templates\tune\comparateur.html:77
 #: .\tune\templates\tune\comparateur.html:117
 #: .\tune\templates\tune\generateur.html:125
 #: .\tune\templates\tune\generateur.html:148
 #: .\tune\templates\tune\tune_liste.html:27
-#: .\tune\templates\tune\tune_liste.html:61
+#: .\tune\templates\tune\tune_liste.html:76
 #: .\tune\templates\tune\tune_liste_favoris.html:27
 #: .\tune\templates\tune\tune_liste_favoris.html:69
 #: .\user\templates\user\groupe_add_favoris.html:30
@@ -1232,14 +1242,14 @@ msgstr "Aucun Tune trouvé"
 msgid "Name"
 msgstr "Nom"
 
-#: .\tune\templates\tune\accueil.html:58
+#: .\tune\templates\tune\accueil.html:59
 #: .\tune\templates\tune\comparateur.html:51
 #: .\tune\templates\tune\comparateur.html:78
 #: .\tune\templates\tune\comparateur.html:118
 #: .\tune\templates\tune\generateur.html:126
 #: .\tune\templates\tune\generateur.html:149
 #: .\tune\templates\tune\tune_liste.html:31
-#: .\tune\templates\tune\tune_liste.html:62
+#: .\tune\templates\tune\tune_liste.html:77
 #: .\tune\templates\tune\tune_liste_favoris.html:31
 #: .\tune\templates\tune\tune_liste_favoris.html:70
 #: .\user\templates\user\groupe_add_favoris.html:31
@@ -1249,14 +1259,14 @@ msgstr "Nom"
 msgid "Type"
 msgstr "Type"
 
-#: .\tune\templates\tune\accueil.html:59
+#: .\tune\templates\tune\accueil.html:60
 #: .\tune\templates\tune\comparateur.html:52
 #: .\tune\templates\tune\comparateur.html:79
 #: .\tune\templates\tune\comparateur.html:119
 #: .\tune\templates\tune\generateur.html:127
 #: .\tune\templates\tune\generateur.html:150
 #: .\tune\templates\tune\tune_liste.html:35
-#: .\tune\templates\tune\tune_liste.html:63
+#: .\tune\templates\tune\tune_liste.html:78
 #: .\tune\templates\tune\tune_liste_favoris.html:35
 #: .\tune\templates\tune\tune_liste_favoris.html:71
 #: .\user\templates\user\groupe_add_favoris.html:32
@@ -1266,69 +1276,69 @@ msgstr "Type"
 msgid "Key"
 msgstr "Tonalité"
 
-#: .\tune\templates\tune\accueil.html:60
+#: .\tune\templates\tune\accueil.html:61
 #: .\tune\templates\tune\comparateur.html:80
-#: .\tune\templates\tune\tune_liste.html:66
+#: .\tune\templates\tune\tune_liste.html:81
 #: .\user\templates\user\profile.html:79
 msgid "Favorite"
 msgstr "Favori"
 
-#: .\tune\templates\tune\accueil.html:76
+#: .\tune\templates\tune\accueil.html:77
 #: .\tune\templates\tune\comparateur.html:91
 #: .\tune\templates\tune\tune_lire.html:14
 #: .\tune\templates\tune\tune_lire_version.html:14
-#: .\tune\templates\tune\tune_liste.html:96
+#: .\tune\templates\tune\tune_liste.html:111
 #: .\user\templates\user\profile.html:96
 msgid "Tune added to your favorites"
 msgstr "Tune ajouté à vos favoris"
 
-#: .\tune\templates\tune\accueil.html:80
+#: .\tune\templates\tune\accueil.html:81
 #: .\tune\templates\tune\comparateur.html:95
 #: .\tune\templates\tune\tune_lire.html:18
 #: .\tune\templates\tune\tune_lire_version.html:18
-#: .\tune\templates\tune\tune_liste.html:100
+#: .\tune\templates\tune\tune_liste.html:115
 #: .\user\templates\user\profile.html:100
 msgid "Tune absent from your favorites"
 msgstr "Tune absent de vos favoris"
 
-#: .\tune\templates\tune\accueil.html:86
+#: .\tune\templates\tune\accueil.html:87
 #: .\tune\templates\tune\tune_lire.html:24
 #: .\tune\templates\tune\tune_lire_version.html:24
-#: .\tune\templates\tune\tune_liste.html:106
+#: .\tune\templates\tune\tune_liste.html:121
 #: .\user\templates\user\profile.html:106
 msgid "Trick !"
 msgstr "Astuce !"
 
-#: .\tune\templates\tune\accueil.html:86
+#: .\tune\templates\tune\accueil.html:87
 #: .\tune\templates\tune\tune_lire.html:24
 #: .\tune\templates\tune\tune_lire_version.html:24
-#: .\tune\templates\tune\tune_liste.html:106
+#: .\tune\templates\tune\tune_liste.html:121
 #: .\user\templates\user\profile.html:106
 msgid "Sign in or register to be able to add this Tune to your favorites."
 msgstr "Connectez-vous afin d'ajouter ce Tune à vos favoris."
 
-#: .\tune\templates\tune\accueil.html:100
+#: .\tune\templates\tune\accueil.html:101
 msgid "All Tunes"
 msgstr "Tous les Tunes"
 
-#: .\tune\templates\tune\accueil.html:108
+#: .\tune\templates\tune\accueil.html:109
 msgid "Last groups created"
 msgstr "Derniers groupes créés"
 
-#: .\tune\templates\tune\accueil.html:112
+#: .\tune\templates\tune\accueil.html:113
 #: .\user\templates\user\groupe_liste.html:37
 msgid "No group"
 msgstr "Aucun groupe"
 
-#: .\tune\templates\tune\accueil.html:136
+#: .\tune\templates\tune\accueil.html:137
 msgid "All groups"
 msgstr "Tous les Groupes"
 
-#: .\tune\templates\tune\accueil.html:142
+#: .\tune\templates\tune\accueil.html:143
 msgid "Last recordings added"
 msgstr "Derniers enregistrements ajoutés"
 
-#: .\tune\templates\tune\accueil.html:147
+#: .\tune\templates\tune\accueil.html:148
 #: .\tune\templates\tune\tune_favori_lire.html:34
 #: .\tune\templates\tune\tune_favori_lire.html:57
 #: .\tune\templates\tune\tune_lire.html:99
@@ -1343,11 +1353,11 @@ msgstr "Derniers enregistrements ajoutés"
 msgid "Description"
 msgstr "Description"
 
-#: .\tune\templates\tune\accueil.html:158
+#: .\tune\templates\tune\accueil.html:159
 msgid "Last registered users"
 msgstr "Derniers utilisateurs enregistrés"
 
-#: .\tune\templates\tune\accueil.html:162
+#: .\tune\templates\tune\accueil.html:163
 msgid "No registered user"
 msgstr "Aucun utilisateur enregistré"
 
@@ -1535,7 +1545,7 @@ msgid "My Account"
 msgstr "Mon compte"
 
 #: .\tune\templates\tune\layout.html:123
-#: .\tune\templates\tune\tune_liste.html:137
+#: .\tune\templates\tune\tune_liste.html:152
 #: .\user\templates\user\groupe_lire.html:134
 #: .\user\templates\user\groupe_liste.html:80
 msgid "You must be logged in to use this feature"
@@ -1587,9 +1597,9 @@ msgid "Attributes T: K: R: are mandatory"
 msgstr "Les attributs T: K: R: sont obligatoires"
 
 #: .\tune\templates\tune\new_from_abc.html:37
-#: .\user\templates\user\groupe_new.html:23
-msgid "Create"
-msgstr "Créer"
+#: .\tune\templates\tune\tune_lire.html:163
+msgid "Functionnality is coming !"
+msgstr "Fonctionnalité à venir !"
 
 #: .\tune\templates\tune\new_from_abc.html:39
 msgid "Where to find .abc file ?"
@@ -1789,13 +1799,13 @@ msgid "Versions"
 msgstr "Versions"
 
 #: .\tune\templates\tune\tune_lire.html:43
-#: .\tune\templates\tune\tune_liste.html:64
+#: .\tune\templates\tune\tune_liste.html:79
 msgid "Other titles"
 msgstr "Autres titres"
 
 #: .\tune\templates\tune\tune_lire.html:44
 #: .\tune\templates\tune\tune_lire.html:148
-#: .\tune\templates\tune\tune_liste.html:65
+#: .\tune\templates\tune\tune_liste.html:80
 msgid "Composers"
 msgstr "Compositeurs"
 
@@ -1838,10 +1848,6 @@ msgstr "Il n'y a pas d'autres titres pour ce Tune"
 #: .\tune\templates\tune\tune_lire.html:150
 msgid "There is not any composer for this Tune"
 msgstr "Il n'y a pas de compositeur pour ce Tune"
-
-#: .\tune\templates\tune\tune_lire.html:163
-msgid "Functionnality is coming !"
-msgstr "Fonctionnalité à venir !"
 
 #: .\tune\templates\tune\tune_lire_version.html:41
 #: .\tune\templates\tune\tune_lire_version.html:54
@@ -1910,31 +1916,33 @@ msgstr "N'a pas d'enregistrement"
 msgid "List of Tunes"
 msgstr "Liste de Tunes"
 
-#: .\tune\templates\tune\tune_liste.html:56
-msgid "No tune found"
-msgstr "Aucun Tune trouvé"
-
 #: .\tune\templates\tune\tune_liste.html:58
-msgid "This tune has recordings linked to it !"
-msgstr "Ce Tune a un enregistrement lié !"
-
-#: .\tune\templates\tune\tune_liste.html:123
+#: .\tune\templates\tune\tune_liste.html:138
 #: .\tune\templates\tune\tune_liste_favoris.html:118
 #: .\user\templates\user\groupe_liste.html:66
 #: .\user\templates\user\user_groupe_liste.html:68
 msgid "Previous"
 msgstr "Précédent"
 
-#: .\tune\templates\tune\tune_liste.html:127
+#: .\tune\templates\tune\tune_liste.html:62
+#: .\tune\templates\tune\tune_liste.html:142
 #: .\tune\templates\tune\tune_liste_favoris.html:122
 #: .\user\templates\user\user_groupe_liste.html:72
 msgid "Next"
 msgstr "Suivant"
 
-#: .\tune\templates\tune\tune_liste.html:140
-#: .\tune\templates\tune\tune_liste.html:145
-#: .\tune\templates\tune\tune_liste.html:153
-#: .\tune\templates\tune\tune_liste.html:158
+#: .\tune\templates\tune\tune_liste.html:71
+msgid "No tune found"
+msgstr "Aucun Tune trouvé"
+
+#: .\tune\templates\tune\tune_liste.html:73
+msgid "This tune has recordings linked to it !"
+msgstr "Ce Tune a un enregistrement lié !"
+
+#: .\tune\templates\tune\tune_liste.html:155
+#: .\tune\templates\tune\tune_liste.html:160
+#: .\tune\templates\tune\tune_liste.html:168
+#: .\tune\templates\tune\tune_liste.html:173
 msgid "Add a Tune"
 msgstr "Ajouter un Tune"
 
@@ -2365,6 +2373,10 @@ msgstr "Création de groupe"
 #: .\user\templates\user\groupe_new.html:15
 msgid "Create a group filling the following form"
 msgstr "Créer un groupe en remplissant le formulaire suivant"
+
+#: .\user\templates\user\groupe_new.html:23
+msgid "Create"
+msgstr "Créer"
 
 #: .\user\templates\user\groupe_update.html:7
 #: .\user\templates\user\groupe_update.html:11
