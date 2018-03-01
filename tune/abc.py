@@ -7,7 +7,6 @@ from django.core import serializers
 from django.db.models import Q
 from django.utils.translation import ugettext as _
 
-
 def handle_uploaded_file(file, version, request):
     content = file.readlines()
     all_abc = []
@@ -79,71 +78,67 @@ def handle_uploaded_file(file, version, request):
             if titles.count() > 0:
                 for title in titles:
                     messages.info(
-                        request,
-                        _('The Title "%(title)s" has been found !') % {'title': title.slug}
+                    request,
+                    _('The Title "%(title)s" has been found !') % {'title': title.slug}
                     )
-                    try:
-                        tune = Tune.objects.get(slug=title.slug)
 
-                        new_title, created = Title.objects.get_or_create(
-                            slug=slug, defaults={'belong_to_tune': tune, 'name': abc.T})
+                    new_title, created = Title.objects.get_or_create(
+                        slug=slug, defaults={'belong_to_tune': title.belong_to_tune, 'name': abc.T})
+                    if created:
+                        messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title.slug})
+
+                    if abc.other_title:
+                        new_title2, created2 = Title.objects.get_or_create(
+                            slug=slug2, defaults={'belong_to_tune': title.belong_to_tune, 'name': abc.other_title})
+                        if created2:
+                            messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title2.slug})
+
+                    if abc.other_title2:
+                        new_title3, created3 = Title.objects.get_or_create(
+                            slug=slug3, defaults={'belong_to_tune': title.belong_to_tune, 'name': abc.other_title2})
+                        if created3:
+                            messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title3.slug})
+
+                    if abc.C:
+                        comp, created = Composer.objects.get_or_create(
+                            slug=slugify(abc.C), defaults={'name': abc.C})
                         if created:
-                            messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title.slug})
+                            comp.composed_tunes.add(title.belong_to_tune)
+                            messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp.name})
 
-                        if abc.other_title:
-                            new_title2, created2 = Title.objects.get_or_create(
-                                slug=slug2, defaults={'belong_to_tune': tune, 'name': abc.other_title})
-                            if created2:
-                                messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title2.slug})
+                    if abc.other_composer:
+                        comp2, created2 = Composer.objects.get_or_create(
+                            slug=slugify(abc.other_composer), defaults={'name': abc.other_composer})
+                        if created2:
+                            comp2.composed_tunes.add(title.belong_to_tune)
+                            messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp2.name})
 
-                        if abc.other_title2:
-                            new_title3, created3 = Title.objects.get_or_create(
-                                slug=slug3, defaults={'belong_to_tune': tune, 'name': abc.other_title2})
-                            if created3:
-                                messages.success(request, _('The title "%(title)s" has been created') % {'title': new_title3.slug})
+                    if abc.other_composer2:
+                        comp3, created3 = Composer.objects.get_or_create(
+                            slug=slugify(abc.other_composer2), defaults={'name': abc.other_composer2})
+                        if created3:
+                            comp3.composed_tunes.add(title.belong_to_tune)
+                            messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp3.name})
 
-                        if abc.C:
-                            comp, created = Composer.objects.get_or_create(
-                                slug=slugify(abc.C), defaults={'name': abc.C})
-                            if created:
-                                comp.composed_tunes.add(tune)
-                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp.name})
-
-                        if abc.other_composer:
-                            comp2, created2 = Composer.objects.get_or_create(
-                                slug=slugify(abc.other_composer), defaults={'name': abc.other_composer})
-                            if created2:
-                                comp2.composed_tunes.add(tune)
-                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp2.name})
-
-                        if abc.other_composer2:
-                            comp3, created3 = Composer.objects.get_or_create(
-                                slug=slugify(abc.other_composer2), defaults={'name': abc.other_composer2})
-                            if created3:
-                                comp3.composed_tunes.add(tune)
-                                messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp3.name})
-
-                        if tune.abcs.filter(version=version).count() == 0:
-                            abc.tune = tune
-                            abc.version = version
-                            abc.save()
-                            messages.info(
-                                request,
-                                _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {
-                                'version': abc.version,
-                                'tune': tune.slug
-                                }
-                            )
-                        else:
-                            messages.warning(
-                                request,
-                                _('The .abc version "%(version)s" of Tune "%(tune)s" already exists !') % {
-                                'version': version,
-                                'tune': tune.slug
-                                }
-                            )
-                    except Tune.DoesNotExist:
-                        pass
+                    if title.belong_to_tune.abcs.filter(version=version).count() == 0:
+                        abc.tune = title.belong_to_tune
+                        abc.version = version
+                        abc.save()
+                        messages.info(
+                            request,
+                            _('The .abc version "%(version)s" of Tune "%(tune)s" has been added !') % {
+                            'version': abc.version,
+                            'tune': title.belong_to_tune.slug
+                            }
+                        )
+                    else:
+                        messages.warning(
+                            request,
+                            _('The .abc version "%(version)s" of Tune "%(tune)s" already exists !') % {
+                            'version': version,
+                            'tune': title.belong_to_tune.slug
+                            }
+                        )
             else:
                 tune = Tune()
                 tune.name = abc.T
