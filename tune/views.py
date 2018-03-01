@@ -492,8 +492,7 @@ def tune_lire_version(request, slug, version):
     temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "-" + version + "temp.abc")
     if not path_abc.is_file():
         constructABC_from_abc(abc, path_abc, temp_path)
-        print(path_abc)
-    if not path_svg.is_file() and settings.DEBUG == False:
+    if not path_svg.is_file():
         constructSVG_from_ABC(path_abc, path_svg)
     if not path_midi.is_file() and settings.DEBUG == False:
         constructMIDI_from_ABC(path_abc, path_midi)
