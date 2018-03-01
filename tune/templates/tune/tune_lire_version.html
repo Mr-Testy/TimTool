@@ -79,3 +79,15 @@ title="{% trans 'Trick !' %}" data-content="{% trans 'Sign in or register to be 
 </div>
 {% include 'disqus.html' with PAGE_IDENTIFIER="Tune : "|add:tune.slug|add:'-'|add:abc.version %}
 {% endblock %}
+
+{% block actions %}
+        <a class="list-group-item" href="{% url 'tune:tune_lire' slug=tune.slug %}">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> {% trans 'Back' %}
+        </a>
+{% endblock %}
+
+    {% block actions_page %}
+        <a class="btn btn-success" href="{% url 'tune:tune_lire' slug=tune.slug %}">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> {% trans 'Back' %}
+        </a>
+    {% endblock %}
