@@ -97,7 +97,9 @@ Tunes
                             <td class="hidden-xs">{{ tune.key }}</td>
                             <td class="hidden-xs hidden-sm">
                                 {% for titl in tune.titles.all %}
+                                {% if not titl.name == tune.name %}
                                 <li class="list-unstyled">{{titl.name}}</li>
+                                {% endif %}
                                 {% endfor %}
                             </td>
                             <td class="hidden-xs hidden-sm">
