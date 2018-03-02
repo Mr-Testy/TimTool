@@ -120,7 +120,7 @@ def handle_uploaded_file(file, version, request):
                             comp3.composed_tunes.add(title.belong_to_tune)
                             messages.success(request, _('The composer "%(name)s" has been created') % {'name': comp3.name})
 
-                    if title.belong_to_tune.abcs.filter(version=version).count() == 0:
+                    if title.belong_to_tune.abcs.filter(version__iexact=version).count() == 0:
                         abc.tune = title.belong_to_tune
                         abc.version = version
                         abc.save()
