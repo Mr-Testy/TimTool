@@ -492,9 +492,9 @@ def tune_lire_version(request, slug, version):
     temp_path = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "-" + version + "temp.abc")
     if not path_abc.is_file():
         constructABC_from_abc(abc, path_abc, temp_path)
-    if not path_svg.is_file():
+    if not path_svg.is_file() and not settings.DEBUG:
         constructSVG_from_ABC(path_abc, path_svg)
-    if not path_midi.is_file():
+    if not path_midi.is_file() and not settings.DEBUG:
         constructMIDI_from_ABC(path_abc, path_midi)
     return render(request, 'tune/tune_lire_version.html', {
         "abc": abc,

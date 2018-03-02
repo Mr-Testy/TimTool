@@ -35,10 +35,16 @@ def handle_uploaded_file(file, version, request):
                     all_abc[-1].other_composer2 = line[1]
             elif line[0] == "S":
                 all_abc[-1].S = line[1]
+            elif line[0] == "H" and not all_abc[-1].H:
+                all_abc[-1].H = line[1]
             elif line[0] == "H":
                 all_abc[-1].H = all_abc[-1].H + "\r\n" + line[1]
+            elif line[0] == "N" and not all_abc[-1].N:
+                all_abc[-1].N = line[1]
             elif line[0] == "N":
                 all_abc[-1].N = all_abc[-1].N + "\r\n" + line[1]
+            elif line[0] == "D" and not all_abc[-1].D:
+                all_abc[-1].D = line[1]
             elif line[0] == "D":
                 all_abc[-1].D = all_abc[-1].D + "\r\n" + line[1]
             elif line[0] == "Z":
@@ -55,7 +61,9 @@ def handle_uploaded_file(file, version, request):
         else:
             line = line.decode("UTF-8")
             if len(line) > 4:
-                if line[0] == "W":
+                if line[0] == "W" and not all_abc[-1].W:
+                    all_abc[-1].W = line[1]
+                elif line[0] == "W":
                     all_abc[-1].W = all_abc[-1].W + "\r\n" + line[1]
                 else:
                     all_abc[-1].content = all_abc[-1].content + line
