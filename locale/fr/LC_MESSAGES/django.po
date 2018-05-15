@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-28 18:36+0100\n"
-"PO-Revision-Date: 2018-02-28 18:41+0100\n"
+"POT-Creation-Date: 2018-05-15 20:14+0200\n"
+"PO-Revision-Date: 2018-05-15 20:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -515,34 +515,34 @@ msgstr ""
 "connecter à\n"
 "%(site_name)s. En dernière étape, veuillez remplir le formulaire suivant:"
 
-#: .\tune\abc.py:83
+#: .\tune\abc.py:90
 #, python-format
 msgid "The Title \"%(title)s\" has been found !"
 msgstr "Le Titre \"%(title)s\" a été trouvé !"
 
-#: .\tune\abc.py:91 .\tune\abc.py:97 .\tune\abc.py:103 .\tune\abc.py:168
-#: .\tune\abc.py:173 .\tune\abc.py:178
+#: .\tune\abc.py:96 .\tune\abc.py:102 .\tune\abc.py:108 .\tune\abc.py:174
+#: .\tune\abc.py:179 .\tune\abc.py:184
 #, python-format
 msgid "The title \"%(title)s\" has been created"
 msgstr "Le titre \"%(title)s\" a été créé"
 
-#: .\tune\abc.py:110 .\tune\abc.py:117 .\tune\abc.py:124 .\tune\abc.py:185
-#: .\tune\abc.py:192 .\tune\abc.py:199
+#: .\tune\abc.py:115 .\tune\abc.py:122 .\tune\abc.py:129 .\tune\abc.py:191
+#: .\tune\abc.py:198 .\tune\abc.py:205
 #, python-format
 msgid "The composer \"%(name)s\" has been created"
 msgstr "Le compositeur \"%(name)s\" a été créé"
 
-#: .\tune\abc.py:132 .\tune\abc.py:160
+#: .\tune\abc.py:140 .\tune\abc.py:166
 #, python-format
 msgid "The .abc version \"%(version)s\" of Tune \"%(tune)s\" has been added !"
 msgstr "La version .abc \"%(version)s\" du Tune \"%(tune)s\" a été ajouté !"
 
-#: .\tune\abc.py:140
+#: .\tune\abc.py:148
 #, python-format
 msgid "The .abc version \"%(version)s\" of Tune \"%(tune)s\" already exists !"
 msgstr "La version .abc \"%(version)s\" du Tune \"%(tune)s\" existe déjà !"
 
-#: .\tune\abc.py:154
+#: .\tune\abc.py:160
 #, python-format
 msgid "The tune \"%(tune)s\" a has been created"
 msgstr "Le tune \"%(tune)s\" a été créé"
@@ -563,60 +563,88 @@ msgstr "Tous les Tunes favoris"
 msgid "All Tunes of Timtool"
 msgstr "Tous les Tunes de Timtool"
 
-#: .\tune\forms.py:14
+#: .\tune\forms.py:15
 msgid "Sets"
 msgstr "Sets"
 
-#: .\tune\forms.py:14
+#: .\tune\forms.py:15
 msgid "Tunes"
 msgstr "Tunes"
 
-#: .\tune\forms.py:16
+#: .\tune\forms.py:17
 msgid "List of "
 msgstr "Liste de "
 
-#: .\tune\forms.py:23
+#: .\tune\forms.py:24
 msgid "Among "
 msgstr "Parmi "
 
-#: .\tune\forms.py:35
+#: .\tune\forms.py:32 .\tune\forms.py:49
+msgid "Yes"
+msgstr ""
+
+#: .\tune\forms.py:32 .\tune\forms.py:49
+msgid "No"
+msgstr "Non"
+
+#: .\tune\forms.py:34
+msgid "All types ?"
+msgstr "Tous les types ?"
+
+#: .\tune\forms.py:44
 msgid "Please select at least one type"
 msgstr "Veuillez sélectionner au moins un type"
 
-#: .\tune\forms.py:42
+#: .\tune\forms.py:51
+msgid "All keys ?"
+msgstr "Toutes les tonalités ?"
+
+#: .\tune\forms.py:58
 msgid "Keys "
 msgstr "Tonalités "
 
-#: .\tune\forms.py:44
+#: .\tune\forms.py:60
 msgid "Please select at least a key"
 msgstr "Veuillez sélectionner au moins une tonalité"
 
-#: .\tune\forms.py:50 .\tune\templates\tune\tune_lire.html:64
+#: .\tune\forms.py:66 .\tune\templates\tune\tune_lire.html:64
 #: .\tune\templates\tune\tune_lire_version.html:38
 msgid "Version"
 msgstr "Version"
 
-#: .\tune\forms.py:53
+#: .\tune\forms.py:69
 msgid "Insert name of Tunebook or User"
 msgstr "Entrez le nom du Tunebook ou un Utilisateur"
 
-#: .\tune\forms.py:56
+#: .\tune\forms.py:73
+msgid "Tunebook"
+msgstr "Tunebook"
+
+#: .\tune\forms.py:73
+msgid "User"
+msgstr "Nom d'utilisateur"
+
+#: .\tune\forms.py:75
+msgid "Tunebook or User ?"
+msgstr "Tunebook ou Utilisateur ?"
+
+#: .\tune\forms.py:79
 msgid "File "
 msgstr "Fichier "
 
-#: .\tune\forms.py:58
+#: .\tune\forms.py:81
 msgid "Select a file"
 msgstr "Choisir un fichier"
 
-#: .\tune\forms.py:64
+#: .\tune\forms.py:87
 msgid ".abc file here"
 msgstr "fichier .abc ici"
 
-#: .\tune\forms.py:65
+#: .\tune\forms.py:88
 msgid "Copy / Paste .abc file content"
 msgstr "Copier/Coller le contenu d'un fichier .abc"
 
-#: .\tune\forms.py:69 .\tune\templates\tune\accueil.html:147
+#: .\tune\forms.py:92 .\tune\templates\tune\accueil.html:147
 #: .\tune\templates\tune\tune_favori_lire.html:33
 #: .\tune\templates\tune\tune_favori_lire.html:56
 #: .\tune\templates\tune\tune_lire.html:98
@@ -624,11 +652,11 @@ msgstr "Copier/Coller le contenu d'un fichier .abc"
 msgid "Title"
 msgstr "Titre"
 
-#: .\tune\forms.py:71
+#: .\tune\forms.py:94
 msgid "Description of the sound to add"
 msgstr "Description du son à ajouter"
 
-#: .\tune\forms.py:73
+#: .\tune\forms.py:96
 msgid ""
 "Recording of the Tune \"xxx\" that I have learned from \"Abcdef\" on \"yyy\" "
 "festival"
@@ -636,15 +664,15 @@ msgstr ""
 "L'enregistrement du Tune \"xxx\" que j'ai appris de \"Abcdef\" au festival "
 "du \"yyy\""
 
-#: .\tune\forms.py:78
+#: .\tune\forms.py:101
 msgid "Link of the audio Clyp sound"
 msgstr "Lien du son Clyp"
 
-#: .\tune\forms.py:81
+#: .\tune\forms.py:104
 msgid "The link of the sound is mandatory"
 msgstr "Le lien du son est obligatoire"
 
-#: .\tune\forms.py:87
+#: .\tune\forms.py:110
 msgid "The link must start with \"https://clyp.it/\""
 msgstr "Le lien doit commencer par \"https://clyp.it/\""
 
@@ -1287,7 +1315,7 @@ msgstr "Favori"
 #: .\tune\templates\tune\comparateur.html:91
 #: .\tune\templates\tune\tune_lire.html:14
 #: .\tune\templates\tune\tune_lire_version.html:14
-#: .\tune\templates\tune\tune_liste.html:111
+#: .\tune\templates\tune\tune_liste.html:113
 #: .\user\templates\user\profile.html:96
 msgid "Tune added to your favorites"
 msgstr "Tune ajouté à vos favoris"
@@ -1296,7 +1324,7 @@ msgstr "Tune ajouté à vos favoris"
 #: .\tune\templates\tune\comparateur.html:95
 #: .\tune\templates\tune\tune_lire.html:18
 #: .\tune\templates\tune\tune_lire_version.html:18
-#: .\tune\templates\tune\tune_liste.html:115
+#: .\tune\templates\tune\tune_liste.html:117
 #: .\user\templates\user\profile.html:100
 msgid "Tune absent from your favorites"
 msgstr "Tune absent de vos favoris"
@@ -1304,7 +1332,7 @@ msgstr "Tune absent de vos favoris"
 #: .\tune\templates\tune\accueil.html:87
 #: .\tune\templates\tune\tune_lire.html:24
 #: .\tune\templates\tune\tune_lire_version.html:24
-#: .\tune\templates\tune\tune_liste.html:121
+#: .\tune\templates\tune\tune_liste.html:123
 #: .\user\templates\user\profile.html:106
 msgid "Trick !"
 msgstr "Astuce !"
@@ -1312,7 +1340,7 @@ msgstr "Astuce !"
 #: .\tune\templates\tune\accueil.html:87
 #: .\tune\templates\tune\tune_lire.html:24
 #: .\tune\templates\tune\tune_lire_version.html:24
-#: .\tune\templates\tune\tune_liste.html:121
+#: .\tune\templates\tune\tune_liste.html:123
 #: .\user\templates\user\profile.html:106
 msgid "Sign in or register to be able to add this Tune to your favorites."
 msgstr "Connectez-vous afin d'ajouter ce Tune à vos favoris."
@@ -1497,8 +1525,8 @@ msgstr ""
 "Sets"
 
 #: .\tune\templates\tune\layout.html:10
-msgid "TIMTOOL beta version"
-msgstr "TIMTOOL version beta"
+msgid "TIMTOOL v1.0"
+msgstr ""
 
 #: .\tune\templates\tune\layout.html:42
 msgid "Anonymous"
@@ -1545,7 +1573,7 @@ msgid "My Account"
 msgstr "Mon compte"
 
 #: .\tune\templates\tune\layout.html:123
-#: .\tune\templates\tune\tune_liste.html:152
+#: .\tune\templates\tune\tune_liste.html:154
 #: .\user\templates\user\groupe_lire.html:134
 #: .\user\templates\user\groupe_liste.html:80
 msgid "You must be logged in to use this feature"
@@ -1862,6 +1890,11 @@ msgstr "Télécharger le fichier ABC (fichier .abc)"
 msgid "Download the sound (.mid file)"
 msgstr "Télécharger le son (fichier .mid)"
 
+#: .\tune\templates\tune\tune_lire_version.html:85
+#: .\tune\templates\tune\tune_lire_version.html:91
+msgid "Back"
+msgstr ""
+
 #: .\tune\templates\tune\tune_liste.html:15
 msgid "All the tunes from Timtool"
 msgstr "Tous les Tunes de Timtool"
@@ -1917,7 +1950,7 @@ msgid "List of Tunes"
 msgstr "Liste de Tunes"
 
 #: .\tune\templates\tune\tune_liste.html:58
-#: .\tune\templates\tune\tune_liste.html:138
+#: .\tune\templates\tune\tune_liste.html:140
 #: .\tune\templates\tune\tune_liste_favoris.html:118
 #: .\user\templates\user\groupe_liste.html:66
 #: .\user\templates\user\user_groupe_liste.html:68
@@ -1925,7 +1958,7 @@ msgid "Previous"
 msgstr "Précédent"
 
 #: .\tune\templates\tune\tune_liste.html:62
-#: .\tune\templates\tune\tune_liste.html:142
+#: .\tune\templates\tune\tune_liste.html:144
 #: .\tune\templates\tune\tune_liste_favoris.html:122
 #: .\user\templates\user\user_groupe_liste.html:72
 msgid "Next"
@@ -1939,10 +1972,10 @@ msgstr "Aucun Tune trouvé"
 msgid "This tune has recordings linked to it !"
 msgstr "Ce Tune a un enregistrement lié !"
 
-#: .\tune\templates\tune\tune_liste.html:155
-#: .\tune\templates\tune\tune_liste.html:160
-#: .\tune\templates\tune\tune_liste.html:168
-#: .\tune\templates\tune\tune_liste.html:173
+#: .\tune\templates\tune\tune_liste.html:157
+#: .\tune\templates\tune\tune_liste.html:162
+#: .\tune\templates\tune\tune_liste.html:170
+#: .\tune\templates\tune\tune_liste.html:175
 msgid "Add a Tune"
 msgstr "Ajouter un Tune"
 
@@ -2118,7 +2151,7 @@ msgstr ""
 msgid "You have already linked this sound to another favorite"
 msgstr "Vous avez déjà lié ce son à un autre favoris"
 
-#: .\tune\views.py:593 .\tune\views.py:597
+#: .\tune\views.py:593 .\tune\views.py:598
 msgid "Processus successfully ended !"
 msgstr "Traitement terminé avec succès !"
 
@@ -2505,6 +2538,9 @@ msgstr ""
 #: .\user\views.py:194
 msgid "You left this group"
 msgstr "Vous avez quitté ce groupe"
+
+#~ msgid "TIMTOOL beta version"
+#~ msgstr "TIMTOOL version beta"
 
 #~ msgid "Added by"
 #~ msgstr "Ajouté par"

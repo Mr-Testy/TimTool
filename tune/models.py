@@ -85,6 +85,9 @@ class ABCTune(models.Model):
     other_composer2 = models.CharField(max_length=150, null=True)
     version = models.CharField(max_length=150, null=False, blank=False)
     tune = models.ForeignKey(Tune, null=False, blank=False, related_name='abcs')
+    from_user = models.ForeignKey(User, null=True, related_name='posted_abcs')
+    version_is_from_tunebook = models.BooleanField(default=False, null=False, blank=False) 
+    # Si le Tune ne provient pas d'un Tunebook, il faut que "from_user" soit valorisé
 
     
 class TuneFavori(models.Model):

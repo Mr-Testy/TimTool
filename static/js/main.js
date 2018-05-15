@@ -256,11 +256,17 @@ $(function () {
 });
 
 //CheckAll
-$("#checkAll1").click(function () {
-    $(".check1").prop('checked', $(this).prop('checked'));
+$("#checkAll1_0").click(function () {
+    $(".check1").prop('checked', true);
 });
-$("#checkAll2").click(function () {
-    $(".check2").prop('checked', $(this).prop('checked'));
+$("#checkAll1_1").click(function () {
+    $(".check1").prop('checked', false);
+});
+$("#checkAll2_0").click(function () {
+    $(".check2").prop('checked', true);
+});
+$("#checkAll2_1").click(function () {
+    $(".check2").prop('checked', false);
 });
 $("#checkAll3").click(function () {
     $(".check3").prop('checked', $(this).prop('checked'));

@@ -7,7 +7,7 @@ from django.core import serializers
 from django.db.models import Q
 from django.utils.translation import ugettext as _
 
-def handle_uploaded_file(file, version, request):
+def handle_uploaded_file(file, version, request, is_from):
     content = file.readlines()
     all_abc = []
     flag = False
@@ -131,6 +131,9 @@ def handle_uploaded_file(file, version, request):
                     if title.belong_to_tune.abcs.filter(version__iexact=version).count() == 0:
                         abc.tune = title.belong_to_tune
                         abc.version = version
+                        if not is_from == "Tunebook":
+                            # Requêter le bon user et l'ajouter à la version du Tune
+                            pass
                         abc.save()
                         messages.info(
                             request,

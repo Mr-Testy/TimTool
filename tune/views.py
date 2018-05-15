@@ -593,7 +593,8 @@ def createABCTune(request):
         messages.success(request, _('Processus successfully ended !'))
     elif formUpload.is_valid() and request.user.is_admin:
         version = formUpload.cleaned_data["version"]
-        handle_uploaded_file(request.FILES['file'], version, request)
+        is_from = formUpload.cleaned_data["is_from"]
+        handle_uploaded_file(request.FILES['file'], version, request, is_from)
         messages.success(request, _('Processus successfully ended !'))
     else:
         print(formUpload.is_valid())
