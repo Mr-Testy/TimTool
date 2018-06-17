@@ -26,7 +26,8 @@ class TuneList(APIView):
         limit = int(self.request.query_params.get('limit', 0))
         offset = int(self.request.query_params.get('offset', limit+50))
         queryset = Tune.objects.all()[limit :offset]
-        serializer = TuneSerializer(queryset, many=True)
+        pre_qs = TuneSerializer.setup_eager_loading(queryset)
+        serializer = TuneSerializer(pre_qs, many=True)
         return Response(serializer.data)
 
 class TuneDetails(APIView):
@@ -49,5 +50,6 @@ class TuneFavoriList(APIView):
 
     def get(self, request, format=None):
         queryset = TuneFavori_user.objects.filter(of_user=self.request.user)
-        serializer = TuneFavoriSerializer(queryset, many=True)
+        pre_qs = TuneFavoriSerializer.setup_eager_loading(queryset)
+        serializer = TuneFavoriSerializer(pre_qs, many=True)
         return Response(serializer.data)
