@@ -26,6 +26,7 @@ class TuneList(APIView):
         limit = int(self.request.query_params.get('limit', 0))
         offset = int(self.request.query_params.get('offset', limit+50))
         queryset = Tune.objects.all()[limit :offset]
+        # pre_qs = TuneSerializer.setup_eager_loading(queryset)
         serializer = TuneSerializer(queryset, many=True)
         return Response(serializer.data)
 
