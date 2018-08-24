@@ -6,6 +6,7 @@ from tune.models import Tune, TuneFavori_user
 from .permissions import IsOwner
 from django.http import HttpResponse, Http404, HttpResponseForbidden
 from django.core.cache import cache
+import datetime
 
 class TuneTypeList(APIView):
 
@@ -24,10 +25,14 @@ class TuneKeyList(APIView):
 class TuneList(APIView):
 
     def get(self, request, format=None):
-        limit = int(self.request.query_params.get('limit', 0))
-        offset = int(self.request.query_params.get('offset', limit+50))
-        data = cache.get_or_set('tunes', TuneSerializer(TuneSerializer.setup_eager_loading(Tune.objects.all()).data, many=True), None)
-        return Response(data[limit :offset])
+        if cache.get('tunes') == None:
+            limit = int(self.request.query_params.get('limit', 0))
+            offset = int(self.request.query_params.get('offset', limit+50))
+            tunes = Tune.objects.all()
+            tunes = TuneSerializer.setup_eager_loading(tunes)
+            tunes =  TuneSerializer(tunes, many=True).data
+            cache.set('tunes', tunes, None)
+        return Response(cache.get('tunes'))
 
 class TuneDetails(APIView):
     """
