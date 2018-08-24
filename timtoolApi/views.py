@@ -24,16 +24,10 @@ class TuneKeyList(APIView):
 class TuneList(APIView):
 
     def get(self, request, format=None):
-        if cache.get('tunes') == None:
-            limit = int(self.request.query_params.get('limit', 0))
-            offset = int(self.request.query_params.get('offset', limit+50))
-            queryset = TuneSerializer.setup_eager_loading(Tune.objects.all()[limit :offset])
-            serializer = TuneSerializer(queryset, many=True)
-            cache.set('tunes', serializer.data, None)
-            print('met en cash')
-        else:
-            print('from the cash')
-        return Response(cache.get('tunes'))
+        limit = int(self.request.query_params.get('limit', 0))
+        offset = int(self.request.query_params.get('offset', limit+50))
+        data = cache.get_or_set('tunes', TuneSerializer(TuneSerializer.setup_eager_loading(Tune.objects.all()).data, many=True), None)
+        return Response(data[limit :offset])
 
 class TuneDetails(APIView):
     """
