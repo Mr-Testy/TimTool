@@ -2,6 +2,11 @@ from django.db import models
 from user.models import User, GroupExtend
 from django.template.defaultfilters import slugify
 from django.db.models.signals import pre_save
+from django.db.models.signals import post_save
+from django.db.models.signals import post_init
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+from django.core.cache import cache
 
 
 class Tune(models.Model):
@@ -30,6 +35,9 @@ class Tune(models.Model):
             return True
         return False
 
+@receiver([post_save, post_delete], sender=Tune)
+def delete_cache(**kwargs):
+    cache.delete('tunes')
 
 class Title(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)

@@ -5,6 +5,7 @@ from .serializers import TuneSerializer, TuneTypeSerializer, TuneFavoriSerialize
 from tune.models import Tune, TuneFavori_user
 from .permissions import IsOwner
 from django.http import HttpResponse, Http404, HttpResponseForbidden
+from django.core.cache import cache
 
 class TuneTypeList(APIView):
 
@@ -23,11 +24,16 @@ class TuneKeyList(APIView):
 class TuneList(APIView):
 
     def get(self, request, format=None):
-        limit = int(self.request.query_params.get('limit', 0))
-        offset = int(self.request.query_params.get('offset', limit+50))
-        queryset = Tune.objects.all()[limit :offset]
-        serializer = TuneSerializer(queryset, many=True)
-        return Response(serializer.data)
+        if cache.get('tunes') == None:
+            limit = int(self.request.query_params.get('limit', 0))
+            offset = int(self.request.query_params.get('offset', limit+50))
+            queryset = TuneSerializer.setup_eager_loading(Tune.objects.all()[limit :offset])
+            serializer = TuneSerializer(queryset, many=True)
+            cache.set('tunes', serializer.data, None)
+            print('met en cash')
+        else:
+            print('from the cash')
+        return Response(cache.get('tunes'))
 
 class TuneDetails(APIView):
     """

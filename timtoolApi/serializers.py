@@ -12,10 +12,17 @@ class ComposerSeriallizer(serializers.ModelSerializer):
         fields = ('name',)
 
 class TuneSerializer(serializers.ModelSerializer):
+    titles = TitleSeriallizer(many=True)
+
+    @staticmethod
+    def setup_eager_loading(queryset):
+        queryset = queryset.prefetch_related(
+            'titles')
+        return queryset
 
     class Meta:
         model = Tune
-        fields = ('name', 'key', 'type', 'slug')
+        fields = ('name', 'key', 'type', 'slug', 'titles')
 
 class TuneTypeSerializer(serializers.ModelSerializer):
 

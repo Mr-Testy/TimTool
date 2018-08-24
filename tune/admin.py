@@ -14,9 +14,6 @@ class TuneAdmin(admin.ModelAdmin):
     #  date_hierarchy = 'date'
     ordering = ('date_creation', )
     search_fields = ('name',)
-    inlines = [
-        ABCInline,
-    ]
 
 
 class TitleAdmin(admin.ModelAdmin):

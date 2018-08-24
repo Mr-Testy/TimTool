@@ -470,8 +470,6 @@ def comparateur(request):
 
 def tune_lire(request, slug):
     tune = get_object_or_404(Tune, slug=slug)
-    tune.nb_vues = tune.nb_vues + 1
-    tune.save()
     user_clyps = Audio_clyp_user_favori.objects.filter(of_tune_favori_user__of_tune=tune)
     group_clyps = Audio_clyp_group_favori.objects.filter(of_tune_favori_group__of_tune=tune)
     return render(request, 'tune/tune_lire.html', {
@@ -483,8 +481,6 @@ def tune_lire(request, slug):
 
 def tune_lire_version(request, slug, version):
     tune = get_object_or_404(Tune, slug=slug)
-    tune.nb_vues = tune.nb_vues + 1
-    tune.save()
     abc = tune.abcs.get(version=version)
     path_abc = Path(settings.MEDIA_ROOT + "tune_abc/" + tune.slug + "-" + version + ".abc")
     path_svg = Path(settings.MEDIA_ROOT + "tune_svg/" + tune.slug + "-" + version + ".svg")
