@@ -3,7 +3,6 @@ from user.models import User, GroupExtend
 from django.template.defaultfilters import slugify
 from django.db.models.signals import pre_save
 from django.db.models.signals import post_save
-from django.db.models.signals import post_init
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.core.cache import cache
@@ -36,8 +35,9 @@ class Tune(models.Model):
         return False
 
 @receiver([post_save, post_delete], sender=Tune)
-def delete_cache(**kwargs):
+def delete_cache_tunes_from_tunes(instance, **kwargs):
     cache.delete('tunes')
+    cache.delete('tune='+instance.slug)
 
 class Title(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
@@ -48,6 +48,10 @@ class Title(models.Model):
     class Meta:
         ordering = ["-date_creation"]
 
+@receiver([post_save, post_delete], sender=Title)
+def delete_cache_tunes_from_title(instance, **kwargs):
+    cache.delete('tunes')
+    cache.delete('tune='+instance.belong_to_tune.slug)
 
 class Composer(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False, unique=True)
@@ -55,12 +59,10 @@ class Composer(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
     composed_tunes = models.ManyToManyField(Tune, related_name='composers')
 
-
 class Source(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False, unique=True)
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)
     of_tunes = models.ManyToManyField(Tune, related_name='sources')
-
 
 class Discography(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False, unique=True)
@@ -95,9 +97,11 @@ class ABCTune(models.Model):
     tune = models.ForeignKey(Tune, null=False, blank=False, related_name='abcs')
     from_user = models.ForeignKey(User, null=True, related_name='posted_abcs')
     version_is_from_tunebook = models.BooleanField(default=False, null=False, blank=False) 
-    # Si le Tune ne provient pas d'un Tunebook, il faut que "from_user" soit valorisé
 
-    
+@receiver([post_save, post_delete], sender=ABCTune)
+def delete_cache_tunes_from_ABCTune(instance, **kwargs):
+    cache.delete('tune='+instance.tune.slug)
+
 class TuneFavori(models.Model):
     personal_note = models.TextField(null=True, blank=True)
     date_creation = models.DateTimeField(auto_now_add=True, auto_now=False)

@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from tune.models import Tune, Title, Composer, TuneFavori
+from tune.models import Tune, Title, Composer, TuneFavori, ABCTune
+
+class ABCTuneSeriallizer(serializers.ModelSerializer):
+    class Meta:
+        model = ABCTune
+        exclude = ('tune',)
 
 class TitleSeriallizer(serializers.ModelSerializer):
     class Meta:
@@ -8,7 +13,7 @@ class TitleSeriallizer(serializers.ModelSerializer):
 
 class ComposerSeriallizer(serializers.ModelSerializer):
     class Meta:
-        model = Title
+        model = Composer
         fields = ('name',)
 
 class TuneSerializer(serializers.ModelSerializer):
@@ -22,22 +27,26 @@ class TuneSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tune
-        fields = ('name', 'key', 'type', 'slug', 'titles')
+        fields = ('name', 'key', 'type', 'slug', 'date_creation', 'titles')
 
-class TuneTypeSerializer(serializers.ModelSerializer):
+class TuneDetailsSerializer(serializers.ModelSerializer):
+    titles = TitleSeriallizer(many=True)
+    composers = ComposerSeriallizer(many=True)
+    abcs = ABCTuneSeriallizer(many=True)
 
     class Meta:
         model = Tune
-        fields = ('type',)
+        fields = ('name', 'key', 'type', 'slug', 'description', 'date_creation', 'titles', 'composers', 'abcs')
 
 class TuneFavoriSerializer(serializers.ModelSerializer):
     """Serializer to map the Model instance into JSON format."""
-    of_tune = TuneSerializer(read_only=True)
+    of_tune = TuneSerializer()
 
     @staticmethod
     def setup_eager_loading(queryset):
-        queryset = queryset.prefetch_related(
+        queryset = queryset.select_related(
             'of_tune')
+        return queryset
 
     class Meta:
         """Meta class to map serializer's fields with the model fields."""

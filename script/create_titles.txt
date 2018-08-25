@@ -1,0 +1,12 @@
+#Script to create titles on production environment
+
+from tune.models import Title, Tune
+tunes=Tune.objects.all()
+for tune in tunes:
+	title = Title(name=tune.name, slug=tune.slug)
+	title.belong_to_tune=tune
+	title.save()
+
+#delete all abc files ?
+from tune.models import ABCTune
+ABCTune.objects.all().delete()
