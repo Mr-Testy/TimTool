@@ -1,4 +1,4 @@
-from rest_framework.permissions import BasePermission
+from rest_framework.permissions import BasePermission, IsAuthenticated
 from tune.models import Tune
 
 class IsOwner(BasePermission):
@@ -9,3 +9,9 @@ class IsOwner(BasePermission):
         if isinstance(obj, Tune):
             return obj.added_by == request.user
         return obj.added_by == request.user
+
+class AllowOptionsAuthentication(IsAuthenticated):
+    def has_permission(self, request, view):
+        if request.method == 'OPTIONS':
+            return True
+        return request.user and request.user.is_authenticated

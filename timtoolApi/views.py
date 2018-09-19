@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import TuneSerializer, TuneFavoriSerializer, TuneDetailsSerializer
 from tune.models import Tune, TuneFavori_user
-from .permissions import IsOwner
+from .permissions import IsOwner, AllowOptionsAuthentication
 from django.http import HttpResponse, Http404, HttpResponseForbidden
 from django.core.cache import cache
 import datetime
@@ -38,7 +38,7 @@ class TuneDetails(APIView):
         return Response(cache.get('tune='+slug))
 
 class TuneFavoriList(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (AllowOptionsAuthentication,)
 
     def get(self, request, format=None):
         if cache.get('tunes_favoris='+self.request.user.username) == None:
