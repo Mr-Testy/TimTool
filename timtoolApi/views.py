@@ -3,8 +3,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import TuneSerializer, TuneFavoriSerializer, TuneDetailsSerializer
 from tune.models import Tune, TuneFavori_user
+from user.models import User
 from .permissions import IsOwner, AllowOptionsAuthentication
-from django.http import HttpResponse, Http404, HttpResponseForbidden
+from django.http import HttpResponse, Http404, HttpResponseForbidden, JsonResponse
 from django.core.cache import cache
 import datetime
 
@@ -47,3 +48,27 @@ class TuneFavoriList(APIView):
             tunes_favoris = TuneFavoriSerializer(tunes_favoris, many=True).data
             cache.set('tunes_favoris='+self.request.user.username, tunes_favoris, None)
         return Response(cache.get('tunes_favoris='+self.request.user.username))
+
+class SwitchFavori(APIView):
+    permission_classes = (AllowOptionsAuthentication,)
+
+    def post(self, request):
+        tune_slug = request.data["tune_slug"]
+
+        if tune_slug:
+            try:
+                tune_favori = TuneFavori_user.objects.get(of_user=request.user, of_tune__slug=tune_slug)
+            except TuneFavori_user.DoesNotExist: 
+                tune_favori = None
+
+            if tune_favori:
+                tune_favori.delete()
+                return JsonResponse({"result": "deleted"})
+            else:
+                tune = Tune.objects.get(slug=tune_slug)
+                create_tune_favori = TuneFavori_user(of_user=request.user, of_tune=tune)
+                create_tune_favori.save()
+                user = User.objects.get(id=request.user.id)
+                user.tunes_favoris.add(create_tune_favori)
+                return JsonResponse({"result": "added"})
+        return JsonResponse({"result": "unchanged"})
